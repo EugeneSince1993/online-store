@@ -1,8 +1,39 @@
-.filterForm {
-  .filterBrand {
-    .filterBrandList {
-      overflow-y: scroll;
-      height: 130px;
+.filtersContainer {
+  
+  .filterBrands {
+
+    .collapsible {
+      background-color: #efefef;
+      cursor: pointer;
+      padding: 10px;
+      width: 100%;
+      border: none;
+    }
+
+    .active, .collapsible:hover {
+      background-color: #c6c6c6;
+    }
+
+    .collapsible:after {
+      font-family: "FontAwesome";
+      content: "\f078";
+      font-size: 13px;
+      color: white;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .active:after {
+      font-family: "FontAwesome";
+      content: "\f077";
+    }
+
+    .content {
+      padding: 0 15px;
+      overflow: hidden;
+      background-color: #e0e0e0;
+      max-height: 0;
+      transition: max-height 0.2s ease-out;
     }
   }
 }

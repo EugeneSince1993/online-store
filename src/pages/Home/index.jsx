@@ -1,6 +1,5 @@
 import React from 'react';
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import classNames from 'classnames';
 
 import { Filters, Sorting, ProductList } from '../../components';
 import styles from './Home.module.scss';
@@ -8,14 +7,14 @@ import styles from './Home.module.scss';
 export const Home = () => {
 
   return (
-    <Row>
-      <Col md={3}>
+    <div className={classNames(styles.homeContainer, 'container')}>
+      <div className={styles.filtersColumn}>
         <Filters />
-      </Col>
-      <Col md={9}>
+      </div>
+      <div className={styles.productsColumn}>
         <Sorting />
         <ProductList />
-      </Col>
-    </Row>
+      </div>
+    </div>
   );
 };

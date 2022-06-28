@@ -1,13 +1,20 @@
-.footerRow1 {
-  ul {
-    list-style-type: none;
-    padding-left: 0;
+.footerContainer {
+  padding-top: 15px;
+  padding-bottom: 15px;
 
-    li {
-      a {
-        text-decoration: none;
-        color: #212529;
-      }
-    }
+  .footerRow {
+    display: flex;
+  }
+
+  .footerLinks {
+    margin-bottom: 10px;
+  }
+
+  .forClients, .aboutCompany {
+    margin-right: 30px;
+  }
+
+  .forClients h6, .aboutCompany h6, .followUs h6 {
+    margin-bottom: 7px;
   }
 }

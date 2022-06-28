@@ -1,23 +1,27 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/Container';
+import classNames from 'classnames';
+
 import styles from './Header.module.scss';
 
 export const Header = () => {
 
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">Online Shop</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link href="">Корзина</Nav.Link>
-            <Nav.Link href="">Войти</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <header className={classNames(styles.header, 'container', 'bgLightGray')}>
+      <div className={styles.headerLogo}>
+        <a href="#">Online store</a>
+      </div>
+      <div className={styles.headerNav}>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">Корзина</a>
+            </li>
+            <li>
+              <a href="#">Войти</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
   );
 };

@@ -1,0 +1,17 @@
+.homeContainer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+
+  .filtersColumn {
+    width: 20%;
+    box-sizing: border-box;
+    padding-right: 30px;
+  }
+
+  .productsColumn {
+    width: 80%;
+    box-sizing: border-box;
+    padding-right: 30px;
+  }
+}
