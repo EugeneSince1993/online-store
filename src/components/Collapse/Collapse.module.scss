@@ -1,6 +1,12 @@
-.collapseButton {
-  display: block;
-  width: 100%;
+.collapseDiv {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 10px;
+
+  i {
+    position: absolute;
+    right: 0;
+  }
 }
 
 .collapseContent.collapsed {

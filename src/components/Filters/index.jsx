@@ -9,22 +9,40 @@ export const Filters = () => {
   return (
     <div className={styles.filtersContainer}>
       <div className={styles.filterBrands}>
-        <Collapse>
-          <div>
-            <input type="checkbox" id="brand1" name="brand1" value="Huawei" />
-            <label htmlFor="brand1">Huawei</label>
-            <input type="checkbox" id="brand2" name="brand2" value="Samsung" />
-            <label htmlFor="brand2">Samsung</label>
-            <input type="checkbox" id="brand3" name="brand3" value="Honor" />
-            <label htmlFor="brand3">Honor</label>
-            <input type="checkbox" id="brand4" name="brand4" value="Apple" />
-            <label htmlFor="brand4">Apple</label>
-            <input type="checkbox" id="brand5" name="brand5" value="Xiaomi" />
-            <label htmlFor="brand5">Xiaomi</label>
-            <input type="checkbox" id="brand6" name="brand6" value="Redmi" />
-            <label htmlFor="brand6">Redmi</label>
-            <input type="checkbox" id="brand7" name="brand7" value="Realme" />
-            <label htmlFor="brand7">Realme</label>
+        <Collapse filterName="Бренд">
+          <div className={styles.brandList}>
+            <label className={styles.container}>Huawei
+              <input type="checkbox" id="brand1" name="brand1" value="Huawei" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>Honor
+              <input type="checkbox" id="brand2" name="brand2" value="Honor" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>Xiaomi
+              <input type="checkbox" id="brand3" name="brand3" value="Xiaomi" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>Redmi
+              <input type="checkbox" id="brand4" name="brand4" value="Redmi" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>Samsung
+              <input type="checkbox" id="brand5" name="brand5" value="Samsung" />
+              <span className={styles.checkmark}></span>
+            </label>  
+            <label className={styles.container}>Apple
+              <input type="checkbox" id="brand6" name="brand6" value="Apple" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>Realme
+              <input type="checkbox" id="brand7" name="brand7" value="Realme" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>Nokia
+              <input type="checkbox" id="brand8" name="brand8" value="Nokia" />
+              <span className={styles.checkmark}></span>
+            </label>
           </div>
         </Collapse>
       </div>
