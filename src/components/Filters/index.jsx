@@ -46,6 +46,22 @@ export const Filters = () => {
           </div>
         </Collapse>
       </div>
+      <div className={styles.filterPrices}>
+        <Collapse filterName="Цена, ₽">
+          <div className={styles.fromToContainer}>
+            <div className={styles.from}>От</div>
+            <div className={styles.to}>До</div>
+          </div>
+          <div className={styles.priceRange}>
+            <div className={styles.priceRangeInput}>
+              <input type="number" placeholder="3000" className={styles.inputLeft} />
+            </div>
+            <div className={styles.priceRangeInput}>
+              <input type="number" placeholder="150000" className={styles.inputRight} />
+            </div>
+          </div>
+        </Collapse>
+      </div>
     </div>
   );
 };

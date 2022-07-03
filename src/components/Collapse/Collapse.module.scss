@@ -1,7 +1,7 @@
 .collapseDiv {
   position: relative;
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 
   i {
     position: absolute;
@@ -9,10 +9,14 @@
   }
 }
 
-.collapseContent.collapsed {
-  display: none;
-}
+.collapseContent {
+  margin-bottom: 25px;
 
-.collapseContent.expanded {
-  display: block;
+  &.collapsed {
+    display: none;
+  }
+
+  &.expanded {
+    display: block;
+  }
 }
