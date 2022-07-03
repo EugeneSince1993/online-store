@@ -1,0 +1,12 @@
+.collapseButton {
+  display: block;
+  width: 100%;
+}
+
+.collapseContent.collapsed {
+  display: none;
+}
+
+.collapseContent.expanded {
+  display: block;
+}
