@@ -2,6 +2,16 @@
   
   .filterBrands {
 
+    .inputSearchContainer {
+      margin-bottom: 15px;
+
+      .inputSearch {
+        width: 100%;
+        border: 1px solid #bcbcbc;
+        padding: 7px 10px;
+      }
+    }
+
     .brandList {
       max-height: 155px;
       overflow-y: scroll;
@@ -97,15 +107,17 @@
 
     .priceRange {
       display: flex;
-      height: 35px;
 
       .priceRangeInput {
         width: 50%;
-        height: 100%;
 
         input {
           width: 100%;
-          height: 100%;
+
+          &.inputLeft, &.inputRight {
+            border: 1px solid #bcbcbc;
+            padding: 7px 10px;
+          }
 
           &.inputLeft {
             border-top-right-radius: 0;

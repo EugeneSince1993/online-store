@@ -9,7 +9,10 @@ export const Filters = () => {
   return (
     <div className={styles.filtersContainer}>
       <div className={styles.filterBrands}>
-        <Collapse filterName="Бренд">
+        <Collapse filterName={<h5>Бренд</h5>}>
+          <div className={styles.inputSearchContainer}>
+            <input type="text" placeholder="Я ищу..." className={styles.inputSearch} />
+          </div>
           <div className={styles.brandList}>
             <label className={styles.container}>Huawei
               <input type="checkbox" id="brand1" name="brand1" value="Huawei" />
@@ -47,7 +50,7 @@ export const Filters = () => {
         </Collapse>
       </div>
       <div className={styles.filterPrices}>
-        <Collapse filterName="Цена, ₽">
+        <Collapse filterName={<h5>Цена, ₽</h5>}>
           <div className={styles.fromToContainer}>
             <div className={styles.from}>От</div>
             <div className={styles.to}>До</div>

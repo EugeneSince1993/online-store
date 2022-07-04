@@ -5,21 +5,6 @@
   outline: none;
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
-}
-
-body {
-  color: $black;
-}
-
-a,
-span,
-p,
-b,
-h1,
-h2,
-h3,
-h4,
-h5 {
   color: $black;
 }
 
@@ -33,11 +18,18 @@ h2 {
   line-height: 30px;
 }
 
+h5 {
+  font-size: 15px;
+}
+
 h6 {
-  font-size: 16px;
+  font-size: 14px;
+}
+
+div {
+  font-size: 14px;
 }
 
 a {
   text-decoration: none;
 }
-
