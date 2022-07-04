@@ -1,6 +1,6 @@
 .filtersContainer {
   
-  .filterBrands {
+  .filterBrand {
 
     .inputSearchContainer {
       margin-bottom: 15px;
@@ -42,59 +42,56 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-      }
 
-      .container input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-      }
+        &:hover input ~ .checkmark {
+          background-color: #ccc;
+        }
 
-      .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 17px;
-        width: 17px;
-        background-color: #eee;
-      }
+        input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
 
-      .container:hover input ~ .checkmark {
-        background-color: #ccc;
-      }
+          &:checked ~ .checkmark {
+            background-color: #2196F3;
+          }
+  
+          &:checked ~ .checkmark:after {
+            display: block;
+          }
+        }
 
-      .container input:checked ~ .checkmark {
-        background-color: #2196F3;
-      }
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 17px;
+          width: 17px;
+          background-color: #eee;
 
-      .checkmark:after {
-        content: "";
-        position: absolute;
-        display: none;
-      }
-
-      .container input:checked ~ .checkmark:after {
-        display: block;
-      }
-
-      .container .checkmark:after {
-        left: 4px;
-        top: 1px;
-        width: 5px;
-        height: 10px;
-        border: solid white;
-        border-width: 0 3px 3px 0;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
+          &::after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 4px;
+            top: 1px;
+            width: 5px;
+            height: 10px;
+            border-style: solid;
+            border-color: white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+        }
       }
     }
-
   }
 
-  .filterPrices {
+  .filterPrice {
 
     .fromToContainer {
       display: flex;
@@ -134,4 +131,52 @@
     }
   }
 
+  .filterColor {
+
+    form {
+
+      .formControl {
+
+        input[type="checkbox"] {
+          -webkit-appearance: none;
+          appearance: none;
+          background-color: #fff;
+          width: 30px;
+          height: 30px;
+
+          &.white {
+            background-color: #fff;
+          }
+
+          &.black {
+            background-color: #000;
+          }
+
+          &.silver {
+            background-color: #d3d3d3;
+          }
+
+          &.blue {
+            background-color: #4e64d3;
+          }
+
+          &.red {
+            background-color: #cc3126;
+          }
+
+          &.pink {
+            background-color: #cc5da3;
+          }
+
+          &.green {
+            background-color: #34b53d;
+          }
+
+          &.yellow {
+            background-color: #f9e31b;
+          }
+        }
+      }
+    }
+  }
 }
