@@ -13,7 +13,7 @@ export const Filters = () => {
           <div className={styles.inputSearchContainer}>
             <input type="text" placeholder="Я ищу..." className={styles.inputSearch} />
           </div>
-          <div className={styles.brandList}>
+          <div className={styles.filterList}>
             <label className={styles.container}>Huawei
               <input type="checkbox" id="brand1" name="brand1" value="Huawei" />
               <span className={styles.checkmark}></span>
@@ -55,11 +55,11 @@ export const Filters = () => {
             <div className={styles.from}>От</div>
             <div className={styles.to}>До</div>
           </div>
-          <div className={styles.priceRange}>
-            <div className={styles.priceRangeInput}>
+          <div className={styles.filterRangeFields}>
+            <div className={styles.filterRangeFieldsInput}>
               <input type="number" placeholder="3000" className={styles.inputLeft} />
             </div>
-            <div className={styles.priceRangeInput}>
+            <div className={styles.filterRangeFieldsInput}>
               <input type="number" placeholder="150000" className={styles.inputRight} />
             </div>
           </div>
@@ -149,15 +149,15 @@ export const Filters = () => {
             <div className={styles.from}>От</div>
             <div className={styles.to}>До</div>
           </div>
-          <div className={styles.screenSizeRange}>
-            <div className={styles.screenSizeRangeInput}>
+          <div className={styles.filterRangeFields}>
+            <div className={styles.filterRangeFieldsInput}>
               <input type="number" placeholder="4.00" className={styles.inputLeft} />
             </div>
-            <div className={styles.screenSizeRangeInput}>
+            <div className={styles.filterRangeFieldsInput}>
               <input type="number" placeholder="7.00" className={styles.inputRight} />
             </div>
           </div>
-          <div className={styles.screenSizeList}>
+          <div className={styles.filterList}>
             <label className={styles.container}>
               Все
               <input type="checkbox" id="screensize1" name="screensize1" value="Все" />
@@ -211,6 +211,52 @@ export const Filters = () => {
                 name="screensize6" 
                 value="6.6 и более" 
               />
+              <span className={styles.checkmark}></span>
+            </label>
+          </div>
+        </Collapse>
+      </div>
+      <div className={styles.filterMemory}>
+        <Collapse filterName={<h5>Объем встроенной памяти</h5>}>
+          <div className={styles.filterList}>
+            <label className={styles.container}>
+              8 Гб
+              <input type="checkbox" id="memory1" name="memory1" value="8 Гб" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              16 Гб
+              <input type="checkbox" id="memory2" name="memory2" value="16 Гб" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              32 Гб
+              <input type="checkbox" id="memory3" name="memory3" value="32 Гб" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              64 Гб
+              <input type="checkbox" id="memory4" name="memory4" value="64 Гб" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              128 Гб
+              <input type="checkbox" id="memory5" name="memory5" value="128 Гб" />
+              <span className={styles.checkmark}></span>
+            </label>  
+            <label className={styles.container}>
+              256 Гб
+              <input type="checkbox" id="memory6" name="memory6" value="256 Гб" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              512 Гб
+              <input type="checkbox" id="memory7" name="memory7" value="512 Гб" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              1 Тб
+              <input type="checkbox" id="memory7" name="memory7" value="1 Тб" />
               <span className={styles.checkmark}></span>
             </label>
           </div>
