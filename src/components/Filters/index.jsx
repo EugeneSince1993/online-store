@@ -143,6 +143,79 @@ export const Filters = () => {
           </form>
         </Collapse>
       </div>
+      <div className={styles.filterScreenSize}>
+        <Collapse filterName={<h5>Диагональ экрана, дюйм</h5>}>
+          <div className={styles.fromToContainer}>
+            <div className={styles.from}>От</div>
+            <div className={styles.to}>До</div>
+          </div>
+          <div className={styles.screenSizeRange}>
+            <div className={styles.screenSizeRangeInput}>
+              <input type="number" placeholder="4.00" className={styles.inputLeft} />
+            </div>
+            <div className={styles.screenSizeRangeInput}>
+              <input type="number" placeholder="7.00" className={styles.inputRight} />
+            </div>
+          </div>
+          <div className={styles.screenSizeList}>
+            <label className={styles.container}>
+              Все
+              <input type="checkbox" id="screensize1" name="screensize1" value="Все" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              Менее 6.09
+              <input 
+                type="checkbox" 
+                id="screensize2" 
+                name="screensize2" 
+                value="Менее 6.00" 
+              />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              6.1 - 6.29
+              <input 
+                type="checkbox" 
+                id="screensize3" 
+                name="screensize3" 
+                value="6.1 - 6.29" 
+              />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              6.3 - 6.49
+              <input 
+                type="checkbox" 
+                id="screensize4" 
+                name="screensize4" 
+                value="6.3 - 6.49" 
+              />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              6.5 - 6.59
+              <input 
+                type="checkbox" 
+                id="screensize5" 
+                name="screensize5" 
+                value="6.5 - 6.59" 
+              />
+              <span className={styles.checkmark}></span>
+            </label>  
+            <label className={styles.container}>
+              6.6 и более
+              <input 
+                type="checkbox" 
+                id="screensize6" 
+                name="screensize6" 
+                value="6.6 и более" 
+              />
+              <span className={styles.checkmark}></span>
+            </label>
+          </div>
+        </Collapse>
+      </div>
     </div>
   );
 };
