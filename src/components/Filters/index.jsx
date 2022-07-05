@@ -256,7 +256,74 @@ export const Filters = () => {
             </label>
             <label className={styles.container}>
               1 Тб
-              <input type="checkbox" id="memory7" name="memory7" value="1 Тб" />
+              <input type="checkbox" id="memory8" name="memory8" value="1 Тб" />
+              <span className={styles.checkmark}></span>
+            </label>
+          </div>
+        </Collapse>
+      </div>
+      <div className={styles.filterRamMemory}>
+        <Collapse filterName={<h5>Объем оперативной памяти</h5>}>
+          <div className={styles.filterList}>
+            <label className={styles.container}>
+              1 Гб
+              <input type="checkbox" id="rammemory1" name="rammemory1" value="1 Гб" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              2 Гб
+              <input type="checkbox" id="rammemory2" name="rammemory2" value="2 Гб" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              3 Гб
+              <input type="checkbox" id="rammemory3" name="rammemory3" value="3 Гб" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              4 Гб
+              <input type="checkbox" id="rammemory4" name="rammemory4" value="4 Гб" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              6 Гб
+              <input type="checkbox" id="rammemory5" name="rammemory5" value="6 Гб" />
+              <span className={styles.checkmark}></span>
+            </label>  
+            <label className={styles.container}>
+              8 Гб
+              <input type="checkbox" id="rammemory6" name="rammemory6" value="8 Гб" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              12 Гб
+              <input type="checkbox" id="rammemory7" name="rammemory7" value="12 Гб" />
+              <span className={styles.checkmark}></span>
+            </label>
+          </div>
+        </Collapse>
+      </div>
+      <div className={styles.filterNumberOfCores}>
+        <Collapse filterName={<h5>Количество ядер</h5>}>
+          <div className={styles.filterList}>
+            <label className={styles.container}>
+              2
+              <input type="checkbox" id="numberofcores1" name="numberofcores1" value="2" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              4
+              <input type="checkbox" id="numberofcores2" name="numberofcores2" value="4" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              6
+              <input type="checkbox" id="numberofcores3" name="numberofcores3" value="6" />
+              <span className={styles.checkmark}></span>
+            </label>
+            <label className={styles.container}>
+              8
+              <input type="checkbox" id="numberofcores4" name="numberofcores4" value="8" />
               <span className={styles.checkmark}></span>
             </label>
           </div>
