@@ -329,6 +329,22 @@ export const Filters = () => {
           </div>
         </Collapse>
       </div>
+      <div className={styles.filterBatteryCapacity}>
+        <Collapse filterName={<h5>Емкость аккумулятора, мАч</h5>}>
+          <div className={styles.fromToContainer}>
+            <div className={styles.from}>От</div>
+            <div className={styles.to}>До</div>
+          </div>
+          <div className={styles.filterRangeFields}>
+            <div className={styles.filterRangeFieldsInput}>
+              <input type="number" placeholder="1500" className={styles.inputLeft} />
+            </div>
+            <div className={styles.filterRangeFieldsInput}>
+              <input type="number" placeholder="15000" className={styles.inputRight} />
+            </div>
+          </div>
+        </Collapse>
+      </div>
     </div>
   );
 };
