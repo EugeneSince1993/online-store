@@ -1,13 +1,12 @@
 import React from 'react';
-import classNames from 'classnames';
 
 import styles from './SearchInput.module.scss';
 
 export const SearchInput = () => {
 
   return (
-    <div>
-
+    <div className={styles.inputSearch}>
+      <input type="text" placeholder="Я ищу..." />
     </div>
   );
 };
