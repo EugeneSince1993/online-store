@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Collapse } from '../Collapse';
-
 import styles from './Filters.module.scss';
+import { MultiRangeSliderInputs } from './MultiRangeSliderInputs';
 
 export const Filters = () => {
 
@@ -51,18 +51,7 @@ export const Filters = () => {
       </div>
       <div className={styles.filterPrice}>
         <Collapse filterName={<h5>Цена, ₽</h5>}>
-          <div className={styles.fromToContainer}>
-            <div className={styles.from}>От</div>
-            <div className={styles.to}>До</div>
-          </div>
-          <div className={styles.filterRangeFields}>
-            <div className={styles.filterRangeFieldsInput}>
-              <input type="number" placeholder="3000" className={styles.inputLeft} />
-            </div>
-            <div className={styles.filterRangeFieldsInput}>
-              <input type="number" placeholder="150000" className={styles.inputRight} />
-            </div>
-          </div>
+          <MultiRangeSliderInputs min={3000} max={150000} step={1000} />
         </Collapse>
       </div>
       <div className={styles.filterColor}>
@@ -145,75 +134,7 @@ export const Filters = () => {
       </div>
       <div className={styles.filterScreenSize}>
         <Collapse filterName={<h5>Диагональ экрана, дюйм</h5>}>
-          <div className={styles.fromToContainer}>
-            <div className={styles.from}>От</div>
-            <div className={styles.to}>До</div>
-          </div>
-          <div className={styles.filterRangeFields}>
-            <div className={styles.filterRangeFieldsInput}>
-              <input type="number" placeholder="4.00" className={styles.inputLeft} />
-            </div>
-            <div className={styles.filterRangeFieldsInput}>
-              <input type="number" placeholder="7.00" className={styles.inputRight} />
-            </div>
-          </div>
-          <div className={styles.filterList}>
-            <label className={styles.container}>
-              Все
-              <input type="checkbox" id="screensize1" name="screensize1" value="Все" />
-              <span className={styles.checkmark}></span>
-            </label>
-            <label className={styles.container}>
-              Менее 6.09
-              <input 
-                type="checkbox" 
-                id="screensize2" 
-                name="screensize2" 
-                value="Менее 6.00" 
-              />
-              <span className={styles.checkmark}></span>
-            </label>
-            <label className={styles.container}>
-              6.1 - 6.29
-              <input 
-                type="checkbox" 
-                id="screensize3" 
-                name="screensize3" 
-                value="6.1 - 6.29" 
-              />
-              <span className={styles.checkmark}></span>
-            </label>
-            <label className={styles.container}>
-              6.3 - 6.49
-              <input 
-                type="checkbox" 
-                id="screensize4" 
-                name="screensize4" 
-                value="6.3 - 6.49" 
-              />
-              <span className={styles.checkmark}></span>
-            </label>
-            <label className={styles.container}>
-              6.5 - 6.59
-              <input 
-                type="checkbox" 
-                id="screensize5" 
-                name="screensize5" 
-                value="6.5 - 6.59" 
-              />
-              <span className={styles.checkmark}></span>
-            </label>  
-            <label className={styles.container}>
-              6.6 и более
-              <input 
-                type="checkbox" 
-                id="screensize6" 
-                name="screensize6" 
-                value="6.6 и более" 
-              />
-              <span className={styles.checkmark}></span>
-            </label>
-          </div>
+          <MultiRangeSliderInputs min="4.00" max="7.00" step={1} />
         </Collapse>
       </div>
       <div className={styles.filterMemory}>
@@ -331,18 +252,7 @@ export const Filters = () => {
       </div>
       <div className={styles.filterBatteryCapacity}>
         <Collapse filterName={<h5>Емкость аккумулятора, мАч</h5>}>
-          <div className={styles.fromToContainer}>
-            <div className={styles.from}>От</div>
-            <div className={styles.to}>До</div>
-          </div>
-          <div className={styles.filterRangeFields}>
-            <div className={styles.filterRangeFieldsInput}>
-              <input type="number" placeholder="1500" className={styles.inputLeft} />
-            </div>
-            <div className={styles.filterRangeFieldsInput}>
-              <input type="number" placeholder="15000" className={styles.inputRight} />
-            </div>
-          </div>
+          <MultiRangeSliderInputs min={1500} max={15000} step={500} />
         </Collapse>
       </div>
     </div>
