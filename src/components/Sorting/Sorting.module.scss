@@ -1,0 +1,16 @@
+.sorting {
+  display: flex;
+  margin-bottom: 25px;
+
+  .popular, .price, .rating {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .price {
+
+    i {
+      margin-left: 5px;
+    }
+  }
+}
