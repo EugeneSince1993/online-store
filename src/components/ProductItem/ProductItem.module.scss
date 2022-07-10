@@ -1,0 +1,185 @@
+.productItem {
+  flex-basis: 25%;
+  padding-right: 20px;
+  margin-bottom: 20px;
+
+  .productItemInner {
+    height: 355px;
+    border: 1px solid #ebebeb;
+    border-radius: 6px;
+    padding: 15px;
+    position: relative;
+
+    .image {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+      overflow: hidden;
+
+      img {
+        max-height: 180px;
+      }
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+
+      i {
+        margin-right: 4px;
+      }
+
+      .rating, .testimonials, .favorites {
+        cursor: pointer;
+      }
+
+      .rating {
+        margin-right: 15px;
+
+        i {
+          color: rgb(255, 192, 74);
+        }
+
+        .tooltipText {
+          width: 120px;
+          margin-left: -60px;
+        }
+      }
+
+      .testimonials {
+
+        i {
+          color: rgb(173, 173, 173);
+        }
+
+        .tooltipText {
+          width: 95px;
+          margin-left: -47px;
+        }
+      }
+
+      .favorites {
+        margin-left: auto;
+
+        i {
+          color: rgb(173, 173, 173);
+          font-size: 19px;
+          transition: all 0.2s ease-in-out;
+        }
+
+        .tooltipText {
+          width: 175px;
+          margin-left: -89px;
+        }
+
+        &:hover i {
+          color: rgb(255, 45, 143);
+        }
+      }
+    }
+
+    .productLink {
+      display: block;
+      font-size: 15px;
+      line-height: 20px;
+      max-height: 40px;
+      overflow: hidden;
+    }
+
+    .buyContainer {
+      position: absolute;
+      width: calc(100% - 30px);
+      bottom: 15px;
+
+      .buy {
+        display: flex;
+        align-items: center;
+  
+        .price {
+          display: block;
+  
+          .priceValue, .currency {
+            display: inline-block;
+            font-size: 18px;
+          }
+  
+          .priceValue {
+            margin-right: 5px;
+          }
+        }
+  
+        .addToCart {
+          margin-left: auto;
+  
+          button {
+            cursor: pointer;
+            border: 1px solid rgb(173, 173, 173);
+            border-radius: 8px;
+            padding: 7px;
+            background-color: #fff;
+            transition: all 0.2s ease-in-out;
+  
+            &:hover {
+              border-color: rgb(255, 192, 74);
+              color: rgb(255, 192, 74);
+  
+              i {
+                color: rgb(255, 192, 74);
+              }
+            }
+  
+            i {
+              color: rgb(173, 173, 173);
+              font-size: 19px;
+              transition: all 0.2s ease-in-out;
+            }
+          }
+  
+          .tooltipText {
+            width: 155px;
+            margin-left: -77px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tooltip {
+  position: relative;
+
+  .tooltipText {
+    display: inline-block;
+    visibility: hidden;
+    width: 160px;
+    background-color: rgb(139, 139, 139);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 131%;
+    left: 50%;
+    margin-left: -79px;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: rgb(139, 139, 139) transparent transparent transparent;
+    }
+  }
+  
+  &:hover .tooltipText {
+    visibility: visible;
+    opacity: 1;
+  }
+}
