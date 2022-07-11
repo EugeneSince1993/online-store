@@ -1,0 +1,30 @@
+.search {
+
+  .searchContainer {
+    display: flex;
+
+    .searchInput {
+      width: 350px;
+
+      input {
+        width: 100%;
+        border: none;
+        padding: 7px 0 7px 7px;
+        font-size: 14px;
+      }
+    }
+
+    .searchIcon {
+      display: flex;
+      align-items: center;
+      padding-left: 7px;
+      padding-right: 7px;
+      background-color: #fff;
+      cursor: pointer;
+
+      i {
+        color: #bcbcbc;
+      }
+    }
+  }
+}

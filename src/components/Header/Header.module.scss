@@ -1,10 +1,11 @@
 .header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-top: 15px;
   padding-bottom: 15px;
 
-  .headerNav {
-    margin-left: auto;
+  .nav {
 
     nav ul {
       list-style-type: none;

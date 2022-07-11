@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-
+import { NavLink } from 'react-router-dom';
 import styles from './Footer.module.scss';
 
 export const Footer = () => {
@@ -14,13 +14,13 @@ export const Footer = () => {
           <h6>Покупателям</h6>
           <ul>
             <li>
-              <a href="#">Lorem ipsum</a>
+              <NavLink to="#">Способы оплаты</NavLink>
             </li>
             <li>
-              <a href="#">Lorem ipsum</a>
+              <NavLink to="#">Доставка</NavLink>
             </li>
             <li>
-              <a href="#">Lorem ipsum</a>
+              <NavLink to="#">Вопросы и ответы</NavLink>
             </li>
           </ul>
         </div>
@@ -28,13 +28,10 @@ export const Footer = () => {
           <h6>О компании</h6>
           <ul>
             <li>
-              <a href="#">Lorem ipsum</a>
+              <NavLink to="#">О нас</NavLink>
             </li>
             <li>
-              <a href="#">Lorem ipsum</a>
-            </li>
-            <li>
-              <a href="#">Lorem ipsum</a>
+              <NavLink to="#">Контакты</NavLink>
             </li>
           </ul>
         </div>
@@ -42,13 +39,13 @@ export const Footer = () => {
           <h6>Мы в соцсетях</h6>
           <ul>
             <li>
-              <a href="#">Lorem ipsum</a>
+              <NavLink to="#">Вконтакте</NavLink>
             </li>
             <li>
-              <a href="#">Lorem ipsum</a>
+              <NavLink to="#">Одноклассники</NavLink>
             </li>
             <li>
-              <a href="#">Lorem ipsum</a>
+              <NavLink to="#">Телеграм</NavLink>
             </li>
           </ul>
         </div>
