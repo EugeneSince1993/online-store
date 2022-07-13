@@ -1,13 +1,11 @@
 import React from 'react';
-import classNames from 'classnames';
-
 import { Filters, Sorting, ProductList } from '../../components';
 import styles from './Home.module.scss';
 
 export const Home = () => {
 
   return (
-    <div className={classNames(styles.homeContainer, 'container')}>
+    <div className={styles.homeContainer}>
       <div className={styles.filtersColumn}>
         <Filters />
       </div>

@@ -5,12 +5,12 @@ import NumberFormat from 'react-number-format';
 import styles from './ProductItem.module.scss';
 
 export const ProductItem = ({ 
-  phoneImage, rating, testimonials, productName, priceValue }) => {
+  phoneImage, rating, testimonials, productName, priceValue, productId }) => {
 
   return (
     <div className={styles.productItem}>
       <div className={styles.productItemInner}>
-        <NavLink to="#" className={styles.image}>
+        <NavLink to={`/devices/${productId}`} className={styles.image}>
           <img src={phoneImage} />
         </NavLink>
         <div className={styles.icons}>
@@ -29,12 +29,12 @@ export const ProductItem = ({
             <div className={styles.tooltipText}>Добавить в избранное</div>
           </div>
         </div>
-        <NavLink to="#" className={styles.productLink}>
+        <NavLink to={`/devices/${productId}`} className={styles.productLink}>
           {productName}
         </NavLink>
         <div className={styles.buyContainer}>
           <div className={styles.buy}>
-            <NavLink to="#" className={styles.price}>
+            <NavLink to={`/devices/${productId}`} className={styles.price}>
               <div className={styles.priceValue}>
                 <NumberFormat 
                   value={priceValue} 

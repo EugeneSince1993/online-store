@@ -1,0 +1,11 @@
+.productContainer {
+  display: flex;
+
+  .productImage {
+    flex-basis: 30%;
+  }
+
+  .mainData {
+    flex-basis: 70%;
+  }
+}

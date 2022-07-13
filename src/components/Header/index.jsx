@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import { NavLink } from 'react-router-dom';
 import styles from './Header.module.scss';
 import { Search } from './Search';
 
@@ -8,7 +9,7 @@ export const Header = () => {
   return (
     <header className={classNames(styles.header, 'container', 'bgLightGray')}>
       <div className={styles.logo}>
-        <a href="#">Online store</a>
+        <NavLink to="/">Online store</NavLink>
       </div>
       <div className={styles.search}>
         <Search />

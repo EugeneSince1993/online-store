@@ -1,0 +1,68 @@
+{
+  "devices": [
+    {
+      "id": 0,
+      "imageUrl": "/assets/iphone-12-red.jpg",
+      "name": "Apple iPhone 12 64 Гб, красный",
+      "price": 60000,
+      "rating": 4.8,
+      "testimonials": 6
+    },
+    {
+      "id": 1,
+      "imageUrl": "/assets/a52.jpeg",
+      "name": "Samsung Galaxy A52 32 Гб, белый",
+      "price": 40000,
+      "rating": 4.0,
+      "testimonials": 4
+    },
+    {
+      "id": 2,
+      "imageUrl": "/assets/redmi-9.jpg",
+      "name": "Xiaomi Redmi 9 64 Гб, белый",
+      "price": 45000,
+      "rating": 4.5,
+      "testimonials": 9
+    },
+    {
+      "id": 3,
+      "imageUrl": "/assets/xiaomi-11-lite.jpg",
+      "name": "Xiaomi 11 Lite 128 Гб, черный",
+      "price": 45000,
+      "rating": 4.3,
+      "testimonials": 10
+    },
+    {
+      "id": 4,
+      "imageUrl": "/assets/iphone-13.jpg",
+      "name": "Apple iPhone 13 64 Гб, белый",
+      "price": 80000,
+      "rating": 4.6,
+      "testimonials": 11
+    },
+    {
+      "id": 5,
+      "imageUrl": "/assets/iphone-13.jpg",
+      "name": "Apple iPhone 13 128 Гб, красный",
+      "price": 100000,
+      "rating": 4.7,
+      "testimonials": 12
+    },
+    {
+      "id": 6,
+      "imageUrl": "/assets/iphone-x.jpg",
+      "name": "Apple iPhone X 64 Гб, серебристый",
+      "price": 30000,
+      "rating": 4.0,
+      "testimonials": 12
+    },
+    {
+      "id": 7,
+      "imageUrl": "/assets/iphone-x.jpg",
+      "name": "Apple iPhone X 128 Гб, черный",
+      "price": 35000,
+      "rating": 4.2,
+      "testimonials": 15
+    }
+  ]
+}

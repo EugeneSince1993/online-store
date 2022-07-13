@@ -10,7 +10,7 @@ export const Search = () => {
           <input type="text" placeholder="Я ищу..." />
         </div>
         <div className={styles.searchIcon}>
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i className="fa-solid fa-magnifying-glass"></i>
         </div>
       </div>
     </div>
