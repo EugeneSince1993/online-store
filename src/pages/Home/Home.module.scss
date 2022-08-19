@@ -11,5 +11,36 @@
     width: 80%;
     box-sizing: border-box;
     padding-right: 30px;
+
+    .productListContainer {
+
+      .loadingBlock {
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        img {
+          width: 200px;
+        }
+      }
+    
+      .productList {
+        display: flex;
+        flex-wrap: wrap;
+        height: 750px;
+      }
+      
+      .productsPagination {
+        margin-top: 20px;
+      
+        .paginationBar {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
   }
 }

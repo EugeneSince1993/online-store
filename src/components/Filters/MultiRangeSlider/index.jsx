@@ -46,6 +46,7 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 		set_barMin(_barMin);
 		triggerInput(_minValue, maxValue);
 	};
+
 	const onLeftThumbMousedown = (e) => {
 		startX = e.clientX;
 		if (e.type === 'touchstart') {
@@ -239,6 +240,7 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 		props.onInput && props.onInput(retObj);
 		props.onChange && props.onChange(retObj);
 	};
+	
 	useEffect(() => {
 		refThis.current.parentNode.addEventListener('wheel', (e) => {
 			if (preventWheel === true || (!e.shiftKey && !e.ctrlKey)) {

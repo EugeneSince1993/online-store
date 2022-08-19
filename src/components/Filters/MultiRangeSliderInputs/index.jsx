@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './MultiRangeSliderInputs.module.scss';
 import { MultiRangeSlider } from '../MultiRangeSlider';
 import classNames from 'classnames';

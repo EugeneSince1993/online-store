@@ -5,6 +5,13 @@
   padding-top: 15px;
   padding-bottom: 15px;
 
+  .logo {
+
+    a {
+      color: #000;
+    }
+  }
+
   .nav {
 
     nav ul {
@@ -15,6 +22,10 @@
 
       li {
         margin-right: 15px;
+
+        a {
+          color: #000;
+        }
       }
     }
   }

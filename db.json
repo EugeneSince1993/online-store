@@ -1,0 +1,134 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "imageUrl": "/images/iphone-12-red.jpg",
+      "brand": "Apple",
+      "name": "Apple iPhone 12 64 Гб, красный",
+      "price": 60000,
+      "rating": 4.8,
+      "testimonials": 6,
+      "memory": "64"
+    },
+    {
+      "id": 1,
+      "imageUrl": "/images/a52.jpeg",
+      "brand": "Samsung",
+      "name": "Samsung Galaxy A52 32 Гб, белый",
+      "price": 40000,
+      "rating": 4.0,
+      "testimonials": 4,
+      "memory": "32"
+    },
+    {
+      "id": 2,
+      "imageUrl": "/images/redmi-9.jpg",
+      "brand": "Xiaomi",
+      "name": "Xiaomi Redmi 9 64 Гб, белый",
+      "price": 45000,
+      "rating": 4.5,
+      "testimonials": 9,
+      "memory": "64"
+    },
+    {
+      "id": 3,
+      "imageUrl": "/images/xiaomi-11-lite.jpg",
+      "brand": "Xiaomi",
+      "name": "Xiaomi 11 Lite 128 Гб, черный",
+      "price": 45000,
+      "rating": 4.3,
+      "testimonials": 10,
+      "memory": "128"
+    },
+    {
+      "id": 4,
+      "imageUrl": "/images/iphone-13.jpg",
+      "brand": "Apple",
+      "name": "Apple iPhone 13 64 Гб, белый",
+      "price": 80000,
+      "rating": 4.6,
+      "testimonials": 11,
+      "memory": "64"
+    },
+    {
+      "id": 5,
+      "imageUrl": "/images/iphone-13.jpg",
+      "brand": "Apple",
+      "name": "Apple iPhone 13 128 Гб, красный",
+      "price": 90000,
+      "rating": 4.7,
+      "testimonials": 12,
+      "memory": "128"
+    },
+    {
+      "id": 6,
+      "imageUrl": "/images/iphone-x.jpg",
+      "brand": "Apple",
+      "name": "Apple iPhone X 64 Гб, серебристый",
+      "price": 20000,
+      "rating": 4.0,
+      "testimonials": 12,
+      "memory": "64"
+    },
+    {
+      "id": 7,
+      "imageUrl": "/images/iphone-x.jpg",
+      "brand": "Apple",
+      "name": "Apple iPhone X 64 Гб, черный",
+      "price": 25000,
+      "rating": 4.2,
+      "testimonials": 15,
+      "memory": "64"
+    },
+    {
+      "id": 8,
+      "imageUrl": "/images/iphone-x.jpg",
+      "brand": "Apple",
+      "name": "Apple iPhone X 128 Гб, черный",
+      "price": 30000,
+      "rating": 4.2,
+      "testimonials": 15,
+      "memory": "128"
+    },
+    {
+      "id": 9,
+      "imageUrl": "/images/iphone-x.jpg",
+      "brand": "Apple",
+      "name": "Apple iPhone X 128 Гб, черный",
+      "price": 35000,
+      "rating": 4.2,
+      "testimonials": 15,
+      "memory": "128"
+    },
+    {
+      "id": 10,
+      "imageUrl": "/images/iphone-x.jpg",
+      "brand": "Apple",
+      "name": "Apple iPhone X 128 Гб, черный",
+      "price": 30000,
+      "rating": 4.2,
+      "testimonials": 15,
+      "memory": "128"
+    },
+    {
+      "id": 11,
+      "imageUrl": "/images/iphone-x.jpg",
+      "brand": "Apple",
+      "name": "Apple iPhone X 128 Гб, черный",
+      "price": 35000,
+      "rating": 4.2,
+      "testimonials": 15,
+      "memory": "128"
+    },
+    {
+      "id": 12,
+      "imageUrl": "/images/iphone-x.jpg",
+      "brand": "Apple",
+      "name": "Apple iPhone X 128 Гб, черный",
+      "price": 40000,
+      "rating": 4.2,
+      "testimonials": 15,
+      "memory": "128"
+    }
+  ]
+}
