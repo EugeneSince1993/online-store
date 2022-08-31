@@ -4,7 +4,7 @@ import { Collapse } from '../Collapse';
 import { MultiRangeSliderInputs } from './MultiRangeSliderInputs';
 import { CheckboxList } from './CheckboxList';
 import { FilterColor } from './FilterColor';
-import { useAppSelector } from '../../redux/hooks';
+// import { useAppSelector } from '../../redux/hooks';
 
 type FilterProps = {
   handleChange: (
@@ -21,7 +21,7 @@ export const Filters: FC<FilterProps> = (
     brandsArr, 
     memoryArr}) => {
 
-  const data = useAppSelector((state) => state.product.products);
+  // const data = useAppSelector((state) => state.product.products);
 
   return (
     <div className={styles.filtersContainer}>

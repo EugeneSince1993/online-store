@@ -18,6 +18,8 @@ export const Home: FC = () => {
   const { sort, types } = useAppSelector(selectFilter);
   const { brands, memory } = types;
 
+  let finalProducts: any = products;
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>, 
     actionCreator: Function,
@@ -56,29 +58,44 @@ export const Home: FC = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  let theProducts: any[] = [];
+  if (filteredBrands.length) {
+    finalProducts = filteredBrands;
+  }
 
-  useEffect(() => {
-    if (filteredBrands.length === 0 && filteredMemory.length === 0) {
-      theProducts = products;
-    } 
-  }, [products, filteredBrands, filteredMemory]);
-  useEffect(() => {
-    if (filteredBrands.length) {
-      theProducts = filteredBrands;
-    } 
-  }, [filteredBrands]);
-  useEffect(() => {
-    if (filteredMemory.length) {
-      theProducts = filteredMemory;
-    }
-  }, [filteredMemory]);
+  if (checkedBrands.length && !filteredBrands.length) {
+    finalProducts = [];
+  }
+
+  if (filteredMemory.length) {
+    finalProducts = filteredMemory;
+  }
+
+  if (checkedBrands.length && !filteredBrands.length && filteredMemory.length) {
+    finalProducts = [];
+  }
+
+  if (checkedMemory.length && !filteredMemory.length) {
+    finalProducts = [];
+  }
+
+  if (filteredBrands.length && filteredMemory.length) {
+    finalProducts = products
+      .filter(({ brand }: any) => {
+        return checkedBrands.includes(brand);
+      })
+      .filter(({ memory }: any) => {
+        return checkedMemory.includes(memory);
+      });
+  }
 
   const currentData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * pageSize;
     const lastPageIndex = firstPageIndex + pageSize;
-    return theProducts.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage, products, filteredBrands, filteredMemory, theProducts]);
+    return finalProducts.slice(firstPageIndex, lastPageIndex);
+  }, 
+  [currentPage, products, finalProducts, filteredBrands, filteredMemory]);
+
+  debugger;
 
   return (
     <div className={styles.homeContainer}>
@@ -115,11 +132,11 @@ export const Home: FC = () => {
                 }))}
               </div>
               <div className={styles.productsPagination}>
-                {products && (
+                {finalProducts && (
                   <Pagination 
                     className={styles.paginationBar}
                     currentPage={currentPage}
-                    totalCount={products!.length}
+                    totalCount={finalProducts!.length}
                     pageSize={pageSize}
                     onPageChange={(page: any) => setCurrentPage(page)}
                   />

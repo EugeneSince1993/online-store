@@ -13,12 +13,16 @@ export type Sort = {
 }
 
 export interface ITypes {
-  brands: ITypeNames;
-  memory: ITypeNames;
+  brands: IBrands;
+  memory: IMemory;
 }
 
-export interface ITypeNames {
-  [typeName: string]: boolean;
+export interface IBrands {
+  [brand: string]: boolean;
+}
+
+export interface IMemory {
+  [memory: string]: boolean;
 }
 
 export interface FilterSliceState {

@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import { FilterSliceState, Sort, SortPropertyEnum, ITypeNames } from './types';
+import { FilterSliceState, Sort, SortPropertyEnum, IBrands, IMemory } from './types';
 
 const initialState: FilterSliceState = {
   types: {
@@ -7,6 +7,7 @@ const initialState: FilterSliceState = {
       "Apple": false,
       "Samsung": false,
       "Xiaomi": false,
+      "Honor": false,
     },
     memory: {
       "8": false, 
@@ -28,10 +29,10 @@ const filterSlice = createSlice({
   name: 'filters',
   initialState,
   reducers: {
-    setBrands(state, action: PayloadAction<ITypeNames>) {
+    setBrands(state, action: PayloadAction<IBrands>) {
       state.types.brands = action.payload;
     },
-    setMemory(state, action: PayloadAction<ITypeNames>) {
+    setMemory(state, action: PayloadAction<IMemory>) {
       state.types.memory = action.payload;
     },
     setSort(state, action: PayloadAction<Sort>) {
