@@ -43,6 +43,8 @@ export const Home: FC = () => {
     getProducts();
   }, [sort.sortProperty, brands, memory]);
 
+  // stopped here, need to convert memory value to number 
+
   const checkedBrands = Object.entries(brands)
     .filter(brand => brand[1])
     .map(brand => brand[0]);
@@ -61,23 +63,18 @@ export const Home: FC = () => {
   if (filteredBrands.length) {
     finalProducts = filteredBrands;
   }
-
   if (checkedBrands.length && !filteredBrands.length) {
     finalProducts = [];
   }
-
   if (filteredMemory.length) {
     finalProducts = filteredMemory;
   }
-
   if (checkedBrands.length && !filteredBrands.length && filteredMemory.length) {
     finalProducts = [];
   }
-
   if (checkedMemory.length && !filteredMemory.length) {
     finalProducts = [];
   }
-
   if (filteredBrands.length && filteredMemory.length) {
     finalProducts = products
       .filter(({ brand }: any) => {
@@ -94,8 +91,6 @@ export const Home: FC = () => {
     return finalProducts.slice(firstPageIndex, lastPageIndex);
   }, 
   [currentPage, products, finalProducts, filteredBrands, filteredMemory]);
-
-  debugger;
 
   return (
     <div className={styles.homeContainer}>
