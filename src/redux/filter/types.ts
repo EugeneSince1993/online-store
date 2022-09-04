@@ -14,15 +14,16 @@ export type Sort = {
 
 export interface ITypes {
   brands: IBrands;
-  memory: IMemory;
+  memory: INumberValue;
+  ramMemory: INumberValue;
 }
 
 export interface IBrands {
   [brand: string]: boolean;
 }
 
-export interface IMemory {
-  [memory: string]: boolean;
+export interface INumberValue {
+  [numberValue: string]: boolean;
 }
 
 export interface FilterSliceState {

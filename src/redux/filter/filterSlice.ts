@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import { FilterSliceState, Sort, SortPropertyEnum, IBrands, IMemory } from './types';
+import { FilterSliceState, Sort, SortPropertyEnum, IBrands, INumberValue } from './types';
 
 const initialState: FilterSliceState = {
   types: {
@@ -18,6 +18,15 @@ const initialState: FilterSliceState = {
       "256": false, 
       "512": false,
     },
+    ramMemory: {
+      "1": false, 
+      "2": false, 
+      "3": false, 
+      "4": false, 
+      "6": false, 
+      "8": false, 
+      "12": false,
+    },
   },
   sort: {
     name: 'по популярности (по убыванию)',
@@ -32,8 +41,11 @@ const filterSlice = createSlice({
     setBrands(state, action: PayloadAction<IBrands>) {
       state.types.brands = action.payload;
     },
-    setMemory(state, action: PayloadAction<IMemory>) {
+    setMemory(state, action: PayloadAction<INumberValue>) {
       state.types.memory = action.payload;
+    },
+    setRamMemory(state, action: PayloadAction<INumberValue>) {
+      state.types.ramMemory = action.payload;
     },
     setSort(state, action: PayloadAction<Sort>) {
       state.sort = action.payload;
@@ -57,6 +69,6 @@ const filterSlice = createSlice({
   },
 });
 
-export const {setSort, setFilters, setBrands, setMemory} = filterSlice.actions;
+export const {setSort, setFilters, setBrands, setMemory, setRamMemory} = filterSlice.actions;
 
 export default filterSlice.reducer;

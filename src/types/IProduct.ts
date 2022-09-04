@@ -7,4 +7,5 @@ export interface IProduct {
   testimonials: number;
   brand: string;
   memory: number;
+  ramMemory: number;
 }

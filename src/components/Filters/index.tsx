@@ -13,12 +13,14 @@ type FilterProps = {
     ) => any;
   brandsArr: any[];
   memoryArr: any[];
+  ramMemoryArr: any[];
 };
 
 export const Filters: FC<FilterProps> = (
   {handleChange, 
     brandsArr, 
-    memoryArr}) => {
+    memoryArr,
+    ramMemoryArr}) => {
 
   return (
     <div className={styles.filtersContainer}>
@@ -59,10 +61,12 @@ export const Filters: FC<FilterProps> = (
       </div>
       <div className={styles.filterRamMemory}>
         <Collapse filterName="Объем оперативной памяти, Гб" elementType="h5">
-          {/* <CheckboxList 
-            itemType="rammemory"
-            itemArr={['1 Гб', '2 Гб', '3 Гб', '4 Гб', '6 Гб', '8 Гб', '12 Гб']}
-          /> */}
+          <CheckboxList 
+            handleChange={handleChange}
+            itemType="ramMemory"
+            itemObj={ramMemoryArr[1]}
+            paramArr={ramMemoryArr}
+          />
         </Collapse>
       </div>
       <div className={styles.filterNumberOfCores}>
