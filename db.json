@@ -8,7 +8,7 @@
       "price": 60000,
       "rating": 4.8,
       "testimonials": 6,
-      "memory": "64"
+      "memory": 64
     },
     {
       "id": 1,
@@ -18,7 +18,7 @@
       "price": 40000,
       "rating": 4.0,
       "testimonials": 4,
-      "memory": "32"
+      "memory": 32
     },
     {
       "id": 2,
@@ -28,7 +28,7 @@
       "price": 45000,
       "rating": 4.5,
       "testimonials": 9,
-      "memory": "64"
+      "memory": 64
     },
     {
       "id": 3,
@@ -38,7 +38,7 @@
       "price": 45000,
       "rating": 4.3,
       "testimonials": 10,
-      "memory": "128"
+      "memory": 128
     },
     {
       "id": 4,
@@ -48,7 +48,7 @@
       "price": 80000,
       "rating": 4.6,
       "testimonials": 11,
-      "memory": "64"
+      "memory": 64
     },
     {
       "id": 5,
@@ -58,7 +58,7 @@
       "price": 90000,
       "rating": 4.7,
       "testimonials": 12,
-      "memory": "128"
+      "memory": 128
     },
     {
       "id": 6,
@@ -68,7 +68,7 @@
       "price": 20000,
       "rating": 4.0,
       "testimonials": 12,
-      "memory": "64"
+      "memory": 64
     },
     {
       "id": 7,
@@ -78,7 +78,7 @@
       "price": 25000,
       "rating": 4.2,
       "testimonials": 15,
-      "memory": "64"
+      "memory": 64
     },
     {
       "id": 8,
@@ -88,7 +88,7 @@
       "price": 30000,
       "rating": 4.2,
       "testimonials": 15,
-      "memory": "128"
+      "memory": 128
     },
     {
       "id": 9,
@@ -98,7 +98,7 @@
       "price": 35000,
       "rating": 4.2,
       "testimonials": 15,
-      "memory": "128"
+      "memory": 128
     },
     {
       "id": 10,
@@ -108,7 +108,7 @@
       "price": 30000,
       "rating": 4.2,
       "testimonials": 15,
-      "memory": "128"
+      "memory": 128
     },
     {
       "id": 11,
@@ -118,7 +118,7 @@
       "price": 35000,
       "rating": 4.2,
       "testimonials": 15,
-      "memory": "128"
+      "memory": 128
     },
     {
       "id": 12,
@@ -128,7 +128,7 @@
       "price": 40000,
       "rating": 4.2,
       "testimonials": 15,
-      "memory": "128"
+      "memory": 128
     }
   ]
 }

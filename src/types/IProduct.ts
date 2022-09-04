@@ -6,4 +6,5 @@ export interface IProduct {
   rating: number;
   testimonials: number;
   brand: string;
+  memory: number;
 }

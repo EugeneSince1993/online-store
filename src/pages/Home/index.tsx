@@ -8,6 +8,7 @@ import spinner from '../../assets/img/Spinner-1s-200px.gif';
 import { ProductItem } from "../../components/ProductItem";
 import { selectProduct } from "../../redux/product/selectors";
 import { setBrands, setMemory } from "../../redux/filter/filterSlice";
+import { IProduct } from "../../types/IProduct";
 
 let pageSize = 8;
 
@@ -43,19 +44,17 @@ export const Home: FC = () => {
     getProducts();
   }, [sort.sortProperty, brands, memory]);
 
-  // stopped here, need to convert memory value to number 
-
   const checkedBrands = Object.entries(brands)
     .filter(brand => brand[1])
     .map(brand => brand[0]);
-  const filteredBrands = products.filter(({ brand }: any) => {
+  const filteredBrands = products.filter(({ brand }: IProduct) => {
     return checkedBrands.includes(brand);
   });
   const checkedMemory = Object.entries(memory)
     .filter(memory => memory[1])
     .map(memory => memory[0]);
-  const filteredMemory = products.filter(({ memory }: any) => {
-    return checkedMemory.includes(memory);
+  const filteredMemory = products.filter(({ memory }: IProduct) => {
+    return checkedMemory.includes(memory.toString());
   });
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -77,11 +76,11 @@ export const Home: FC = () => {
   }
   if (filteredBrands.length && filteredMemory.length) {
     finalProducts = products
-      .filter(({ brand }: any) => {
+      .filter(({ brand }: IProduct) => {
         return checkedBrands.includes(brand);
       })
-      .filter(({ memory }: any) => {
-        return checkedMemory.includes(memory);
+      .filter(({ memory }: IProduct) => {
+        return checkedMemory.includes(memory.toString());
       });
   }
 
