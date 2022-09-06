@@ -27,6 +27,12 @@ const initialState: FilterSliceState = {
       "8": false, 
       "12": false,
     },
+    cpuCores: {
+      "2": false, 
+      "4": false, 
+      "6": false, 
+      "8": false, 
+    },
   },
   sort: {
     name: 'по популярности (по убыванию)',
@@ -46,6 +52,9 @@ const filterSlice = createSlice({
     },
     setRamMemory(state, action: PayloadAction<INumberValue>) {
       state.types.ramMemory = action.payload;
+    },
+    setCpuCores(state, action: PayloadAction<INumberValue>) {
+      state.types.cpuCores = action.payload;
     },
     setSort(state, action: PayloadAction<Sort>) {
       state.sort = action.payload;
@@ -69,6 +78,13 @@ const filterSlice = createSlice({
   },
 });
 
-export const {setSort, setFilters, setBrands, setMemory, setRamMemory} = filterSlice.actions;
+export const {
+  setSort, 
+  setFilters, 
+  setBrands, 
+  setMemory, 
+  setRamMemory,
+  setCpuCores
+} = filterSlice.actions;
 
 export default filterSlice.reducer;

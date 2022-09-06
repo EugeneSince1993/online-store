@@ -8,4 +8,5 @@ export interface IProduct {
   brand: string;
   memory: number;
   ramMemory: number;
+  cpuCores: number;
 }

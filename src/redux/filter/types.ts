@@ -16,6 +16,7 @@ export interface ITypes {
   brands: IBrands;
   memory: INumberValue;
   ramMemory: INumberValue;
+  cpuCores: INumberValue;
 }
 
 export interface IBrands {
