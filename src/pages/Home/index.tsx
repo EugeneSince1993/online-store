@@ -17,9 +17,17 @@ export const Home: FC = () => {
   
   const { products, isLoading } = useAppSelector(selectProduct);
   const { sort, types } = useAppSelector(selectFilter);
-  const { brands, memory, ramMemory, cpuCores } = types;
+  const { brands, memory, ramMemory, cpuCores, priceRange } = types;
 
   let finalProducts: any = products;
+
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  useEffect(() => {
+    console.log(priceRange);
+  }, [priceRange]);
+
+  // stopped here
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>, 
@@ -30,6 +38,7 @@ export const Home: FC = () => {
         ...entityName,
         [name]: !entityName[name]
       }));
+      setCurrentPage(1);
   };
 
   const getProducts = async () => {
@@ -42,7 +51,7 @@ export const Home: FC = () => {
 
   useEffect(() => {
     getProducts();
-  }, [sort.sortProperty, brands, memory, ramMemory, cpuCores]);
+  }, [sort.sortProperty]);
 
   const setCheckedItems = (itemList: any) => {
     return Object.entries(itemList).filter(item => item[1]).map(item => item[0]);
@@ -70,44 +79,50 @@ export const Home: FC = () => {
   const checkedCpuCores = setCheckedItems(cpuCores);
   const filteredCpuCores = setFilteredItems(checkedCpuCores, "cpuCores");
 
-  const [currentPage, setCurrentPage] = useState(1);
-
-  // Filter Conditionals
+  // Filter logics
 
   const brandsExist = (Array.isArray(filteredBrands) && filteredBrands.length) ? true : false;
   const memoryExists = (Array.isArray(filteredMemory) && filteredMemory.length) ? true : false;
   const ramExists = (Array.isArray(filteredRam) && filteredRam.length) ? true : false;
   const cpuCoresExist = (Array.isArray(filteredCpuCores) && filteredCpuCores.length) ? true : false;
-
+  
   const brandsChecked = (Array.isArray(checkedBrands) && checkedBrands.length) ? true : false;
   const memoryChecked = (Array.isArray(checkedMemory) && checkedMemory.length) ? true : false;
   const ramChecked = (Array.isArray(checkedRam) && checkedRam.length) ? true : false;
   const cpuCoresChecked = (Array.isArray(checkedCpuCores) && checkedCpuCores.length) ? true : false;
-
+  
   const brandsNotFiltered = filteredBrands.length === 0;
   const memoryNotFiltered = filteredMemory.length === 0;
   const ramNotFiltered = filteredRam.length === 0;
   const cpuCoresNotFiltered = filteredCpuCores.length === 0;
-
+  
   const brandsDontExist = (brandsChecked && brandsNotFiltered) ? true : false;
   const memoryDoesntExist = (memoryChecked && memoryNotFiltered) ? true : false;
   const ramDoesntExist = (ramChecked && ramNotFiltered) ? true : false;
   const cpuCoresDontExist = (cpuCoresChecked && cpuCoresNotFiltered) ? true : false;
-
+  
   const showFinalProducts = (value: any[]) => {
     finalProducts = value;
   };
-
-  const brandsDontExistOtherExists = (brandsDontExist && memoryExists) || (brandsDontExist && ramExists) || (brandsDontExist && cpuCoresExist);
-  const memoryDoesntExistOtherExists = (memoryDoesntExist && brandsExist) || (memoryDoesntExist && ramExists) || (memoryDoesntExist && cpuCoresExist);
-  const ramDoesntExistOtherExists = (ramDoesntExist && brandsExist) || (ramDoesntExist && memoryExists) || (ramDoesntExist && cpuCoresExist);
-  const cpuCoresDontExistOtherExists = (cpuCoresDontExist && brandsExist) || (cpuCoresDontExist && memoryExists) || (cpuCoresDontExist && ramExists);
-
-  const brandsDontExistOtherExist = (brandsDontExist && memoryExists && ramExists) || (brandsDontExist && memoryExists && ramExists && cpuCoresExist);
-  const memoryDoesntExistOtherExist = (memoryDoesntExist && brandsExist && ramExists) || (memoryDoesntExist && brandsExist && ramExists && cpuCoresExist);
-  const ramDoesntExistOtherExist = (ramDoesntExist && brandsExist && memoryExists) || (ramDoesntExist && brandsExist && memoryExists && cpuCoresExist);
-  const cpuCoresDontExistOtherExist = (cpuCoresDontExist && brandsExist && memoryExists) || (cpuCoresDontExist && brandsExist && memoryExists && ramExists);
-
+  
+  const brandsDontExistOtherExists = (brandsDontExist && memoryExists) || (brandsDontExist && ramExists) || 
+    (brandsDontExist && cpuCoresExist);
+  const memoryDoesntExistOtherExists = (memoryDoesntExist && brandsExist) || (memoryDoesntExist && ramExists) || 
+    (memoryDoesntExist && cpuCoresExist);
+  const ramDoesntExistOtherExists = (ramDoesntExist && brandsExist) || (ramDoesntExist && memoryExists) || 
+    (ramDoesntExist && cpuCoresExist);
+  const cpuCoresDontExistOtherExists = (cpuCoresDontExist && brandsExist) || (cpuCoresDontExist && memoryExists) || 
+    (cpuCoresDontExist && ramExists);
+  
+  const brandsDontExistOtherExist = (brandsDontExist && memoryExists && ramExists) || 
+    (brandsDontExist && memoryExists && ramExists && cpuCoresExist);
+  const memoryDoesntExistOtherExist = (memoryDoesntExist && brandsExist && ramExists) || 
+    (memoryDoesntExist && brandsExist && ramExists && cpuCoresExist);
+  const ramDoesntExistOtherExist = (ramDoesntExist && brandsExist && memoryExists) || 
+    (ramDoesntExist && brandsExist && memoryExists && cpuCoresExist);
+  const cpuCoresDontExistOtherExist = (cpuCoresDontExist && brandsExist && memoryExists) || 
+    (cpuCoresDontExist && brandsExist && memoryExists && ramExists);
+  
   const filterBrands = ({ brand }: IProduct) => {
     return checkedBrands.includes(brand);
   };
@@ -120,7 +135,7 @@ export const Home: FC = () => {
   const filterCpuCores = ({ cpuCores }: IProduct) => {
     return checkedCpuCores.includes(cpuCores.toString());
   };
-
+  
   if (brandsExist && memoryExists && ramExists && cpuCoresExist) {
     showFinalProducts(products
       .filter(filterBrands)
@@ -180,7 +195,7 @@ export const Home: FC = () => {
   } else if (brandsNotFiltered && memoryNotFiltered && ramExists && cpuCoresNotFiltered) {
     showFinalProducts(filteredRam);
   }
-
+  
   if (brandsDontExist || memoryDoesntExist || ramDoesntExist || cpuCoresDontExist || brandsDontExistOtherExists || memoryDoesntExistOtherExists || ramDoesntExistOtherExists || cpuCoresDontExistOtherExists || brandsDontExistOtherExist || memoryDoesntExistOtherExist || ramDoesntExistOtherExist || cpuCoresDontExistOtherExist) 
   {
     showFinalProducts([]);
@@ -190,9 +205,7 @@ export const Home: FC = () => {
     const firstPageIndex = (currentPage - 1) * pageSize;
     const lastPageIndex = firstPageIndex + pageSize;
     return finalProducts.slice(firstPageIndex, lastPageIndex);
-  }, 
-  [currentPage, products, finalProducts, filteredBrands, 
-    filteredMemory, filteredRam, filteredCpuCores]);
+  }, [currentPage, finalProducts]);
 
   return (
     <div className={styles.homeContainer}>
@@ -203,10 +216,16 @@ export const Home: FC = () => {
           memoryArr={[setMemory, memory]}
           ramMemoryArr={[setRamMemory, ramMemory]}
           cpuCoresArr={[setCpuCores, cpuCores]}
+          priceRange={priceRange}
         />
       </div>
       <div className={styles.productsColumn}>
         <Sorting />
+        <div style={{marginTop: 20, marginBottom: 20}}>
+          {priceRange.min} 
+          {" , "} 
+          {priceRange.max} 
+        </div>
         <div className={styles.productListContainer}>
           {isLoading ? (
             <div className={styles.loadingBlock}>

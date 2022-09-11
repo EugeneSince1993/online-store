@@ -4,6 +4,7 @@ import { Collapse } from '../Collapse';
 import { MultiRangeSliderInputs } from './MultiRangeSliderInputs';
 import { CheckboxList } from './CheckboxList';
 import { FilterColor } from './FilterColor';
+import { IPriceRange } from '../../redux/filter/types';
 
 type FilterProps = {
   handleChange: (
@@ -15,6 +16,7 @@ type FilterProps = {
   memoryArr: any[];
   ramMemoryArr: any[];
   cpuCoresArr: any[];
+  priceRange: IPriceRange;
 };
 
 export const Filters: FC<FilterProps> = (
@@ -22,7 +24,8 @@ export const Filters: FC<FilterProps> = (
     brandsArr, 
     memoryArr,
     ramMemoryArr,
-    cpuCoresArr}) => {
+    cpuCoresArr,
+    priceRange}) => {
 
   return (
     <div className={styles.filtersContainer}>
@@ -38,7 +41,7 @@ export const Filters: FC<FilterProps> = (
       </div>
       <div className={styles.filterPrice}>
         <Collapse filterName="Цена, ₽" elementType="h5">
-          <MultiRangeSliderInputs min={3000} max={150000} step={1000} />
+          <MultiRangeSliderInputs min={0} max={95000} step={1000} />
         </Collapse>
       </div>
       <div className={styles.filterColor}>

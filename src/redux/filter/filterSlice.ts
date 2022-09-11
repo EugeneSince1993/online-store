@@ -1,5 +1,11 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import { FilterSliceState, Sort, SortPropertyEnum, IBrands, INumberValue } from './types';
+import { 
+  FilterSliceState, 
+  Sort, 
+  SortPropertyEnum, 
+  IBrands, 
+  INumberValue, 
+  IPriceRange } from './types';
 
 const initialState: FilterSliceState = {
   types: {
@@ -33,6 +39,10 @@ const initialState: FilterSliceState = {
       "6": false, 
       "8": false, 
     },
+    priceRange: {
+      min: 0,
+      max: 95000,
+    },
   },
   sort: {
     name: 'по популярности (по убыванию)',
@@ -55,6 +65,9 @@ const filterSlice = createSlice({
     },
     setCpuCores(state, action: PayloadAction<INumberValue>) {
       state.types.cpuCores = action.payload;
+    },
+    setPriceRange(state, action: PayloadAction<IPriceRange>) {
+      state.types.priceRange = action.payload;
     },
     setSort(state, action: PayloadAction<Sort>) {
       state.sort = action.payload;
@@ -84,7 +97,8 @@ export const {
   setBrands, 
   setMemory, 
   setRamMemory,
-  setCpuCores
+  setCpuCores,
+  setPriceRange
 } = filterSlice.actions;
 
 export default filterSlice.reducer;
