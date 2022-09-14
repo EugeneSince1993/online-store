@@ -41,7 +41,7 @@ export const Filters: FC<FilterProps> = (
       </div>
       <div className={styles.filterPrice}>
         <Collapse filterName="Цена, ₽" elementType="h5">
-          <MultiRangeSliderInputs min={0} max={95000} step={1000} />
+          <MultiRangeSliderInputs min={0} max={95000} />
         </Collapse>
       </div>
       <div className={styles.filterColor}>
@@ -51,7 +51,7 @@ export const Filters: FC<FilterProps> = (
       </div>
       <div className={styles.filterScreenSize}>
         <Collapse filterName="Диагональ экрана, дюйм" elementType="h5">
-          <MultiRangeSliderInputs min={4.00} max={7.00} step={1} />
+          <MultiRangeSliderInputs min={4.00} max={7.00} />
         </Collapse>
       </div>
       <div className={styles.filterMemory}>
@@ -86,7 +86,7 @@ export const Filters: FC<FilterProps> = (
       </div>
       <div className={styles.filterBatteryCapacity}>
         <Collapse filterName="Емкость аккумулятора, мАч" elementType="h5">
-          <MultiRangeSliderInputs min={1500} max={15000} step={500} />
+          <MultiRangeSliderInputs min={1500} max={15000} />
         </Collapse>
       </div>
     </div>

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { useAppDispatch } from '../../../redux/hooks';
 import { setMaxPrice, setMinPrice } from '../../../redux/filter/filterSlice';
 
-export const MultiRangeSliderInputs = ({ min, max, step }) => {
+export const MultiRangeSliderInputs = ({ min, max }) => {
 	const dispatch = useAppDispatch();
 
   const [minValue, set_minValue] = useState(min);
@@ -35,7 +35,6 @@ export const MultiRangeSliderInputs = ({ min, max, step }) => {
 				<MultiRangeSlider
 					min={min}
 					max={max}
-					step={step}
 					ruler={false}
 					label={false}
 					preventWheel={false}

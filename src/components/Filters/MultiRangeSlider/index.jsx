@@ -23,17 +23,6 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 	const [barMin, set_barMin] = useState(((minValue - min) / (max - min)) * 100);
 	const [barMax, set_barMax] = useState(((max - maxValue) / (max - min)) * 100);
 
-	// custom - beginning
-	const dispatch = useAppDispatch();
-
-	const handleMinChange = (value) => {
-		dispatch(setMinPrice(value));
-	};
-	const handleMaxChange = (value) => {
-		dispatch(setMaxPrice(value));
-	};
-	// custom - end
-
 	let refThis = useRef();
 
 	let barBox = null;
@@ -271,6 +260,26 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 		set_barMax(((max - maxValue) / (max - min)) * 100);
 	}, [props.minValue, props.maxValue, minValue, min, maxValue, max]);
 
+	// custom - beginning
+	const dispatch = useAppDispatch();
+
+	const handleMinChange = () => {
+		dispatch(setMinPrice(minValue));
+	};
+	const handleMaxChange = () => {
+		dispatch(setMaxPrice(maxValue));
+	};
+
+	useEffect(() => {
+		if (minValue === min) {
+			dispatch(setMinPrice(minValue));
+		}
+		if (maxValue === max) {
+			dispatch(setMaxPrice(maxValue));
+		}
+	}, [minValue, maxValue]);
+	// custom - end
+
 	return (
 		<div className={baseClassName} onWheel={onMouseWheel} ref={ref}>
 			<div className={styles.bar} ref={refThis}>
@@ -291,7 +300,7 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 					className={classNames(styles.thumb, styles.thumbLeft)} 
 					onMouseDown={onLeftThumbMousedown} 
 					onTouchStart={onLeftThumbMousedown}
-					onMouseUp={() => handleMinChange(minValue)}
+					onMouseUp={handleMinChange}
 				>
 					<div className={styles.minValue}>{minValue}</div>
 				</div>
@@ -312,7 +321,7 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 					className={classNames(styles.thumb, styles.thumbRight)} 
 					onMouseDown={onRightThumbMousedown} 
 					onTouchStart={onRightThumbMousedown}
-					onMouseUp={() => handleMaxChange(maxValue)}
+					onMouseUp={handleMaxChange}
 				>
 					<div className={styles.maxValue}>{maxValue}</div>
 				</div>

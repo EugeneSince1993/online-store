@@ -123,8 +123,8 @@ export const Home: FC = () => {
     return price >= priceRange.min && price <= priceRange.max;
   };
 
-  const existingItems: boolean[] = [brandsExist, memoryExists, ramExists, cpuCoresExist];
-  const filterFunctions: filterFuncArr = [filterBrands, filterMemory, filterRam, filterCpuCores];
+  const existingItems: boolean[] = [brandsExist, memoryExists, ramExists, cpuCoresExist, priceExists];
+  const filterFunctions: filterFuncArr = [filterBrands, filterMemory, filterRam, filterCpuCores, filterPrice];
 
   const filterProducts = (filterFuncArr: filterFuncArr) => {
     return filterFuncArr.reduce((totalArr: any[], filterFunc) => {
@@ -137,7 +137,6 @@ export const Home: FC = () => {
   let filterArrItemsByIdx = (srcArr: any[], indexes: number[]) => {
     return srcArr.filter((el, i) => indexes.some(j => i === j));
   };
-
   let makeFinalProducts = (srcArr: sourceArr, indexes: number[]) => {
     setFilteredFinalProducts(filterArrItemsByIdx(srcArr, indexes));
   };
