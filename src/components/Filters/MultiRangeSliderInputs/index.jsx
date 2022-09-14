@@ -3,7 +3,7 @@ import styles from './MultiRangeSliderInputs.module.scss';
 import { MultiRangeSlider } from '../MultiRangeSlider';
 import classNames from 'classnames';
 import { useAppDispatch } from '../../../redux/hooks';
-import { setPriceRange } from '../../../redux/filter/filterSlice';
+import { setMaxPrice, setMinPrice } from '../../../redux/filter/filterSlice';
 
 export const MultiRangeSliderInputs = ({ min, max, step }) => {
 	const dispatch = useAppDispatch();
@@ -22,11 +22,11 @@ export const MultiRangeSliderInputs = ({ min, max, step }) => {
 		set_maxValue(e.target.value);
 	};
 
-	const handleMRSChange = () => {
-		dispatch(setPriceRange({
-			min: minValue,
-			max: maxValue,
-		}));
+	const handleMinBlur = (value) => {
+		dispatch(setMinPrice(Number(value)));
+	};
+	const handleMaxBlur = (value) => {
+		dispatch(setMaxPrice(Number(value)));
 	};
 
   return (
@@ -42,7 +42,6 @@ export const MultiRangeSliderInputs = ({ min, max, step }) => {
 					minValue={minValue}
 					maxValue={maxValue}
 					onInput={handleInput}
-					onChange={handleMRSChange}
 				/>
 			</div>
 			<div className={styles.rangeFields}>
@@ -54,10 +53,8 @@ export const MultiRangeSliderInputs = ({ min, max, step }) => {
 						<input 
 							type="number" 
 							value={minValue} 
-							onChange={(e) => {
-								handleMinChange(e);
-								handleMRSChange();
-							}} 
+							onChange={handleMinChange} 
+							onBlur={() => handleMinBlur(minValue)}
 						/>
 					</div>
 				</div>
@@ -69,10 +66,8 @@ export const MultiRangeSliderInputs = ({ min, max, step }) => {
 						<input 
 							type="number" 
 							value={maxValue} 
-							onChange={(e) => {
-								handleMaxChange(e);
-								handleMRSChange();
-							}}
+							onChange={handleMaxChange}
+							onBlur={() => handleMaxBlur(maxValue)}
 						/>
 					</div>
 				</div>

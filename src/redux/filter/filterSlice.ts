@@ -41,7 +41,7 @@ const initialState: FilterSliceState = {
     },
     priceRange: {
       min: 0,
-      max: 95000,
+      max: 95000
     },
   },
   sort: {
@@ -66,8 +66,11 @@ const filterSlice = createSlice({
     setCpuCores(state, action: PayloadAction<INumberValue>) {
       state.types.cpuCores = action.payload;
     },
-    setPriceRange(state, action: PayloadAction<IPriceRange>) {
-      state.types.priceRange = action.payload;
+    setMinPrice(state, action: PayloadAction<number>) {
+      state.types.priceRange.min = action.payload;
+    },
+    setMaxPrice(state, action: PayloadAction<number>) {
+      state.types.priceRange.max = action.payload;
     },
     setSort(state, action: PayloadAction<Sort>) {
       state.sort = action.payload;
@@ -98,7 +101,8 @@ export const {
   setMemory, 
   setRamMemory,
   setCpuCores,
-  setPriceRange
+  setMinPrice,
+  setMaxPrice
 } = filterSlice.actions;
 
 export default filterSlice.reducer;

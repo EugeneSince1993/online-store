@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC, useCallback, useEffect, useMemo, useState } from "react";
 import { Filters, Sorting, Pagination } from "../../components";
 import { selectFilter } from "../../redux/filter/selectors";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
@@ -13,21 +13,22 @@ import { IProduct } from "../../types/IProduct";
 let pageSize = 8;
 
 export const Home: FC = () => {
+  type filterFunc = (object: IProduct) => boolean;
+  type filterFuncArr = filterFunc[];
+  type sourceArr = boolean[] | filterFuncArr;
+
   const dispatch = useAppDispatch();
   
   const { products, isLoading } = useAppSelector(selectProduct);
   const { sort, types } = useAppSelector(selectFilter);
   const { brands, memory, ramMemory, cpuCores, priceRange } = types;
 
-  let finalProducts: any = products;
+  let finalProducts: IProduct[] = products;
+  const showFinalProducts = (value: any[]) => {
+    finalProducts = value;
+  };
 
   const [currentPage, setCurrentPage] = useState<number>(1);
-
-  useEffect(() => {
-    console.log(priceRange);
-  }, [priceRange]);
-
-  // stopped here
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>, 
@@ -41,7 +42,7 @@ export const Home: FC = () => {
       setCurrentPage(1);
   };
 
-  const getProducts = async () => {
+  const getProducts = () => {
     const _sort = sort.sortProperty.replace('-', '');
     const _order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
     const brand: any = null;
@@ -67,61 +68,43 @@ export const Home: FC = () => {
     });
   };
 
-  const checkedBrands = setCheckedItems(brands);
-  const filteredBrands = setFilteredItems(checkedBrands, "brand");
+  const checkedBrands: any[] = setCheckedItems(brands);
+  const filteredBrands: IProduct[] = setFilteredItems(checkedBrands, "brand");
 
-  const checkedMemory = setCheckedItems(memory);
-  const filteredMemory = setFilteredItems(checkedMemory, "memory");
+  const checkedMemory: any[] = setCheckedItems(memory);
+  const filteredMemory: IProduct[] = setFilteredItems(checkedMemory, "memory");
 
-  const checkedRam = setCheckedItems(ramMemory);
-  const filteredRam = setFilteredItems(checkedRam, "ramMemory");
+  const checkedRam: any[] = setCheckedItems(ramMemory);
+  const filteredRam: IProduct[] = setFilteredItems(checkedRam, "ramMemory");
 
-  const checkedCpuCores = setCheckedItems(cpuCores);
-  const filteredCpuCores = setFilteredItems(checkedCpuCores, "cpuCores");
+  const checkedCpuCores: any[] = setCheckedItems(cpuCores);
+  const filteredCpuCores: IProduct[] = setFilteredItems(checkedCpuCores, "cpuCores");
 
-  // Filter logics
+  const filteredPrice: IProduct[] = products.filter(({price}: IProduct) => {
+    return price >= priceRange.min && price <= priceRange.max;
+  });
 
-  const brandsExist = (Array.isArray(filteredBrands) && filteredBrands.length) ? true : false;
-  const memoryExists = (Array.isArray(filteredMemory) && filteredMemory.length) ? true : false;
-  const ramExists = (Array.isArray(filteredRam) && filteredRam.length) ? true : false;
-  const cpuCoresExist = (Array.isArray(filteredCpuCores) && filteredCpuCores.length) ? true : false;
+  const brandsExist = filteredBrands.length ? true : false;
+  const memoryExists = filteredMemory.length ? true : false;
+  const ramExists = filteredRam.length ? true : false;
+  const cpuCoresExist = filteredCpuCores.length ? true : false;
+  const priceExists = filteredPrice.length ? true : false;
   
-  const brandsChecked = (Array.isArray(checkedBrands) && checkedBrands.length) ? true : false;
-  const memoryChecked = (Array.isArray(checkedMemory) && checkedMemory.length) ? true : false;
-  const ramChecked = (Array.isArray(checkedRam) && checkedRam.length) ? true : false;
-  const cpuCoresChecked = (Array.isArray(checkedCpuCores) && checkedCpuCores.length) ? true : false;
+  const brandsChecked = checkedBrands.length ? true : false;
+  const memoryChecked = checkedMemory.length ? true : false;
+  const ramChecked = checkedRam.length ? true : false;
+  const cpuCoresChecked = checkedCpuCores.length ? true : false;
   
   const brandsNotFiltered = filteredBrands.length === 0;
   const memoryNotFiltered = filteredMemory.length === 0;
   const ramNotFiltered = filteredRam.length === 0;
   const cpuCoresNotFiltered = filteredCpuCores.length === 0;
+  const priceNotFiltered = filteredPrice.length === 0;
   
   const brandsDontExist = (brandsChecked && brandsNotFiltered) ? true : false;
   const memoryDoesntExist = (memoryChecked && memoryNotFiltered) ? true : false;
   const ramDoesntExist = (ramChecked && ramNotFiltered) ? true : false;
   const cpuCoresDontExist = (cpuCoresChecked && cpuCoresNotFiltered) ? true : false;
-  
-  const showFinalProducts = (value: any[]) => {
-    finalProducts = value;
-  };
-  
-  const brandsDontExistOtherExists = (brandsDontExist && memoryExists) || (brandsDontExist && ramExists) || 
-    (brandsDontExist && cpuCoresExist);
-  const memoryDoesntExistOtherExists = (memoryDoesntExist && brandsExist) || (memoryDoesntExist && ramExists) || 
-    (memoryDoesntExist && cpuCoresExist);
-  const ramDoesntExistOtherExists = (ramDoesntExist && brandsExist) || (ramDoesntExist && memoryExists) || 
-    (ramDoesntExist && cpuCoresExist);
-  const cpuCoresDontExistOtherExists = (cpuCoresDontExist && brandsExist) || (cpuCoresDontExist && memoryExists) || 
-    (cpuCoresDontExist && ramExists);
-  
-  const brandsDontExistOtherExist = (brandsDontExist && memoryExists && ramExists) || 
-    (brandsDontExist && memoryExists && ramExists && cpuCoresExist);
-  const memoryDoesntExistOtherExist = (memoryDoesntExist && brandsExist && ramExists) || 
-    (memoryDoesntExist && brandsExist && ramExists && cpuCoresExist);
-  const ramDoesntExistOtherExist = (ramDoesntExist && brandsExist && memoryExists) || 
-    (ramDoesntExist && brandsExist && memoryExists && cpuCoresExist);
-  const cpuCoresDontExistOtherExist = (cpuCoresDontExist && brandsExist && memoryExists) || 
-    (cpuCoresDontExist && brandsExist && memoryExists && ramExists);
   
   const filterBrands = ({ brand }: IProduct) => {
     return checkedBrands.includes(brand);
@@ -135,69 +118,49 @@ export const Home: FC = () => {
   const filterCpuCores = ({ cpuCores }: IProduct) => {
     return checkedCpuCores.includes(cpuCores.toString());
   };
+
+  const filterPrice = ({ price }: IProduct) => {
+    return price >= priceRange.min && price <= priceRange.max;
+  };
+
+  const existingItems: boolean[] = [brandsExist, memoryExists, ramExists, cpuCoresExist];
+  const filterFunctions: filterFuncArr = [filterBrands, filterMemory, filterRam, filterCpuCores];
+
+  const filterProducts = (filterFuncArr: filterFuncArr) => {
+    return filterFuncArr.reduce((totalArr: any[], filterFunc) => {
+      return totalArr.filter(filterFunc);
+    }, products);
+  };
+  let setFilteredFinalProducts = (filterFuncArr: filterFuncArr) => {
+    showFinalProducts(filterProducts(filterFuncArr));
+  };  
+  let filterArrItemsByIdx = (srcArr: any[], indexes: number[]) => {
+    return srcArr.filter((el, i) => indexes.some(j => i === j));
+  };
+
+  let makeFinalProducts = (srcArr: sourceArr, indexes: number[]) => {
+    setFilteredFinalProducts(filterArrItemsByIdx(srcArr, indexes));
+  };
+
+  let indexes: number[] = [];
+  const setIndexes = useCallback(() => {
+    indexes = existingItems.map((el, i) => {
+      if (el === true) {
+        return i;
+      }
+    }).filter(item => {
+      return item || item === 0;
+    }).map(item => {
+      return Number(item);
+    });
+    if (indexes.length) {
+      makeFinalProducts(filterFunctions, indexes);
+    }
+  }, [existingItems]);
+
+  setIndexes();
   
-  if (brandsExist && memoryExists && ramExists && cpuCoresExist) {
-    showFinalProducts(products
-      .filter(filterBrands)
-      .filter(filterMemory)
-      .filter(filterRam)
-      .filter(filterCpuCores));
-  } else if (brandsNotFiltered && memoryExists && ramExists && cpuCoresExist) {
-    showFinalProducts(products
-      .filter(filterMemory)
-      .filter(filterRam)
-      .filter(filterCpuCores));
-  } else if (brandsExist && memoryNotFiltered && ramExists && cpuCoresExist) {
-    showFinalProducts(products
-      .filter(filterBrands)
-      .filter(filterRam)
-      .filter(filterCpuCores));
-  } else if (brandsExist && memoryExists && ramNotFiltered && cpuCoresExist) {
-    showFinalProducts(products
-      .filter(filterBrands)
-      .filter(filterMemory)
-      .filter(filterCpuCores));
-  } else if (brandsExist && memoryExists && ramExists && cpuCoresNotFiltered) {
-    showFinalProducts(products
-      .filter(filterBrands)
-      .filter(filterMemory)
-      .filter(filterRam));
-  } else if (brandsNotFiltered && memoryNotFiltered && ramExists && cpuCoresExist) {
-    showFinalProducts(products
-      .filter(filterRam)
-      .filter(filterCpuCores));
-  } else if (brandsExist && memoryNotFiltered && ramNotFiltered && cpuCoresExist) {
-    showFinalProducts(products
-      .filter(filterBrands)
-      .filter(filterCpuCores));
-  } else if (brandsExist && memoryExists && ramNotFiltered && cpuCoresNotFiltered) {
-    showFinalProducts(products
-      .filter(filterBrands)
-      .filter(filterMemory));
-  } else if (brandsNotFiltered && memoryExists && ramExists && cpuCoresNotFiltered) {
-    showFinalProducts(products
-      .filter(filterMemory)
-      .filter(filterRam));
-  } else if (brandsNotFiltered && memoryExists && ramNotFiltered && cpuCoresExist) {
-    showFinalProducts(products
-      .filter(filterMemory)
-      .filter(filterCpuCores));
-  } else if (brandsExist && memoryNotFiltered && ramExists && cpuCoresNotFiltered) {
-    showFinalProducts(products
-      .filter(filterBrands)
-      .filter(filterRam));
-  } else if (brandsNotFiltered && memoryNotFiltered && ramNotFiltered && cpuCoresExist) {
-    showFinalProducts(filteredCpuCores);
-  } else if (brandsExist && memoryNotFiltered && ramNotFiltered && cpuCoresNotFiltered) {
-    showFinalProducts(filteredBrands);
-  } else if (brandsNotFiltered && memoryExists && ramNotFiltered && cpuCoresNotFiltered) {
-    showFinalProducts(filteredMemory);
-  } else if (brandsNotFiltered && memoryNotFiltered && ramExists && cpuCoresNotFiltered) {
-    showFinalProducts(filteredRam);
-  }
-  
-  if (brandsDontExist || memoryDoesntExist || ramDoesntExist || cpuCoresDontExist || brandsDontExistOtherExists || memoryDoesntExistOtherExists || ramDoesntExistOtherExists || cpuCoresDontExistOtherExists || brandsDontExistOtherExist || memoryDoesntExistOtherExist || ramDoesntExistOtherExist || cpuCoresDontExistOtherExist) 
-  {
+  if (brandsDontExist || memoryDoesntExist || ramDoesntExist || cpuCoresDontExist) {
     showFinalProducts([]);
   }
 
@@ -206,6 +169,8 @@ export const Home: FC = () => {
     const lastPageIndex = firstPageIndex + pageSize;
     return finalProducts.slice(firstPageIndex, lastPageIndex);
   }, [currentPage, finalProducts]);
+
+  // debugger; 
 
   return (
     <div className={styles.homeContainer}>
@@ -221,11 +186,6 @@ export const Home: FC = () => {
       </div>
       <div className={styles.productsColumn}>
         <Sorting />
-        <div style={{marginTop: 20, marginBottom: 20}}>
-          {priceRange.min} 
-          {" , "} 
-          {priceRange.max} 
-        </div>
         <div className={styles.productListContainer}>
           {isLoading ? (
             <div className={styles.loadingBlock}>
@@ -254,7 +214,7 @@ export const Home: FC = () => {
                   <Pagination 
                     className={styles.paginationBar}
                     currentPage={currentPage}
-                    totalCount={finalProducts!.length}
+                    totalCount={finalProducts.length}
                     pageSize={pageSize}
                     onPageChange={(page: any) => setCurrentPage(page)}
                   />

@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import styles from './MultiRangeSlider.module.scss';
+import { useAppDispatch } from '../../../redux/hooks';
+import { setMinPrice, setMaxPrice } from '../../../redux/filter/filterSlice';
 
 export const MultiRangeSlider = React.forwardRef((props, ref) => {
+
 	let baseClassName = props.baseClassName || styles.multiRangeSlider;
 	const min = parseFloat(props.min || 0);
 	const max = parseFloat(props.max || 100);
@@ -19,6 +22,17 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 	const [maxValue, set_maxValue] = useState(parseFloat(props.maxValue || 75));
 	const [barMin, set_barMin] = useState(((minValue - min) / (max - min)) * 100);
 	const [barMax, set_barMax] = useState(((max - maxValue) / (max - min)) * 100);
+
+	// custom - beginning
+	const dispatch = useAppDispatch();
+
+	const handleMinChange = (value) => {
+		dispatch(setMinPrice(value));
+	};
+	const handleMaxChange = (value) => {
+		dispatch(setMaxPrice(value));
+	};
+	// custom - end
 
 	let refThis = useRef();
 
@@ -277,6 +291,7 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 					className={classNames(styles.thumb, styles.thumbLeft)} 
 					onMouseDown={onLeftThumbMousedown} 
 					onTouchStart={onLeftThumbMousedown}
+					onMouseUp={() => handleMinChange(minValue)}
 				>
 					<div className={styles.minValue}>{minValue}</div>
 				</div>
@@ -297,6 +312,7 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 					className={classNames(styles.thumb, styles.thumbRight)} 
 					onMouseDown={onRightThumbMousedown} 
 					onTouchStart={onRightThumbMousedown}
+					onMouseUp={() => handleMaxChange(maxValue)}
 				>
 					<div className={styles.maxValue}>{maxValue}</div>
 				</div>
