@@ -4,8 +4,10 @@ import { MultiRangeSlider } from '../MultiRangeSlider';
 import classNames from 'classnames';
 import { useAppDispatch } from '../../../redux/hooks';
 import { 
+	setMaxBatteryCapacity,
 	setMaxPrice, 
 	setMaxScreenSize, 
+	setMinBatteryCapacity, 
 	setMinPrice, 
 	setMinScreenSize } from '../../../redux/filter/filterSlice';
 
@@ -33,9 +35,9 @@ export const MultiRangeSliderInputs = ({ min, max, step, inputType }) => {
 		if (inputType === "screenSize") {
 			dispatch(setMinScreenSize(minValue));
 		}
-		// if (inputType === "batteryCapacity") {
-		// 	dispatch(setMinBatteryCapacity(minValue));
-		// }
+		if (inputType === "batteryCapacity") {
+			dispatch(setMinBatteryCapacity(minValue));
+		}
 	};
 	const handleMaxBlur = () => {
 		if (inputType === "price") {
@@ -44,9 +46,9 @@ export const MultiRangeSliderInputs = ({ min, max, step, inputType }) => {
 		if (inputType === "screenSize") {
 			dispatch(setMaxScreenSize(maxValue));
 		}
-		// if (inputType === "batteryCapacity") {
-		// 	dispatch(setMaxBatteryCapacity(maxValue));
-		// }
+		if (inputType === "batteryCapacity") {
+			dispatch(setMaxBatteryCapacity(maxValue));
+		}
 	};
 
 	const handleMinOnEnter = (e) => {
@@ -57,9 +59,9 @@ export const MultiRangeSliderInputs = ({ min, max, step, inputType }) => {
 			if (inputType === "screenSize") {
 				dispatch(setMinScreenSize(minValue));
 			}
-			// if (inputType === "batteryCapacity") {
-			// 	dispatch(setMinBatteryCapacity(minValue));
-			// }
+			if (inputType === "batteryCapacity") {
+				dispatch(setMinBatteryCapacity(minValue));
+			}
 		}
 	};
 	const handleMaxOnEnter = (e) => {
@@ -70,9 +72,9 @@ export const MultiRangeSliderInputs = ({ min, max, step, inputType }) => {
 			if (inputType === "screenSize") {
 				dispatch(setMaxScreenSize(maxValue));
 			}
-			// if (inputType === "batteryCapacity") {
-			// 	dispatch(setMaxBatteryCapacity(maxValue));
-			// }
+			if (inputType === "batteryCapacity") {
+				dispatch(setMaxBatteryCapacity(maxValue));
+			}
 		}
 	};
 

@@ -10,4 +10,5 @@ export interface IProduct {
   ramMemory: number;
   cpuCores: number;
   screenSize: number;
+  batteryCapacity: number;
 }

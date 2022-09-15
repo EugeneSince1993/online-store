@@ -6,7 +6,9 @@ import {
 	setMinPrice, 
 	setMaxPrice, 
 	setMinScreenSize, 
-	setMaxScreenSize } from '../../../redux/filter/filterSlice';
+	setMaxScreenSize, 
+	setMinBatteryCapacity,
+	setMaxBatteryCapacity} from '../../../redux/filter/filterSlice';
 
 export const MultiRangeSlider = React.forwardRef((props, ref) => {
 	const dispatch = useAppDispatch();
@@ -274,9 +276,9 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 		if (props.inputType === "screenSize") {
 			dispatch(setMinScreenSize(minValue));
 		}
-		// if (props.inputType === "batteryCapacity") {
-		// 	dispatch(setMinBatteryCapacity(minValue));
-		// }
+		if (props.inputType === "batteryCapacity") {
+			dispatch(setMinBatteryCapacity(minValue));
+		}
 	};
 	const handleMaxChange = () => {
 		if (props.inputType === "price") {
@@ -285,9 +287,9 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 		if (props.inputType === "screenSize") {
 			dispatch(setMaxScreenSize(maxValue));
 		}
-		// if (props.inputType === "batteryCapacity") {
-		// 	dispatch(setMaxBatteryCapacity(maxValue));
-		// }
+		if (props.inputType === "batteryCapacity") {
+			dispatch(setMaxBatteryCapacity(maxValue));
+		}
 	};
 
 	useEffect(() => {
@@ -298,6 +300,9 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 			if (props.inputType === "screenSize") {
 				dispatch(setMinScreenSize(minValue));
 			}
+			if (props.inputType === "batteryCapacity") {
+				dispatch(setMinBatteryCapacity(minValue));
+			}
 		}
 		if (maxValue === max) {
 			if (props.inputType === "price") {
@@ -305,6 +310,9 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 			}
 			if (props.inputType === "screenSize") {
 				dispatch(setMaxScreenSize(maxValue));
+			}
+			if (props.inputType === "batteryCapacity") {
+				dispatch(setMaxBatteryCapacity(maxValue));
 			}
 		}
 	}, [minValue, maxValue]);

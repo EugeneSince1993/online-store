@@ -11,7 +11,8 @@
       "memory": 64,
       "ramMemory": 6,
       "cpuCores": 6,
-      "screenSize": 5.5
+      "screenSize": 5.5,
+      "batteryCapacity": 3000
     },
     {
       "id": 1,
@@ -24,7 +25,8 @@
       "memory": 32,
       "ramMemory": 4,
       "cpuCores": 4,
-      "screenSize": 6.5
+      "screenSize": 6.5,
+      "batteryCapacity": 4500
     },
     {
       "id": 2,
@@ -37,7 +39,8 @@
       "memory": 64,
       "ramMemory": 4,
       "cpuCores": 4,
-      "screenSize": 6.7
+      "screenSize": 6.7,
+      "batteryCapacity": 4500
     },
     {
       "id": 3,
@@ -50,7 +53,8 @@
       "memory": 128,
       "ramMemory": 8,
       "cpuCores": 8,
-      "screenSize": 6.5
+      "screenSize": 6.5,
+      "batteryCapacity": 5500
     },
     {
       "id": 4,
@@ -63,7 +67,8 @@
       "memory": 64,
       "ramMemory": 6,
       "cpuCores": 8,
-      "screenSize": 6.7
+      "screenSize": 6.7,
+      "batteryCapacity": 4000
     },
     {
       "id": 5,
@@ -76,7 +81,8 @@
       "memory": 128,
       "ramMemory": 6,
       "cpuCores": 8,
-      "screenSize": 6.7
+      "screenSize": 6.7,
+      "batteryCapacity": 4000
     },
     {
       "id": 6,
@@ -89,7 +95,8 @@
       "memory": 64,
       "ramMemory": 3,
       "cpuCores": 4,
-      "screenSize": 6.5
+      "screenSize": 6.5,
+      "batteryCapacity": 2500
     },
     {
       "id": 7,
@@ -102,7 +109,8 @@
       "memory": 64,
       "ramMemory": 3,
       "cpuCores": 4,
-      "screenSize": 6.5
+      "screenSize": 6.5,
+      "batteryCapacity": 2500
     },
     {
       "id": 8,
@@ -115,7 +123,8 @@
       "memory": 128,
       "ramMemory": 3,
       "cpuCores": 4,
-      "screenSize": 6.5
+      "screenSize": 6.5,
+      "batteryCapacity": 2500
     },
     {
       "id": 9,
@@ -128,7 +137,8 @@
       "memory": 128,
       "ramMemory": 3,
       "cpuCores": 4,
-      "screenSize": 6.5
+      "screenSize": 6.5,
+      "batteryCapacity": 2500
     },
     {
       "id": 10,
@@ -141,7 +151,8 @@
       "memory": 128,
       "ramMemory": 3,
       "cpuCores": 4,
-      "screenSize": 6.5
+      "screenSize": 6.5,
+      "batteryCapacity": 2500
     },
     {
       "id": 11,
@@ -154,7 +165,8 @@
       "memory": 128,
       "ramMemory": 3,
       "cpuCores": 4,
-      "screenSize": 6.5
+      "screenSize": 6.5,
+      "batteryCapacity": 2500
     },
     {
       "id": 12,
@@ -167,7 +179,8 @@
       "memory": 128,
       "ramMemory": 3,
       "cpuCores": 4,
-      "screenSize": 6.5
+      "screenSize": 6.5,
+      "batteryCapacity": 2500
     }
   ]
 }

@@ -46,6 +46,10 @@ const initialState: FilterSliceState = {
       min: 4,
       max: 7,
     },
+    batteryCapacityRange: {
+      min: 1500,
+      max: 7000,
+    },
   },
   sort: {
     name: 'по популярности (по убыванию)',
@@ -81,6 +85,12 @@ const filterSlice = createSlice({
     setMaxScreenSize(state, action: PayloadAction<number>) {
       state.types.screenSizeRange.max = action.payload;
     },
+    setMinBatteryCapacity(state, action: PayloadAction<number>) {
+      state.types.batteryCapacityRange.min = action.payload;
+    },
+    setMaxBatteryCapacity(state, action: PayloadAction<number>) {
+      state.types.batteryCapacityRange.max = action.payload;
+    },
     setSort(state, action: PayloadAction<Sort>) {
       state.sort = action.payload;
     },
@@ -113,7 +123,9 @@ export const {
   setMinPrice,
   setMaxPrice,
   setMinScreenSize,
-  setMaxScreenSize
+  setMaxScreenSize,
+  setMinBatteryCapacity,
+  setMaxBatteryCapacity
 } = filterSlice.actions;
 
 export default filterSlice.reducer;

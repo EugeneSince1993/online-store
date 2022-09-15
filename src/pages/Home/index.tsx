@@ -25,8 +25,8 @@ export const Home: FC = () => {
   
   const { products, isLoading } = useAppSelector(selectProduct);
   const { sort, types } = useAppSelector(selectFilter);
-  const { brands, memory, ramMemory, 
-    cpuCores, priceRange, screenSizeRange } = types;
+  const { brands, memory, ramMemory, cpuCores, 
+    priceRange, screenSizeRange, batteryCapacityRange } = types;
 
   let finalProducts: IProduct[] = products;
   const showFinalProducts = (value: any[]) => {
@@ -92,6 +92,7 @@ export const Home: FC = () => {
   };
   const filteredPrice: IProduct[] = setFilteredRange(priceRange, "price");
   const filteredScreenSize: IProduct[] = setFilteredRange(screenSizeRange, "screenSize");
+  const filteredbatteryCapacity: IProduct[] = setFilteredRange(batteryCapacityRange, "batteryCapacity");
 
   const brandsExist = filteredBrands.length ? true : false;
   const memoryExists = filteredMemory.length ? true : false;
@@ -99,6 +100,7 @@ export const Home: FC = () => {
   const cpuCoresExist = filteredCpuCores.length ? true : false;
   const priceExists = filteredPrice.length ? true : false;
   const screenSizeExists = filteredScreenSize.length ? true : false;
+  const batteryCapacityExists = filteredbatteryCapacity.length ? true : false;
   
   const brandsChecked = checkedBrands.length ? true : false;
   const memoryChecked = checkedMemory.length ? true : false;
@@ -109,8 +111,6 @@ export const Home: FC = () => {
   const memoryNotFiltered = filteredMemory.length === 0;
   const ramNotFiltered = filteredRam.length === 0;
   const cpuCoresNotFiltered = filteredCpuCores.length === 0;
-  const priceNotFiltered = filteredPrice.length === 0;
-  const screenSizeNotFiltered = filteredScreenSize.length === 0;
   
   const brandsDontExist = (brandsChecked && brandsNotFiltered) ? true : false;
   const memoryDoesntExist = (memoryChecked && memoryNotFiltered) ? true : false;
@@ -135,9 +135,12 @@ export const Home: FC = () => {
   const filterScreenSize = ({ screenSize }: IProduct) => {
     return screenSize >= screenSizeRange.min && screenSize <= screenSizeRange.max;
   };
+  const filterBatteryCapacity = ({ batteryCapacity }: IProduct) => {
+    return batteryCapacity >= batteryCapacityRange.min && batteryCapacity <= batteryCapacityRange.max;
+  };
 
-  const existingItems: boolean[] = [brandsExist, memoryExists, ramExists, cpuCoresExist, priceExists, screenSizeExists];
-  const filterFunctions: filterFuncArr = [filterBrands, filterMemory, filterRam, filterCpuCores, filterPrice, filterScreenSize];
+  const existingItems: boolean[] = [brandsExist, memoryExists, ramExists, cpuCoresExist, priceExists, screenSizeExists, batteryCapacityExists];
+  const filterFunctions: filterFuncArr = [filterBrands, filterMemory, filterRam, filterCpuCores, filterPrice, filterScreenSize, filterBatteryCapacity];
 
   const filterProducts = (filterFuncArr: filterFuncArr) => {
     return filterFuncArr.reduce((totalArr: any[], filterFunc) => {

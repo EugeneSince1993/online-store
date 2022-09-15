@@ -96,7 +96,7 @@ export const Filters: FC<FilterProps> = (
           <MultiRangeSliderInputs 
             inputType="batteryCapacity" 
             min={1500} 
-            max={15000}
+            max={7000}
             step={100}
           />
         </Collapse>
