@@ -16,12 +16,17 @@ export const Home: FC = () => {
   type filterFunc = (object: IProduct) => boolean;
   type filterFuncArr = filterFunc[];
   type sourceArr = boolean[] | filterFuncArr;
+  interface rangeObj {
+    min: number;
+    max: number;
+  };
 
   const dispatch = useAppDispatch();
   
   const { products, isLoading } = useAppSelector(selectProduct);
   const { sort, types } = useAppSelector(selectFilter);
-  const { brands, memory, ramMemory, cpuCores, priceRange } = types;
+  const { brands, memory, ramMemory, 
+    cpuCores, priceRange, screenSizeRange } = types;
 
   let finalProducts: IProduct[] = products;
   const showFinalProducts = (value: any[]) => {
@@ -58,7 +63,7 @@ export const Home: FC = () => {
     return Object.entries(itemList).filter(item => item[1]).map(item => item[0]);
   };
 
-  const setFilteredItems = (checkedItemList: any[], item: any) => {
+  const setFilteredItems = (checkedItemList: any[], item: string) => {
     return products.filter(({ [item]: itemName }: any) => {
       if (itemName === "brand") {
         return checkedItemList.includes(itemName);
@@ -80,15 +85,20 @@ export const Home: FC = () => {
   const checkedCpuCores: any[] = setCheckedItems(cpuCores);
   const filteredCpuCores: IProduct[] = setFilteredItems(checkedCpuCores, "cpuCores");
 
-  const filteredPrice: IProduct[] = products.filter(({price}: IProduct) => {
-    return price >= priceRange.min && price <= priceRange.max;
-  });
+  const setFilteredRange = (rangeType: rangeObj, item: string) => {
+    return products.filter(({[item]: itemName}: any) => {
+      return itemName >= rangeType.min && itemName <= rangeType.max;
+    });
+  };
+  const filteredPrice: IProduct[] = setFilteredRange(priceRange, "price");
+  const filteredScreenSize: IProduct[] = setFilteredRange(screenSizeRange, "screenSize");
 
   const brandsExist = filteredBrands.length ? true : false;
   const memoryExists = filteredMemory.length ? true : false;
   const ramExists = filteredRam.length ? true : false;
   const cpuCoresExist = filteredCpuCores.length ? true : false;
   const priceExists = filteredPrice.length ? true : false;
+  const screenSizeExists = filteredScreenSize.length ? true : false;
   
   const brandsChecked = checkedBrands.length ? true : false;
   const memoryChecked = checkedMemory.length ? true : false;
@@ -100,12 +110,13 @@ export const Home: FC = () => {
   const ramNotFiltered = filteredRam.length === 0;
   const cpuCoresNotFiltered = filteredCpuCores.length === 0;
   const priceNotFiltered = filteredPrice.length === 0;
+  const screenSizeNotFiltered = filteredScreenSize.length === 0;
   
   const brandsDontExist = (brandsChecked && brandsNotFiltered) ? true : false;
   const memoryDoesntExist = (memoryChecked && memoryNotFiltered) ? true : false;
   const ramDoesntExist = (ramChecked && ramNotFiltered) ? true : false;
   const cpuCoresDontExist = (cpuCoresChecked && cpuCoresNotFiltered) ? true : false;
-  
+
   const filterBrands = ({ brand }: IProduct) => {
     return checkedBrands.includes(brand);
   };
@@ -118,13 +129,15 @@ export const Home: FC = () => {
   const filterCpuCores = ({ cpuCores }: IProduct) => {
     return checkedCpuCores.includes(cpuCores.toString());
   };
-
   const filterPrice = ({ price }: IProduct) => {
     return price >= priceRange.min && price <= priceRange.max;
   };
+  const filterScreenSize = ({ screenSize }: IProduct) => {
+    return screenSize >= screenSizeRange.min && screenSize <= screenSizeRange.max;
+  };
 
-  const existingItems: boolean[] = [brandsExist, memoryExists, ramExists, cpuCoresExist, priceExists];
-  const filterFunctions: filterFuncArr = [filterBrands, filterMemory, filterRam, filterCpuCores, filterPrice];
+  const existingItems: boolean[] = [brandsExist, memoryExists, ramExists, cpuCoresExist, priceExists, screenSizeExists];
+  const filterFunctions: filterFuncArr = [filterBrands, filterMemory, filterRam, filterCpuCores, filterPrice, filterScreenSize];
 
   const filterProducts = (filterFuncArr: filterFuncArr) => {
     return filterFuncArr.reduce((totalArr: any[], filterFunc) => {
@@ -180,7 +193,6 @@ export const Home: FC = () => {
           memoryArr={[setMemory, memory]}
           ramMemoryArr={[setRamMemory, ramMemory]}
           cpuCoresArr={[setCpuCores, cpuCores]}
-          priceRange={priceRange}
         />
       </div>
       <div className={styles.productsColumn}>

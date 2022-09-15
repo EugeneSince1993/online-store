@@ -4,8 +4,7 @@ import {
   Sort, 
   SortPropertyEnum, 
   IBrands, 
-  INumberValue, 
-  IPriceRange } from './types';
+  INumberValue } from './types';
 
 const initialState: FilterSliceState = {
   types: {
@@ -41,7 +40,11 @@ const initialState: FilterSliceState = {
     },
     priceRange: {
       min: 0,
-      max: 95000
+      max: 95000,
+    },
+    screenSizeRange: {
+      min: 4,
+      max: 7,
     },
   },
   sort: {
@@ -71,6 +74,12 @@ const filterSlice = createSlice({
     },
     setMaxPrice(state, action: PayloadAction<number>) {
       state.types.priceRange.max = action.payload;
+    },
+    setMinScreenSize(state, action: PayloadAction<number>) {
+      state.types.screenSizeRange.min = action.payload;
+    },
+    setMaxScreenSize(state, action: PayloadAction<number>) {
+      state.types.screenSizeRange.max = action.payload;
     },
     setSort(state, action: PayloadAction<Sort>) {
       state.sort = action.payload;
@@ -102,7 +111,9 @@ export const {
   setRamMemory,
   setCpuCores,
   setMinPrice,
-  setMaxPrice
+  setMaxPrice,
+  setMinScreenSize,
+  setMaxScreenSize
 } = filterSlice.actions;
 
 export default filterSlice.reducer;

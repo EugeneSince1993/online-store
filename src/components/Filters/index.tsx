@@ -4,7 +4,6 @@ import { Collapse } from '../Collapse';
 import { MultiRangeSliderInputs } from './MultiRangeSliderInputs';
 import { CheckboxList } from './CheckboxList';
 import { FilterColor } from './FilterColor';
-import { IPriceRange } from '../../redux/filter/types';
 
 type FilterProps = {
   handleChange: (
@@ -16,7 +15,6 @@ type FilterProps = {
   memoryArr: any[];
   ramMemoryArr: any[];
   cpuCoresArr: any[];
-  priceRange: IPriceRange;
 };
 
 export const Filters: FC<FilterProps> = (
@@ -24,8 +22,7 @@ export const Filters: FC<FilterProps> = (
     brandsArr, 
     memoryArr,
     ramMemoryArr,
-    cpuCoresArr,
-    priceRange}) => {
+    cpuCoresArr}) => {
 
   return (
     <div className={styles.filtersContainer}>
@@ -41,7 +38,12 @@ export const Filters: FC<FilterProps> = (
       </div>
       <div className={styles.filterPrice}>
         <Collapse filterName="Цена, ₽" elementType="h5">
-          <MultiRangeSliderInputs min={0} max={95000} />
+          <MultiRangeSliderInputs 
+            inputType="price" 
+            min={0} 
+            max={95000} 
+            step={1} 
+          />
         </Collapse>
       </div>
       <div className={styles.filterColor}>
@@ -51,7 +53,12 @@ export const Filters: FC<FilterProps> = (
       </div>
       <div className={styles.filterScreenSize}>
         <Collapse filterName="Диагональ экрана, дюйм" elementType="h5">
-          <MultiRangeSliderInputs min={4.00} max={7.00} />
+          <MultiRangeSliderInputs 
+            inputType="screenSize" 
+            min={4} 
+            max={7} 
+            step={0.1} 
+          />
         </Collapse>
       </div>
       <div className={styles.filterMemory}>
@@ -86,7 +93,12 @@ export const Filters: FC<FilterProps> = (
       </div>
       <div className={styles.filterBatteryCapacity}>
         <Collapse filterName="Емкость аккумулятора, мАч" elementType="h5">
-          <MultiRangeSliderInputs min={1500} max={15000} />
+          <MultiRangeSliderInputs 
+            inputType="batteryCapacity" 
+            min={1500} 
+            max={15000}
+            step={100}
+          />
         </Collapse>
       </div>
     </div>

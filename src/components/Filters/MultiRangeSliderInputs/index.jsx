@@ -3,9 +3,13 @@ import styles from './MultiRangeSliderInputs.module.scss';
 import { MultiRangeSlider } from '../MultiRangeSlider';
 import classNames from 'classnames';
 import { useAppDispatch } from '../../../redux/hooks';
-import { setMaxPrice, setMinPrice } from '../../../redux/filter/filterSlice';
+import { 
+	setMaxPrice, 
+	setMaxScreenSize, 
+	setMinPrice, 
+	setMinScreenSize } from '../../../redux/filter/filterSlice';
 
-export const MultiRangeSliderInputs = ({ min, max }) => {
+export const MultiRangeSliderInputs = ({ min, max, step, inputType }) => {
 	const dispatch = useAppDispatch();
 
   const [minValue, set_minValue] = useState(min);
@@ -22,19 +26,64 @@ export const MultiRangeSliderInputs = ({ min, max }) => {
 		set_maxValue(e.target.value);
 	};
 
-	const handleMinBlur = (value) => {
-		dispatch(setMinPrice(Number(value)));
+	const handleMinBlur = () => {
+		if (inputType === "price") {
+			dispatch(setMinPrice(minValue));
+		}
+		if (inputType === "screenSize") {
+			dispatch(setMinScreenSize(minValue));
+		}
+		// if (inputType === "batteryCapacity") {
+		// 	dispatch(setMinBatteryCapacity(minValue));
+		// }
 	};
-	const handleMaxBlur = (value) => {
-		dispatch(setMaxPrice(Number(value)));
+	const handleMaxBlur = () => {
+		if (inputType === "price") {
+			dispatch(setMaxPrice(maxValue));
+		}
+		if (inputType === "screenSize") {
+			dispatch(setMaxScreenSize(maxValue));
+		}
+		// if (inputType === "batteryCapacity") {
+		// 	dispatch(setMaxBatteryCapacity(maxValue));
+		// }
+	};
+
+	const handleMinOnEnter = (e) => {
+		if (e.key === "Enter") {
+			if (inputType === "price") {
+				dispatch(setMinPrice(minValue));
+			}
+			if (inputType === "screenSize") {
+				dispatch(setMinScreenSize(minValue));
+			}
+			// if (inputType === "batteryCapacity") {
+			// 	dispatch(setMinBatteryCapacity(minValue));
+			// }
+		}
+	};
+	const handleMaxOnEnter = (e) => {
+		if (e.key === "Enter") {
+			if (inputType === "price") {
+				dispatch(setMaxPrice(maxValue));
+			}
+			if (inputType === "screenSize") {
+				dispatch(setMaxScreenSize(maxValue));
+			}
+			// if (inputType === "batteryCapacity") {
+			// 	dispatch(setMaxBatteryCapacity(maxValue));
+			// }
+		}
 	};
 
   return (
     <div className={styles.multiRangeSliderInputs}>
 			<div className={styles.multiRangeSliderContainer}>
 				<MultiRangeSlider
+					inputType={inputType}
 					min={min}
 					max={max}
+					step={step}
 					ruler={false}
 					label={false}
 					preventWheel={false}
@@ -53,7 +102,8 @@ export const MultiRangeSliderInputs = ({ min, max }) => {
 							type="number" 
 							value={minValue} 
 							onChange={handleMinChange} 
-							onBlur={() => handleMinBlur(minValue)}
+							onBlur={handleMinBlur}
+							onKeyDown={handleMinOnEnter}
 						/>
 					</div>
 				</div>
@@ -66,7 +116,8 @@ export const MultiRangeSliderInputs = ({ min, max }) => {
 							type="number" 
 							value={maxValue} 
 							onChange={handleMaxChange}
-							onBlur={() => handleMaxBlur(maxValue)}
+							onBlur={handleMaxBlur}
+							onKeyDown={handleMaxOnEnter}
 						/>
 					</div>
 				</div>

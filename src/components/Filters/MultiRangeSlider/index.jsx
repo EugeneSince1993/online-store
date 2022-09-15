@@ -2,9 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import styles from './MultiRangeSlider.module.scss';
 import { useAppDispatch } from '../../../redux/hooks';
-import { setMinPrice, setMaxPrice } from '../../../redux/filter/filterSlice';
+import { 
+	setMinPrice, 
+	setMaxPrice, 
+	setMinScreenSize, 
+	setMaxScreenSize } from '../../../redux/filter/filterSlice';
 
 export const MultiRangeSlider = React.forwardRef((props, ref) => {
+	const dispatch = useAppDispatch();
 
 	let baseClassName = props.baseClassName || styles.multiRangeSlider;
 	const min = parseFloat(props.min || 0);
@@ -260,25 +265,49 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 		set_barMax(((max - maxValue) / (max - min)) * 100);
 	}, [props.minValue, props.maxValue, minValue, min, maxValue, max]);
 
-	// custom - beginning
-	const dispatch = useAppDispatch();
+	// custom
 
 	const handleMinChange = () => {
-		dispatch(setMinPrice(minValue));
+		if (props.inputType === "price") {
+			dispatch(setMinPrice(minValue));
+		}
+		if (props.inputType === "screenSize") {
+			dispatch(setMinScreenSize(minValue));
+		}
+		// if (props.inputType === "batteryCapacity") {
+		// 	dispatch(setMinBatteryCapacity(minValue));
+		// }
 	};
 	const handleMaxChange = () => {
-		dispatch(setMaxPrice(maxValue));
+		if (props.inputType === "price") {
+			dispatch(setMaxPrice(maxValue));
+		}
+		if (props.inputType === "screenSize") {
+			dispatch(setMaxScreenSize(maxValue));
+		}
+		// if (props.inputType === "batteryCapacity") {
+		// 	dispatch(setMaxBatteryCapacity(maxValue));
+		// }
 	};
 
 	useEffect(() => {
 		if (minValue === min) {
-			dispatch(setMinPrice(minValue));
+			if (props.inputType === "price") {
+				dispatch(setMinPrice(minValue));
+			}
+			if (props.inputType === "screenSize") {
+				dispatch(setMinScreenSize(minValue));
+			}
 		}
 		if (maxValue === max) {
-			dispatch(setMaxPrice(maxValue));
+			if (props.inputType === "price") {
+				dispatch(setMaxPrice(maxValue));
+			}
+			if (props.inputType === "screenSize") {
+				dispatch(setMaxScreenSize(maxValue));
+			}
 		}
 	}, [minValue, maxValue]);
-	// custom - end
 
 	return (
 		<div className={baseClassName} onWheel={onMouseWheel} ref={ref}>

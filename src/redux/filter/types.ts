@@ -17,7 +17,8 @@ export interface ITypes {
   memory: INumberValue;
   ramMemory: INumberValue;
   cpuCores: INumberValue;
-  priceRange: IPriceRange;
+  priceRange: IRange;
+  screenSizeRange: IRange;
 }
 
 export interface IBrands {
@@ -28,7 +29,7 @@ export interface INumberValue {
   [numberValue: string]: boolean;
 }
 
-export interface IPriceRange {
+export interface IRange {
   min: number;
   max: number;
 }

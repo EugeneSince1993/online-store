@@ -9,4 +9,5 @@ export interface IProduct {
   memory: number;
   ramMemory: number;
   cpuCores: number;
+  screenSize: number;
 }

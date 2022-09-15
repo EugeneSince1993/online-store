@@ -4,13 +4,14 @@
       "id": 0,
       "imageUrl": "/images/iphone-12-red.jpg",
       "brand": "Apple",
-      "name": "Apple iPhone 12 64 Гб, красный",
+      "name": "Apple iPhone 12 Mini 64 Гб, красный",
       "price": 60000,
       "rating": 4.8,
       "testimonials": 6,
       "memory": 64,
       "ramMemory": 6,
-      "cpuCores": 6
+      "cpuCores": 6,
+      "screenSize": 5.5
     },
     {
       "id": 1,
@@ -22,7 +23,8 @@
       "testimonials": 4,
       "memory": 32,
       "ramMemory": 4,
-      "cpuCores": 4
+      "cpuCores": 4,
+      "screenSize": 6.5
     },
     {
       "id": 2,
@@ -34,7 +36,8 @@
       "testimonials": 9,
       "memory": 64,
       "ramMemory": 4,
-      "cpuCores": 4
+      "cpuCores": 4,
+      "screenSize": 6.7
     },
     {
       "id": 3,
@@ -46,19 +49,21 @@
       "testimonials": 10,
       "memory": 128,
       "ramMemory": 8,
-      "cpuCores": 8
+      "cpuCores": 8,
+      "screenSize": 6.5
     },
     {
       "id": 4,
       "imageUrl": "/images/iphone-13.jpg",
       "brand": "Apple",
-      "name": "Apple iPhone 13 64 Гб, белый",
+      "name": "Apple iPhone 13 Pro 64 Гб, белый",
       "price": 80000,
       "rating": 4.6,
       "testimonials": 11,
       "memory": 64,
       "ramMemory": 6,
-      "cpuCores": 8
+      "cpuCores": 8,
+      "screenSize": 6.7
     },
     {
       "id": 5,
@@ -70,7 +75,8 @@
       "testimonials": 12,
       "memory": 128,
       "ramMemory": 6,
-      "cpuCores": 8
+      "cpuCores": 8,
+      "screenSize": 6.7
     },
     {
       "id": 6,
@@ -82,7 +88,8 @@
       "testimonials": 12,
       "memory": 64,
       "ramMemory": 3,
-      "cpuCores": 4
+      "cpuCores": 4,
+      "screenSize": 6.5
     },
     {
       "id": 7,
@@ -94,7 +101,8 @@
       "testimonials": 15,
       "memory": 64,
       "ramMemory": 3,
-      "cpuCores": 4
+      "cpuCores": 4,
+      "screenSize": 6.5
     },
     {
       "id": 8,
@@ -106,7 +114,8 @@
       "testimonials": 15,
       "memory": 128,
       "ramMemory": 3,
-      "cpuCores": 4
+      "cpuCores": 4,
+      "screenSize": 6.5
     },
     {
       "id": 9,
@@ -118,7 +127,8 @@
       "testimonials": 15,
       "memory": 128,
       "ramMemory": 3,
-      "cpuCores": 4
+      "cpuCores": 4,
+      "screenSize": 6.5
     },
     {
       "id": 10,
@@ -130,7 +140,8 @@
       "testimonials": 15,
       "memory": 128,
       "ramMemory": 3,
-      "cpuCores": 4
+      "cpuCores": 4,
+      "screenSize": 6.5
     },
     {
       "id": 11,
@@ -142,7 +153,8 @@
       "testimonials": 15,
       "memory": 128,
       "ramMemory": 3,
-      "cpuCores": 4
+      "cpuCores": 4,
+      "screenSize": 6.5
     },
     {
       "id": 12,
@@ -154,7 +166,8 @@
       "testimonials": 15,
       "memory": 128,
       "ramMemory": 3,
-      "cpuCores": 4
+      "cpuCores": 4,
+      "screenSize": 6.5
     }
   ]
 }
