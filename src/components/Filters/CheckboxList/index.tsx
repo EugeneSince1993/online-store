@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import styles from './CheckboxList.module.scss';
 
-interface Props {
+interface IProps {
   itemType: string;
   itemObj: any;
   handleChange: (
@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const CheckboxList = memo((
-  { itemType, itemObj, handleChange, paramArr }: Props
+  { itemType, itemObj, handleChange, paramArr }: IProps
 ) => {
 
   const itemArr = Object.keys(itemObj).map((key) => [key, itemObj[key]]);

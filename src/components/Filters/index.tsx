@@ -15,6 +15,7 @@ type FilterProps = {
   memoryArr: any[];
   ramMemoryArr: any[];
   cpuCoresArr: any[];
+  colorsArr: any[];
 };
 
 export const Filters: FC<FilterProps> = (
@@ -22,7 +23,8 @@ export const Filters: FC<FilterProps> = (
     brandsArr, 
     memoryArr,
     ramMemoryArr,
-    cpuCoresArr}) => {
+    cpuCoresArr,
+    colorsArr}) => {
 
   return (
     <div className={styles.filtersContainer}>
@@ -48,7 +50,12 @@ export const Filters: FC<FilterProps> = (
       </div>
       <div className={styles.filterColor}>
         <Collapse filterName="Цвет" elementType="h5">
-          <FilterColor />
+          <FilterColor 
+            handleChange={handleChange}
+            itemType="color"
+            itemObj={colorsArr[1]}
+            paramArr={colorsArr}
+          />
         </Collapse>
       </div>
       <div className={styles.filterScreenSize}>

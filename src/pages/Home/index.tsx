@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useMemo, useState } from "react";
+import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
 import { Filters, Sorting, Pagination } from "../../components";
 import { selectFilter } from "../../redux/filter/selectors";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
@@ -7,7 +7,7 @@ import styles from "./Home.module.scss";
 import spinner from '../../assets/img/Spinner-1s-200px.gif';
 import { ProductItem } from "../../components/ProductItem";
 import { selectProduct } from "../../redux/product/selectors";
-import { setBrands, setCpuCores, setMemory, setRamMemory } from "../../redux/filter/filterSlice";
+import { setBrands, setColors, setCpuCores, setMemory, setRamMemory } from "../../redux/filter/filterSlice";
 import { IProduct } from "../../types/IProduct";
 
 let pageSize = 8;
@@ -25,8 +25,8 @@ export const Home: FC = () => {
   
   const { products, isLoading } = useAppSelector(selectProduct);
   const { sort, types } = useAppSelector(selectFilter);
-  const { brands, memory, ramMemory, cpuCores, 
-    priceRange, screenSizeRange, batteryCapacityRange } = types;
+  const { brands, memory, ramMemory, cpuCores, colors, 
+    priceRange, screenSizeRange, batteryCapacityRange, } = types;
 
   let finalProducts: IProduct[] = products;
   const showFinalProducts = (value: any[]) => {
@@ -65,7 +65,7 @@ export const Home: FC = () => {
 
   const setFilteredItems = (checkedItemList: any[], item: string) => {
     return products.filter(({ [item]: itemName }: any) => {
-      if (itemName === "brand") {
+      if (itemName === "brand" || itemName === "color") {
         return checkedItemList.includes(itemName);
       } else {
         return checkedItemList.includes(itemName.toString());
@@ -85,6 +85,9 @@ export const Home: FC = () => {
   const checkedCpuCores: any[] = setCheckedItems(cpuCores);
   const filteredCpuCores: IProduct[] = setFilteredItems(checkedCpuCores, "cpuCores");
 
+  const checkedColors: any[] = setCheckedItems(colors);
+  const filteredColors: IProduct[] = setFilteredItems(checkedColors, "color");
+
   const setFilteredRange = (rangeType: rangeObj, item: string) => {
     return products.filter(({[item]: itemName}: any) => {
       return itemName >= rangeType.min && itemName <= rangeType.max;
@@ -101,24 +104,31 @@ export const Home: FC = () => {
   const priceExists = filteredPrice.length ? true : false;
   const screenSizeExists = filteredScreenSize.length ? true : false;
   const batteryCapacityExists = filteredbatteryCapacity.length ? true : false;
+  const colorsExist = filteredColors.length ? true : false;
   
   const brandsChecked = checkedBrands.length ? true : false;
   const memoryChecked = checkedMemory.length ? true : false;
   const ramChecked = checkedRam.length ? true : false;
   const cpuCoresChecked = checkedCpuCores.length ? true : false;
+  const colorsChecked = checkedColors.length ? true : false;
   
   const brandsNotFiltered = filteredBrands.length === 0;
   const memoryNotFiltered = filteredMemory.length === 0;
   const ramNotFiltered = filteredRam.length === 0;
   const cpuCoresNotFiltered = filteredCpuCores.length === 0;
+  const colorsNotFiltered = filteredColors.length === 0;
   
   const brandsDontExist = (brandsChecked && brandsNotFiltered) ? true : false;
   const memoryDoesntExist = (memoryChecked && memoryNotFiltered) ? true : false;
   const ramDoesntExist = (ramChecked && ramNotFiltered) ? true : false;
   const cpuCoresDontExist = (cpuCoresChecked && cpuCoresNotFiltered) ? true : false;
+  const colorsDontExist = (colorsChecked && colorsNotFiltered) ? true : false;
 
   const filterBrands = ({ brand }: IProduct) => {
     return checkedBrands.includes(brand);
+  };
+  const filterColors = ({ color }: IProduct) => {
+    return checkedColors.includes(color);
   };
   const filterMemory = ({ memory }: IProduct) => {
     return checkedMemory.includes(memory.toString());
@@ -139,8 +149,8 @@ export const Home: FC = () => {
     return batteryCapacity >= batteryCapacityRange.min && batteryCapacity <= batteryCapacityRange.max;
   };
 
-  const existingItems: boolean[] = [brandsExist, memoryExists, ramExists, cpuCoresExist, priceExists, screenSizeExists, batteryCapacityExists];
-  const filterFunctions: filterFuncArr = [filterBrands, filterMemory, filterRam, filterCpuCores, filterPrice, filterScreenSize, filterBatteryCapacity];
+  const existingItems: boolean[] = [brandsExist, memoryExists, ramExists, cpuCoresExist, priceExists, screenSizeExists, batteryCapacityExists, colorsExist];
+  const filterFunctions: filterFuncArr = [filterBrands, filterMemory, filterRam, filterCpuCores, filterPrice, filterScreenSize, filterBatteryCapacity, filterColors];
 
   const filterProducts = (filterFuncArr: filterFuncArr) => {
     return filterFuncArr.reduce((totalArr: any[], filterFunc) => {
@@ -175,7 +185,7 @@ export const Home: FC = () => {
 
   setIndexes();
   
-  if (brandsDontExist || memoryDoesntExist || ramDoesntExist || cpuCoresDontExist) {
+  if (brandsDontExist || memoryDoesntExist || ramDoesntExist || cpuCoresDontExist || colorsDontExist) {
     showFinalProducts([]);
   }
 
@@ -196,6 +206,7 @@ export const Home: FC = () => {
           memoryArr={[setMemory, memory]}
           ramMemoryArr={[setRamMemory, ramMemory]}
           cpuCoresArr={[setCpuCores, cpuCores]}
+          colorsArr={[setColors, colors]}
         />
       </div>
       <div className={styles.productsColumn}>

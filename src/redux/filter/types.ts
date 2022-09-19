@@ -13,21 +13,18 @@ export type Sort = {
 }
 
 export interface ITypes {
-  brands: IBrands;
-  memory: INumberValue;
-  ramMemory: INumberValue;
-  cpuCores: INumberValue;
+  brands: IStringVal;
+  memory: IStringVal;
+  ramMemory: IStringVal;
+  cpuCores: IStringVal;
   priceRange: IRange;
   screenSizeRange: IRange;
   batteryCapacityRange: IRange;
+  colors: IStringVal;
 }
 
-export interface IBrands {
-  [brand: string]: boolean;
-}
-
-export interface INumberValue {
-  [numberValue: string]: boolean;
+export interface IStringVal {
+  [stringVal: string]: boolean;
 }
 
 export interface IRange {

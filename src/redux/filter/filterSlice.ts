@@ -2,9 +2,8 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import { 
   FilterSliceState, 
   Sort, 
-  SortPropertyEnum, 
-  IBrands, 
-  INumberValue } from './types';
+  SortPropertyEnum,  
+  IStringVal } from './types';
 
 const initialState: FilterSliceState = {
   types: {
@@ -13,6 +12,24 @@ const initialState: FilterSliceState = {
       "Samsung": false,
       "Xiaomi": false,
       "Honor": false,
+    },
+    priceRange: {
+      min: 0,
+      max: 95000,
+    },
+    colors: {
+      "white": false,
+      "black": false,
+      "gray": false,
+      "blue": false,
+      "red": false,
+      "pink": false,
+      "green": false,
+      "yellow": false
+    },
+    screenSizeRange: {
+      min: 4,
+      max: 7,
     },
     memory: {
       "8": false, 
@@ -38,14 +55,6 @@ const initialState: FilterSliceState = {
       "6": false, 
       "8": false, 
     },
-    priceRange: {
-      min: 0,
-      max: 95000,
-    },
-    screenSizeRange: {
-      min: 4,
-      max: 7,
-    },
     batteryCapacityRange: {
       min: 1500,
       max: 7000,
@@ -61,16 +70,16 @@ const filterSlice = createSlice({
   name: 'filters',
   initialState,
   reducers: {
-    setBrands(state, action: PayloadAction<IBrands>) {
+    setBrands(state, action: PayloadAction<IStringVal>) {
       state.types.brands = action.payload;
     },
-    setMemory(state, action: PayloadAction<INumberValue>) {
+    setMemory(state, action: PayloadAction<IStringVal>) {
       state.types.memory = action.payload;
     },
-    setRamMemory(state, action: PayloadAction<INumberValue>) {
+    setRamMemory(state, action: PayloadAction<IStringVal>) {
       state.types.ramMemory = action.payload;
     },
-    setCpuCores(state, action: PayloadAction<INumberValue>) {
+    setCpuCores(state, action: PayloadAction<IStringVal>) {
       state.types.cpuCores = action.payload;
     },
     setMinPrice(state, action: PayloadAction<number>) {
@@ -90,6 +99,9 @@ const filterSlice = createSlice({
     },
     setMaxBatteryCapacity(state, action: PayloadAction<number>) {
       state.types.batteryCapacityRange.max = action.payload;
+    },
+    setColors(state, action: PayloadAction<IStringVal>) {
+      state.types.colors = action.payload;
     },
     setSort(state, action: PayloadAction<Sort>) {
       state.sort = action.payload;
@@ -125,7 +137,8 @@ export const {
   setMinScreenSize,
   setMaxScreenSize,
   setMinBatteryCapacity,
-  setMaxBatteryCapacity
+  setMaxBatteryCapacity,
+  setColors
 } = filterSlice.actions;
 
 export default filterSlice.reducer;

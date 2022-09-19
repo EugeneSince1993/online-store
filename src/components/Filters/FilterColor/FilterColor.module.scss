@@ -1,4 +1,4 @@
-form {
+.filterColorList {
   display: flex;
   flex-wrap: wrap;
 
@@ -10,7 +10,6 @@ form {
     input[type="checkbox"] {
       -webkit-appearance: none;
       appearance: none;
-      background-color: #fff;
       width: 32px;
       height: 32px;
       border: 1px solid #efefef;
@@ -48,38 +47,6 @@ form {
         top: calc(50% - 19px);
         left: calc(50% - 19px);
         border: 2px solid #bcbcbc;
-      }
-
-      &.white {
-        background-color: #fff;
-      }
-
-      &.black {
-        background-color: #000;
-      }
-
-      &.silver {
-        background-color: #d3d3d3;
-      }
-
-      &.blue {
-        background-color: #4e64d3;
-      }
-
-      &.red {
-        background-color: #cc3126;
-      }
-
-      &.pink {
-        background-color: #cc5da3;
-      }
-
-      &.green {
-        background-color: #34b53d;
-      }
-
-      &.yellow {
-        background-color: #f9e31b;
       }
     }
   }

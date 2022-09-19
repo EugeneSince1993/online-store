@@ -11,4 +11,5 @@ export interface IProduct {
   cpuCores: number;
   screenSize: number;
   batteryCapacity: number;
+  color: string;
 }

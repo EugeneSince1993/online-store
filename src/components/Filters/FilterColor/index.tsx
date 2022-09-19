@@ -1,81 +1,51 @@
+import React, { memo } from 'react';
 import styles from './FilterColor.module.scss';
 
-export const FilterColor = () => {
+interface IProps {
+  itemType: string;
+  itemObj: any;
+  handleChange: (
+    e: React.ChangeEvent<HTMLInputElement>,
+    actionCreator: Function,
+    entity: any
+    ) => any;
+  paramArr: any[];
+}
+
+export const FilterColor = memo(({
+  itemType, itemObj, handleChange, paramArr
+}: IProps) => {
+  const itemArr = Object.keys(itemObj).map((key) => [key, itemObj[key]]);
+
+  let itemList = itemArr.map((unitArr: any, index: number) => {
+    let item = unitArr[0];
+    let itemValue = unitArr[1]; 
+
+    let itemNumber = index + 1;
+    let itemTypeNumber = itemType + itemNumber;
+
+    return (
+      <label 
+        key={index}
+        className={styles.formControl} 
+      >
+        <input 
+          type="checkbox" 
+          id={itemTypeNumber} 
+          name={item} 
+          value={item}
+          className={`fc-${item}`}
+          checked={itemValue}
+          onChange={(e) => handleChange(e, paramArr[0], paramArr[1])} 
+        />
+        <span className={styles.checkmark}></span>
+      </label>
+    );
+  });
 
   return (
-    <form>
-      <label className={styles.formControl}>
-        <input 
-          type="checkbox" 
-          id="color1" 
-          name="color1" 
-          value="белый" 
-          className={styles.white} 
-        />
-      </label>
-      <label className={styles.formControl}>
-        <input 
-          type="checkbox" 
-          id="color2" 
-          name="color2" 
-          value="черный" 
-          className={styles.black} 
-        />
-      </label>
-      <label className={styles.formControl}>
-        <input 
-          type="checkbox" 
-          id="color3" 
-          name="color3" 
-          value="серебристый" 
-          className={styles.silver} 
-        />
-      </label>
-      <label className={styles.formControl}>
-        <input 
-          type="checkbox" 
-          id="color4" 
-          name="color4" 
-          value="синий" 
-          className={styles.blue} 
-        />
-      </label>
-      <label className={styles.formControl}>
-        <input 
-          type="checkbox" 
-          id="color5" 
-          name="color5" 
-          value="красный" 
-          className={styles.red} 
-        />
-      </label>
-      <label className={styles.formControl}>
-        <input 
-          type="checkbox" 
-          id="color6" 
-          name="color6" 
-          value="розовый" 
-          className={styles.pink} 
-        />
-      </label>
-      <label className={styles.formControl}>
-        <input 
-          type="checkbox" 
-          id="color7" 
-          name="color7" 
-          value="зеленый" 
-          className={styles.green} 
-        />
-      </label>
-      <label className={styles.formControl}>
-        <input 
-          type="checkbox" 
-          id="color8" 
-          name="color8" 
-          value="желтый" 
-          className={styles.yellow} 
-        />
-      </label>
-    </form>
+    <div className={styles.filterColorList}>
+      {itemList}
+    </div>
   );
-};
+});

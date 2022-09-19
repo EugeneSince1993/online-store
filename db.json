@@ -12,7 +12,8 @@
       "ramMemory": 6,
       "cpuCores": 6,
       "screenSize": 5.5,
-      "batteryCapacity": 3000
+      "batteryCapacity": 3000,
+      "color": "red"
     },
     {
       "id": 1,
@@ -26,13 +27,14 @@
       "ramMemory": 4,
       "cpuCores": 4,
       "screenSize": 6.5,
-      "batteryCapacity": 4500
+      "batteryCapacity": 4500,
+      "color": "white"
     },
     {
       "id": 2,
       "imageUrl": "/images/redmi-9.jpg",
       "brand": "Xiaomi",
-      "name": "Xiaomi Redmi 9 64 Гб, белый",
+      "name": "Xiaomi Redmi 9 64 Гб, серый",
       "price": 45000,
       "rating": 4.5,
       "testimonials": 9,
@@ -40,7 +42,8 @@
       "ramMemory": 4,
       "cpuCores": 4,
       "screenSize": 6.7,
-      "batteryCapacity": 4500
+      "batteryCapacity": 4500,
+      "color": "gray"
     },
     {
       "id": 3,
@@ -54,13 +57,14 @@
       "ramMemory": 8,
       "cpuCores": 8,
       "screenSize": 6.5,
-      "batteryCapacity": 5500
+      "batteryCapacity": 5500,
+      "color": "black"
     },
     {
       "id": 4,
       "imageUrl": "/images/iphone-13.jpg",
       "brand": "Apple",
-      "name": "Apple iPhone 13 Pro 64 Гб, белый",
+      "name": "Apple iPhone 13 Pro 64 Гб, синий",
       "price": 80000,
       "rating": 4.6,
       "testimonials": 11,
@@ -68,13 +72,14 @@
       "ramMemory": 6,
       "cpuCores": 8,
       "screenSize": 6.7,
-      "batteryCapacity": 4000
+      "batteryCapacity": 4000,
+      "color": "blue"
     },
     {
       "id": 5,
       "imageUrl": "/images/iphone-13.jpg",
       "brand": "Apple",
-      "name": "Apple iPhone 13 128 Гб, красный",
+      "name": "Apple iPhone 13 128 Гб, розовый",
       "price": 90000,
       "rating": 4.7,
       "testimonials": 12,
@@ -82,7 +87,8 @@
       "ramMemory": 6,
       "cpuCores": 8,
       "screenSize": 6.7,
-      "batteryCapacity": 4000
+      "batteryCapacity": 4000,
+      "color": "pink"
     },
     {
       "id": 6,
@@ -96,7 +102,8 @@
       "ramMemory": 3,
       "cpuCores": 4,
       "screenSize": 6.5,
-      "batteryCapacity": 2500
+      "batteryCapacity": 2500,
+      "color": "gray"
     },
     {
       "id": 7,
@@ -110,13 +117,14 @@
       "ramMemory": 3,
       "cpuCores": 4,
       "screenSize": 6.5,
-      "batteryCapacity": 2500
+      "batteryCapacity": 2500,
+      "color": "black"
     },
     {
       "id": 8,
       "imageUrl": "/images/iphone-x.jpg",
       "brand": "Apple",
-      "name": "Apple iPhone X 128 Гб, черный",
+      "name": "Apple iPhone X 128 Гб, зеленый",
       "price": 30000,
       "rating": 4.2,
       "testimonials": 15,
@@ -124,13 +132,14 @@
       "ramMemory": 3,
       "cpuCores": 4,
       "screenSize": 6.5,
-      "batteryCapacity": 2500
+      "batteryCapacity": 2500,
+      "color": "green"
     },
     {
       "id": 9,
       "imageUrl": "/images/iphone-x.jpg",
       "brand": "Apple",
-      "name": "Apple iPhone X 128 Гб, черный",
+      "name": "Apple iPhone X 128 Гб, золотой",
       "price": 35000,
       "rating": 4.2,
       "testimonials": 15,
@@ -138,7 +147,8 @@
       "ramMemory": 3,
       "cpuCores": 4,
       "screenSize": 6.5,
-      "batteryCapacity": 2500
+      "batteryCapacity": 2500,
+      "color": "yellow"
     },
     {
       "id": 10,
@@ -152,13 +162,14 @@
       "ramMemory": 3,
       "cpuCores": 4,
       "screenSize": 6.5,
-      "batteryCapacity": 2500
+      "batteryCapacity": 2500,
+      "color": "black"
     },
     {
       "id": 11,
       "imageUrl": "/images/iphone-x.jpg",
       "brand": "Apple",
-      "name": "Apple iPhone X 128 Гб, черный",
+      "name": "Apple iPhone X 128 Гб, белый",
       "price": 35000,
       "rating": 4.2,
       "testimonials": 15,
@@ -166,7 +177,8 @@
       "ramMemory": 3,
       "cpuCores": 4,
       "screenSize": 6.5,
-      "batteryCapacity": 2500
+      "batteryCapacity": 2500,
+      "color": "white"
     },
     {
       "id": 12,
@@ -180,7 +192,8 @@
       "ramMemory": 3,
       "cpuCores": 4,
       "screenSize": 6.5,
-      "batteryCapacity": 2500
+      "batteryCapacity": 2500,
+      "color": "black"
     }
   ]
 }
