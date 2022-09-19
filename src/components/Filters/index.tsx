@@ -33,7 +33,6 @@ export const Filters: FC<FilterProps> = (
           <CheckboxList 
             handleChange={handleChange}
             itemType="brand"
-            itemObj={brandsArr[1]}
             paramArr={brandsArr}
           />
         </Collapse>
@@ -53,7 +52,6 @@ export const Filters: FC<FilterProps> = (
           <FilterColor 
             handleChange={handleChange}
             itemType="color"
-            itemObj={colorsArr[1]}
             paramArr={colorsArr}
           />
         </Collapse>
@@ -73,7 +71,6 @@ export const Filters: FC<FilterProps> = (
           <CheckboxList 
             handleChange={handleChange}
             itemType="memory"
-            itemObj={memoryArr[1]}
             paramArr={memoryArr}
           />
         </Collapse>
@@ -83,7 +80,6 @@ export const Filters: FC<FilterProps> = (
           <CheckboxList 
             handleChange={handleChange}
             itemType="ramMemory"
-            itemObj={ramMemoryArr[1]}
             paramArr={ramMemoryArr}
           />
         </Collapse>
@@ -93,7 +89,6 @@ export const Filters: FC<FilterProps> = (
           <CheckboxList 
             handleChange={handleChange}
             itemType="cpuCores"
-            itemObj={cpuCoresArr[1]}
             paramArr={cpuCoresArr}
           />
         </Collapse>

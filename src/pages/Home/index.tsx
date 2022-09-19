@@ -195,6 +195,12 @@ export const Home: FC = () => {
     return finalProducts.slice(firstPageIndex, lastPageIndex);
   }, [currentPage, finalProducts]);
 
+  const brandsArr = [setBrands, brands];
+  const memoryArr = [setMemory, memory];
+  const ramMemoryArr = [setRamMemory, ramMemory];
+  const cpuCoresArr = [setCpuCores, cpuCores];
+  const colorsArr = [setColors, colors];
+
   // debugger; 
 
   return (
@@ -202,11 +208,11 @@ export const Home: FC = () => {
       <div className={styles.filtersColumn}>
         <Filters 
           handleChange={handleChange}
-          brandsArr={[setBrands, brands]}
-          memoryArr={[setMemory, memory]}
-          ramMemoryArr={[setRamMemory, ramMemory]}
-          cpuCoresArr={[setCpuCores, cpuCores]}
-          colorsArr={[setColors, colors]}
+          brandsArr={brandsArr}
+          memoryArr={memoryArr}
+          ramMemoryArr={ramMemoryArr}
+          cpuCoresArr={cpuCoresArr}
+          colorsArr={colorsArr}
         />
       </div>
       <div className={styles.productsColumn}>

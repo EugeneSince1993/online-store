@@ -3,7 +3,6 @@ import styles from './FilterColor.module.scss';
 
 interface IProps {
   itemType: string;
-  itemObj: any;
   handleChange: (
     e: React.ChangeEvent<HTMLInputElement>,
     actionCreator: Function,
@@ -13,8 +12,11 @@ interface IProps {
 }
 
 export const FilterColor = memo(({
-  itemType, itemObj, handleChange, paramArr
+  itemType, handleChange, paramArr
 }: IProps) => {
+  const actionCreator = paramArr[0];
+  const itemObj = paramArr[1];
+
   const itemArr = Object.keys(itemObj).map((key) => [key, itemObj[key]]);
 
   let itemList = itemArr.map((unitArr: any, index: number) => {
@@ -36,7 +38,7 @@ export const FilterColor = memo(({
           value={item}
           className={`fc-${item}`}
           checked={itemValue}
-          onChange={(e) => handleChange(e, paramArr[0], paramArr[1])} 
+          onChange={(e) => handleChange(e, actionCreator, itemObj)} 
         />
         <span className={styles.checkmark}></span>
       </label>
