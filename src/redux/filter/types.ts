@@ -35,4 +35,5 @@ export interface IRange {
 export interface FilterSliceState {
   sort: Sort;
   types: ITypes;
+  searchValue: string;
 }

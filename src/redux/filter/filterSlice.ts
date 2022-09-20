@@ -64,6 +64,7 @@ const initialState: FilterSliceState = {
     name: 'по популярности (по убыванию)',
     sortProperty: SortPropertyEnum.RATING_DESC,
   },
+  searchValue: '',
 };
 
 const filterSlice = createSlice({
@@ -106,6 +107,9 @@ const filterSlice = createSlice({
     setSort(state, action: PayloadAction<Sort>) {
       state.sort = action.payload;
     },
+    setSearchValue(state, action: PayloadAction<string>) {
+      state.searchValue = action.payload;
+    },
     setFilters(state, action: PayloadAction<any>) {
       if (Object.keys(action.payload).length) {
         state.sort = action.payload.sort;
@@ -138,7 +142,8 @@ export const {
   setMaxScreenSize,
   setMinBatteryCapacity,
   setMaxBatteryCapacity,
-  setColors
+  setColors,
+  setSearchValue
 } = filterSlice.actions;
 
 export default filterSlice.reducer;

@@ -10,23 +10,23 @@ import { selectProduct } from "../../redux/product/selectors";
 import { setBrands, setColors, setCpuCores, setMemory, setRamMemory } from "../../redux/filter/filterSlice";
 import { IProduct } from "../../types/IProduct";
 
+type filterFunc = (object: IProduct) => boolean;
+type filterFuncArr = filterFunc[];
+type sourceArr = boolean[] | filterFuncArr;
+interface rangeObj {
+  min: number;
+  max: number;
+};
+
 let pageSize = 8;
 
 export const Home: FC = () => {
-  type filterFunc = (object: IProduct) => boolean;
-  type filterFuncArr = filterFunc[];
-  type sourceArr = boolean[] | filterFuncArr;
-  interface rangeObj {
-    min: number;
-    max: number;
-  };
-
   const dispatch = useAppDispatch();
   
   const { products, isLoading } = useAppSelector(selectProduct);
-  const { sort, types } = useAppSelector(selectFilter);
+  const { sort, types, searchValue } = useAppSelector(selectFilter);
   const { brands, memory, ramMemory, cpuCores, colors, 
-    priceRange, screenSizeRange, batteryCapacityRange, } = types;
+    priceRange, screenSizeRange, batteryCapacityRange } = types;
 
   let finalProducts: IProduct[] = products;
   const showFinalProducts = (value: any[]) => {
@@ -50,9 +50,8 @@ export const Home: FC = () => {
   const getProducts = () => {
     const _sort = sort.sortProperty.replace('-', '');
     const _order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
-    const brand: any = null;
 
-    dispatch(fetchProducts({_sort, _order, brand}));
+    dispatch(fetchProducts({_sort, _order}));
   };
 
   useEffect(() => {
@@ -97,6 +96,10 @@ export const Home: FC = () => {
   const filteredScreenSize: IProduct[] = setFilteredRange(screenSizeRange, "screenSize");
   const filteredbatteryCapacity: IProduct[] = setFilteredRange(batteryCapacityRange, "batteryCapacity");
 
+  const filteredSearchItems = products.filter(({name}: IProduct) => {
+    return name.toLocaleLowerCase().includes(searchValue);
+  });
+
   const brandsExist = filteredBrands.length ? true : false;
   const memoryExists = filteredMemory.length ? true : false;
   const ramExists = filteredRam.length ? true : false;
@@ -105,6 +108,7 @@ export const Home: FC = () => {
   const screenSizeExists = filteredScreenSize.length ? true : false;
   const batteryCapacityExists = filteredbatteryCapacity.length ? true : false;
   const colorsExist = filteredColors.length ? true : false;
+  const searchItemsExist = filteredSearchItems.length ? true : false;
   
   const brandsChecked = checkedBrands.length ? true : false;
   const memoryChecked = checkedMemory.length ? true : false;
@@ -148,9 +152,12 @@ export const Home: FC = () => {
   const filterBatteryCapacity = ({ batteryCapacity }: IProduct) => {
     return batteryCapacity >= batteryCapacityRange.min && batteryCapacity <= batteryCapacityRange.max;
   };
+  const filterSearchItems = ({ name }: IProduct) => {
+    return name.toLocaleLowerCase().includes(searchValue);
+  };
 
-  const existingItems: boolean[] = [brandsExist, memoryExists, ramExists, cpuCoresExist, priceExists, screenSizeExists, batteryCapacityExists, colorsExist];
-  const filterFunctions: filterFuncArr = [filterBrands, filterMemory, filterRam, filterCpuCores, filterPrice, filterScreenSize, filterBatteryCapacity, filterColors];
+  const existingItems: boolean[] = [brandsExist, memoryExists, ramExists, cpuCoresExist, priceExists, screenSizeExists, batteryCapacityExists, colorsExist, searchItemsExist];
+  const filterFunctions: filterFuncArr = [filterBrands, filterMemory, filterRam, filterCpuCores, filterPrice, filterScreenSize, filterBatteryCapacity, filterColors, filterSearchItems];
 
   const filterProducts = (filterFuncArr: filterFuncArr) => {
     return filterFuncArr.reduce((totalArr: any[], filterFunc) => {

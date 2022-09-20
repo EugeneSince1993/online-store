@@ -268,8 +268,10 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 	}, [props.minValue, props.maxValue, minValue, min, maxValue, max]);
 
 	// custom
+	// let mouseUpCheck = 1;
 
 	const handleMinChange = () => {
+		// mouseUpCheck++;
 		if (props.inputType === "price") {
 			dispatch(setMinPrice(minValue));
 		}
@@ -281,6 +283,7 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 		}
 	};
 	const handleMaxChange = () => {
+		// mouseUpCheck++;
 		if (props.inputType === "price") {
 			dispatch(setMaxPrice(maxValue));
 		}
@@ -293,6 +296,7 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 	};
 
 	useEffect(() => {
+		// console.log(mouseUpCheck);
 		if (minValue === min) {
 			if (props.inputType === "price") {
 				dispatch(setMinPrice(minValue));

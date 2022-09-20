@@ -6,12 +6,11 @@ import { SearchProductParams } from './types';
 export const fetchProducts = createAsyncThunk<IProduct[], SearchProductParams>(
   'product/fetchProducts',
   async (params) => {
-    const { _sort, _order, brand } = params;
+    const { _sort, _order } = params;
     const { data } = await axios.get<IProduct[]>('/products', {
       params: {
         _sort,
         _order,
-        brand,
       },
     });
     return data;
