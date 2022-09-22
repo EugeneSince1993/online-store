@@ -59,17 +59,6 @@ export const MultiRangeSliderInputs = ({ min, max, step, inputType, setFirstPage
 		dispatchMax();
 	}, 400);
 
-	const handleMinOnEnter = (e) => {
-		if (e.key === "Enter") {
-			dispatchMin();
-		}
-	};
-	const handleMaxOnEnter = (e) => {
-		if (e.key === "Enter") {
-			dispatchMax();
-		}
-	};
-
 	useEffect(() => {
 		dispatchExtremes();
 		setFirstPage();
@@ -101,8 +90,6 @@ export const MultiRangeSliderInputs = ({ min, max, step, inputType, setFirstPage
 							type="number" 
 							value={minValue} 
 							onChange={handleMinChange} 
-							onBlur={dispatchMin}
-							onKeyDown={handleMinOnEnter}
 						/>
 					</div>
 				</div>
@@ -115,8 +102,6 @@ export const MultiRangeSliderInputs = ({ min, max, step, inputType, setFirstPage
 							type="number" 
 							value={maxValue} 
 							onChange={handleMaxChange}
-							onBlur={dispatchMax}
-							onKeyDown={handleMaxOnEnter}
 						/>
 					</div>
 				</div>
