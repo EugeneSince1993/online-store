@@ -65,6 +65,7 @@ const initialState: FilterSliceState = {
     sortProperty: SortPropertyEnum.RATING_DESC,
   },
   searchValue: '',
+  currentPage: 1,
 };
 
 const filterSlice = createSlice({
@@ -104,6 +105,9 @@ const filterSlice = createSlice({
     setColors(state, action: PayloadAction<IStringVal>) {
       state.types.colors = action.payload;
     },
+    setCurrentPage(state, action: PayloadAction<number>) {
+      state.currentPage = action.payload;
+    },
     setSort(state, action: PayloadAction<Sort>) {
       state.sort = action.payload;
     },
@@ -112,9 +116,11 @@ const filterSlice = createSlice({
     },
     setFilters(state, action: PayloadAction<any>) {
       if (Object.keys(action.payload).length) {
+        state.currentPage = Number(action.payload.currentPage);
         state.sort = action.payload.sort;
         state.types.brands = action.payload;
       } else {
+        state.currentPage = 1;
         state.sort = {
           name: 'популярности',
           sortProperty: SortPropertyEnum.RATING_DESC,
@@ -143,7 +149,8 @@ export const {
   setMinBatteryCapacity,
   setMaxBatteryCapacity,
   setColors,
-  setSearchValue
+  setSearchValue,
+  setCurrentPage
 } = filterSlice.actions;
 
 export default filterSlice.reducer;

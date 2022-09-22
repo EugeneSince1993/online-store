@@ -11,6 +11,7 @@ type FilterProps = {
     actionCreator: Function,
     entityName: any
     ) => any;
+  setFirstPage: () => any;
   brandsArr: any[];
   memoryArr: any[];
   ramMemoryArr: any[];
@@ -20,6 +21,7 @@ type FilterProps = {
 
 export const Filters: FC<FilterProps> = (
   {handleChange, 
+    setFirstPage,
     brandsArr, 
     memoryArr,
     ramMemoryArr,
@@ -44,6 +46,7 @@ export const Filters: FC<FilterProps> = (
             min={0} 
             max={95000} 
             step={1} 
+            setFirstPage={setFirstPage}
           />
         </Collapse>
       </div>
@@ -63,6 +66,7 @@ export const Filters: FC<FilterProps> = (
             min={4} 
             max={7} 
             step={0.1} 
+            setFirstPage={setFirstPage}
           />
         </Collapse>
       </div>
@@ -100,6 +104,7 @@ export const Filters: FC<FilterProps> = (
             min={1500} 
             max={7000}
             step={100}
+            setFirstPage={setFirstPage}
           />
         </Collapse>
       </div>

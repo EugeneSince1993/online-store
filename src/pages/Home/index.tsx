@@ -7,7 +7,7 @@ import styles from "./Home.module.scss";
 import spinner from '../../assets/img/Spinner-1s-200px.gif';
 import { ProductItem } from "../../components/ProductItem";
 import { selectProduct } from "../../redux/product/selectors";
-import { setBrands, setColors, setCpuCores, setMemory, setRamMemory } from "../../redux/filter/filterSlice";
+import { setBrands, setColors, setCpuCores, setCurrentPage, setMemory, setRamMemory } from "../../redux/filter/filterSlice";
 import { IProduct } from "../../types/IProduct";
 
 type filterFunc = (object: IProduct) => boolean;
@@ -24,7 +24,7 @@ export const Home: FC = () => {
   const dispatch = useAppDispatch();
   
   const { products, isLoading } = useAppSelector(selectProduct);
-  const { sort, types, searchValue } = useAppSelector(selectFilter);
+  const { sort, types, searchValue, currentPage } = useAppSelector(selectFilter);
   const { brands, memory, ramMemory, cpuCores, colors, 
     priceRange, screenSizeRange, batteryCapacityRange } = types;
 
@@ -33,7 +33,9 @@ export const Home: FC = () => {
     finalProducts = value;
   };
 
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const setFirstPage = () => {
+    dispatch(setCurrentPage(1));
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>, 
@@ -44,7 +46,7 @@ export const Home: FC = () => {
         ...entityName,
         [name]: !entityName[name]
       }));
-      setCurrentPage(1);
+      setFirstPage();
   };
 
   const getProducts = () => {
@@ -52,6 +54,7 @@ export const Home: FC = () => {
     const _order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
 
     dispatch(fetchProducts({_sort, _order}));
+    setFirstPage();
   };
 
   useEffect(() => {
@@ -166,7 +169,7 @@ export const Home: FC = () => {
   };
   let setFilteredFinalProducts = (filterFuncArr: filterFuncArr) => {
     showFinalProducts(filterProducts(filterFuncArr));
-  };  
+  };
   let filterArrItemsByIdx = (srcArr: any[], indexes: number[]) => {
     return srcArr.filter((el, i) => indexes.some(j => i === j));
   };
@@ -209,11 +212,14 @@ export const Home: FC = () => {
   const cpuCoresArr = [setCpuCores, cpuCores];
   const colorsArr = [setColors, colors];
 
+  // debugger;
+
   return (
     <div className={styles.homeContainer}>
       <div className={styles.filtersColumn}>
         <Filters 
           handleChange={handleChange}
+          setFirstPage={setFirstPage}
           brandsArr={brandsArr}
           memoryArr={memoryArr}
           ramMemoryArr={ramMemoryArr}
@@ -253,7 +259,7 @@ export const Home: FC = () => {
                     currentPage={currentPage}
                     totalCount={finalProducts.length}
                     pageSize={pageSize}
-                    onPageChange={(page: any) => setCurrentPage(page)}
+                    onPageChange={(page: number) => dispatch(setCurrentPage(page))}
                   />
                 )}
               </div>

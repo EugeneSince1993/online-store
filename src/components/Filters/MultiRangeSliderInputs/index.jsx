@@ -12,7 +12,7 @@ import {
 	setMinScreenSize } from '../../../redux/filter/filterSlice';
 import { debounce } from 'lodash';
 
-export const MultiRangeSliderInputs = ({ min, max, step, inputType }) => {
+export const MultiRangeSliderInputs = ({ min, max, step, inputType, setFirstPage }) => {
 	const dispatch = useAppDispatch();
 
   const [minValue, set_minValue] = useState(min);
@@ -72,6 +72,7 @@ export const MultiRangeSliderInputs = ({ min, max, step, inputType }) => {
 
 	useEffect(() => {
 		dispatchExtremes();
+		setFirstPage();
 	}, [minValue, maxValue]);
 
   return (

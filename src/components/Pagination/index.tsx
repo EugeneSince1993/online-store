@@ -32,7 +32,6 @@ export const Pagination = ({
 
   const onNext = () => {
     onPageChange(currentPage + 1);
-    console.log(lastPage);
   };
 
   const onPrevious = () => {
@@ -40,6 +39,8 @@ export const Pagination = ({
   };
 
   let lastPage = paginationRange[paginationRange.length - 1];
+
+  // debugger;
 
   return (
     <ul
