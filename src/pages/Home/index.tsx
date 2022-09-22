@@ -192,7 +192,8 @@ export const Home: FC = () => {
 
   setIndexes();
   
-  if (brandsDontExist || memoryDoesntExist || ramDoesntExist || cpuCoresDontExist || colorsDontExist) {
+  if (brandsDontExist || memoryDoesntExist || ramDoesntExist || cpuCoresDontExist || colorsDontExist || 
+    !priceExists || !screenSizeExists || !batteryCapacityExists || !searchItemsExist ) {
     showFinalProducts([]);
   }
 
@@ -207,8 +208,6 @@ export const Home: FC = () => {
   const ramMemoryArr = [setRamMemory, ramMemory];
   const cpuCoresArr = [setCpuCores, cpuCores];
   const colorsArr = [setColors, colors];
-
-  // debugger; 
 
   return (
     <div className={styles.homeContainer}>

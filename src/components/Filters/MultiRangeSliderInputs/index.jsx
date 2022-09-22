@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './MultiRangeSliderInputs.module.scss';
 import { MultiRangeSlider } from '../MultiRangeSlider';
 import classNames from 'classnames';
@@ -10,16 +10,18 @@ import {
 	setMinBatteryCapacity, 
 	setMinPrice, 
 	setMinScreenSize } from '../../../redux/filter/filterSlice';
+import { debounce } from 'lodash';
 
 export const MultiRangeSliderInputs = ({ min, max, step, inputType }) => {
 	const dispatch = useAppDispatch();
 
   const [minValue, set_minValue] = useState(min);
   const [maxValue, set_maxValue] = useState(max);
-  const handleInput = (e) => {
-    set_minValue(e.minValue);
-    set_maxValue(e.maxValue);
-  };
+
+	const handleInput = (e) => {
+		set_minValue(e.minValue);
+		set_maxValue(e.maxValue);
+	};
 
 	const handleMinChange = (e) => {
 		set_minValue(e.target.value);
@@ -28,7 +30,7 @@ export const MultiRangeSliderInputs = ({ min, max, step, inputType }) => {
 		set_maxValue(e.target.value);
 	};
 
-	const handleMinBlur = () => {
+	const dispatchMin = () => {
 		if (inputType === "price") {
 			dispatch(setMinPrice(minValue));
 		}
@@ -39,7 +41,8 @@ export const MultiRangeSliderInputs = ({ min, max, step, inputType }) => {
 			dispatch(setMinBatteryCapacity(minValue));
 		}
 	};
-	const handleMaxBlur = () => {
+
+	const dispatchMax = () => {
 		if (inputType === "price") {
 			dispatch(setMaxPrice(maxValue));
 		}
@@ -51,32 +54,25 @@ export const MultiRangeSliderInputs = ({ min, max, step, inputType }) => {
 		}
 	};
 
+	const dispatchExtremes = debounce(() => {
+		dispatchMin();
+		dispatchMax();
+	}, 400);
+
 	const handleMinOnEnter = (e) => {
 		if (e.key === "Enter") {
-			if (inputType === "price") {
-				dispatch(setMinPrice(minValue));
-			}
-			if (inputType === "screenSize") {
-				dispatch(setMinScreenSize(minValue));
-			}
-			if (inputType === "batteryCapacity") {
-				dispatch(setMinBatteryCapacity(minValue));
-			}
+			dispatchMin();
 		}
 	};
 	const handleMaxOnEnter = (e) => {
 		if (e.key === "Enter") {
-			if (inputType === "price") {
-				dispatch(setMaxPrice(maxValue));
-			}
-			if (inputType === "screenSize") {
-				dispatch(setMaxScreenSize(maxValue));
-			}
-			if (inputType === "batteryCapacity") {
-				dispatch(setMaxBatteryCapacity(maxValue));
-			}
+			dispatchMax();
 		}
 	};
+
+	useEffect(() => {
+		dispatchExtremes();
+	}, [minValue, maxValue]);
 
   return (
     <div className={styles.multiRangeSliderInputs}>
@@ -104,7 +100,7 @@ export const MultiRangeSliderInputs = ({ min, max, step, inputType }) => {
 							type="number" 
 							value={minValue} 
 							onChange={handleMinChange} 
-							onBlur={handleMinBlur}
+							onBlur={dispatchMin}
 							onKeyDown={handleMinOnEnter}
 						/>
 					</div>
@@ -118,7 +114,7 @@ export const MultiRangeSliderInputs = ({ min, max, step, inputType }) => {
 							type="number" 
 							value={maxValue} 
 							onChange={handleMaxChange}
-							onBlur={handleMaxBlur}
+							onBlur={dispatchMax}
 							onKeyDown={handleMaxOnEnter}
 						/>
 					</div>

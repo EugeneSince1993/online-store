@@ -267,60 +267,6 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 		set_barMax(((max - maxValue) / (max - min)) * 100);
 	}, [props.minValue, props.maxValue, minValue, min, maxValue, max]);
 
-	// custom
-	// let mouseUpCheck = 1;
-
-	const handleMinChange = () => {
-		// mouseUpCheck++;
-		if (props.inputType === "price") {
-			dispatch(setMinPrice(minValue));
-		}
-		if (props.inputType === "screenSize") {
-			dispatch(setMinScreenSize(minValue));
-		}
-		if (props.inputType === "batteryCapacity") {
-			dispatch(setMinBatteryCapacity(minValue));
-		}
-	};
-	const handleMaxChange = () => {
-		// mouseUpCheck++;
-		if (props.inputType === "price") {
-			dispatch(setMaxPrice(maxValue));
-		}
-		if (props.inputType === "screenSize") {
-			dispatch(setMaxScreenSize(maxValue));
-		}
-		if (props.inputType === "batteryCapacity") {
-			dispatch(setMaxBatteryCapacity(maxValue));
-		}
-	};
-
-	useEffect(() => {
-		// console.log(mouseUpCheck);
-		if (minValue === min) {
-			if (props.inputType === "price") {
-				dispatch(setMinPrice(minValue));
-			}
-			if (props.inputType === "screenSize") {
-				dispatch(setMinScreenSize(minValue));
-			}
-			if (props.inputType === "batteryCapacity") {
-				dispatch(setMinBatteryCapacity(minValue));
-			}
-		}
-		if (maxValue === max) {
-			if (props.inputType === "price") {
-				dispatch(setMaxPrice(maxValue));
-			}
-			if (props.inputType === "screenSize") {
-				dispatch(setMaxScreenSize(maxValue));
-			}
-			if (props.inputType === "batteryCapacity") {
-				dispatch(setMaxBatteryCapacity(maxValue));
-			}
-		}
-	}, [minValue, maxValue]);
-
 	return (
 		<div className={baseClassName} onWheel={onMouseWheel} ref={ref}>
 			<div className={styles.bar} ref={refThis}>
@@ -341,7 +287,6 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 					className={classNames(styles.thumb, styles.thumbLeft)} 
 					onMouseDown={onLeftThumbMousedown} 
 					onTouchStart={onLeftThumbMousedown}
-					onMouseUp={handleMinChange}
 				>
 					<div className={styles.minValue}>{minValue}</div>
 				</div>
@@ -362,7 +307,6 @@ export const MultiRangeSlider = React.forwardRef((props, ref) => {
 					className={classNames(styles.thumb, styles.thumbRight)} 
 					onMouseDown={onRightThumbMousedown} 
 					onTouchStart={onRightThumbMousedown}
-					onMouseUp={handleMaxChange}
 				>
 					<div className={styles.maxValue}>{maxValue}</div>
 				</div>
