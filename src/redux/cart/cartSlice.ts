@@ -23,7 +23,7 @@ const cartSlice = createSlice({
 
       state.totalPrice = calcTotalPrice(state.items);
     },
-    minusItem(state, action: PayloadAction<string>) {
+    subtractItem(state, action: PayloadAction<string>) {
       const findItem = state.items.find((obj) => obj.id === action.payload);
 
       if (findItem) {
@@ -43,6 +43,6 @@ const cartSlice = createSlice({
   }
 });
 
-export const { addItem, removeItem, minusItem, clearItems } = cartSlice.actions;
+export const { addItem, removeItem, subtractItem, clearItems } = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -2,6 +2,9 @@ import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
 import NumberFormat from 'react-number-format';
 import styles from './ProductItem.module.scss';
+import { CartItem } from '../../redux/cart/types';
+import { useAppDispatch } from '../../redux/hooks';
+import { addItem } from '../../redux/cart/cartSlice';
 
 interface Props {
   phoneImage: string;
@@ -15,6 +18,18 @@ interface Props {
 export const ProductItem = ({ 
   phoneImage, rating, testimonials, productName, priceValue, productId 
 }: Props) => {
+  const dispatch = useAppDispatch();
+
+  const onClickAdd = () => {
+    const item: CartItem = {
+      id: productId.toString(),
+      name: productName,
+      price: priceValue,
+      imageUrl: phoneImage,
+      count: 0,
+    };
+    dispatch(addItem(item));
+  };
 
   return (
     <div className={styles.productItem}>
@@ -60,7 +75,10 @@ export const ProductItem = ({
               <div className={styles.currency}>₽</div>
             </NavLink>
             <div className={styles.addToCart}>
-              <button className="tooltip">
+              <button 
+                className="tooltip"
+                onClick={onClickAdd}
+              >
                 <span className={
                   classNames("material-symbols-outlined", styles.cartIcon)
                 }>

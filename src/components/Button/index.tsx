@@ -8,6 +8,7 @@ interface Props {
   variant: string;
   link?: string;
   justifyContentCenter?: boolean;
+  onClickFunc?: () => any;
   children: ReactNode;
 }
 
@@ -16,6 +17,7 @@ export const Button = ({
   variant,
   link = "/",
   justifyContentCenter = false,
+  onClickFunc,
   children,
 }: Props) => {
   return (
@@ -35,6 +37,7 @@ export const Button = ({
               [styles.solid]: variant === "solid",
               [styles.db]: true,
             })}
+            onClick={onClickFunc}
           >
             {children}
           </NavLink>
@@ -49,6 +52,7 @@ export const Button = ({
             [styles.solid]: variant === "solid",
             [styles.dib]: true,
           })}
+          onClick={onClickFunc}
         >
           {children}
         </NavLink>

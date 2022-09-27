@@ -8,6 +8,10 @@
   color: $black;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 h1 {
   font-size: 32px;
   font-weight: 500;

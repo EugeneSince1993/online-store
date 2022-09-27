@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import { Header, Footer } from "./components";
-import { Home, Product, Cart, CartEmpty } from "./pages";
+import { Header, Footer, CartEmpty } from "./components";
+import { Home, Product, Cart } from "./pages";
 
 function App() {
   return (
