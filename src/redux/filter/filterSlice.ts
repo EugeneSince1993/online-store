@@ -40,7 +40,7 @@ const initialState: FilterSliceState = {
       "256": false, 
       "512": false,
     },
-    ramMemory: {
+    ram: {
       "1": false, 
       "2": false, 
       "3": false, 
@@ -78,8 +78,8 @@ const filterSlice = createSlice({
     setMemory(state, action: PayloadAction<IStringVal>) {
       state.types.memory = action.payload;
     },
-    setRamMemory(state, action: PayloadAction<IStringVal>) {
-      state.types.ramMemory = action.payload;
+    setRam(state, action: PayloadAction<IStringVal>) {
+      state.types.ram = action.payload;
     },
     setCpuCores(state, action: PayloadAction<IStringVal>) {
       state.types.cpuCores = action.payload;
@@ -140,7 +140,7 @@ export const {
   setFilters, 
   setBrands, 
   setMemory, 
-  setRamMemory,
+  setRam,
   setCpuCores,
   setMinPrice,
   setMaxPrice,

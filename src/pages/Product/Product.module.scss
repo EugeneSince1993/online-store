@@ -160,5 +160,14 @@
   .productDescription {
     line-height: 20px;
     width: 1000px;
+
+    div {
+      margin-bottom: 10px;
+    }
+
+    h6 {
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
   }
 }

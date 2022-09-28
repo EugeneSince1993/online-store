@@ -13,10 +13,17 @@ interface Props {
   productName: string;
   priceValue: number;
   productId: number;
+  productCode: number;
 }
 
 export const ProductItem = ({ 
-  phoneImage, rating, testimonials, productName, priceValue, productId 
+  phoneImage, 
+  rating, 
+  testimonials, 
+  productName, 
+  priceValue, 
+  productId, 
+  productCode
 }: Props) => {
   const dispatch = useAppDispatch();
 
@@ -26,6 +33,7 @@ export const ProductItem = ({
       name: productName,
       price: priceValue,
       imageUrl: phoneImage,
+      productCode: productCode,
       count: 0,
     };
     dispatch(addItem(item));
@@ -34,7 +42,7 @@ export const ProductItem = ({
   return (
     <div className={styles.productItem}>
       <div className={styles.productItemInner}>
-        <NavLink to={`/devices/${productId}`} className={styles.image}>
+        <NavLink to={`/products/${productId}`} className={styles.image}>
           <img src={phoneImage} />
         </NavLink>
         <div className={styles.icons}>
@@ -59,12 +67,12 @@ export const ProductItem = ({
             </div>
           </div>
         </div>
-        <NavLink to={`/devices/${productId}`} className={styles.productLink}>
+        <NavLink to={`/products/${productId}`} className={styles.productLink}>
           {productName}
         </NavLink>
         <div className={styles.buyContainer}>
           <div className={styles.buy}>
-            <NavLink to={`/devices/${productId}`} className={styles.price}>
+            <NavLink to={`/products/${productId}`} className={styles.price}>
               <div className={styles.priceValue}>
                 <NumberFormat 
                   value={priceValue} 

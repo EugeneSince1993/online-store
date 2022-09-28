@@ -14,19 +14,20 @@ type FilterProps = {
   setFirstPage: () => any;
   brandsArr: any[];
   memoryArr: any[];
-  ramMemoryArr: any[];
+  ramArr: any[];
   cpuCoresArr: any[];
   colorsArr: any[];
 };
 
-export const Filters: FC<FilterProps> = (
-  {handleChange, 
-    setFirstPage,
-    brandsArr, 
-    memoryArr,
-    ramMemoryArr,
-    cpuCoresArr,
-    colorsArr}) => {
+export const Filters: FC<FilterProps> = ({
+  handleChange, 
+  setFirstPage,
+  brandsArr, 
+  memoryArr,
+  ramArr,
+  cpuCoresArr,
+  colorsArr
+}) => {
 
   return (
     <div className={styles.filtersContainer}>
@@ -79,12 +80,12 @@ export const Filters: FC<FilterProps> = (
           />
         </Collapse>
       </div>
-      <div className={styles.filterRamMemory}>
+      <div className={styles.filterRam}>
         <Collapse filterName="Объем оперативной памяти, Гб" elementType="h5">
           <CheckboxList 
             handleChange={handleChange}
-            itemType="ramMemory"
-            paramArr={ramMemoryArr}
+            itemType="ram"
+            paramArr={ramArr}
           />
         </Collapse>
       </div>

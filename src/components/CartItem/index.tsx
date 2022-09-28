@@ -13,6 +13,7 @@ interface CartItemProps {
   price: number;
   imageUrl: string;
   count: number;
+  productCode: number;
 };
 
 export const CartItem: FC<CartItemProps> = ({
@@ -21,9 +22,8 @@ export const CartItem: FC<CartItemProps> = ({
   price,
   imageUrl,
   count,
+  productCode
 }) => {
-  const productCode = 1092452;
-
   const dispatch = useAppDispatch();
 
   const onClickAdd = () => {

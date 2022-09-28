@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
+import React, { FC, useCallback, useEffect, useMemo } from "react";
 import { Filters, Sorting, Pagination } from "../../components";
 import { selectFilter } from "../../redux/filter/selectors";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
@@ -7,7 +7,7 @@ import styles from "./Home.module.scss";
 import spinner from '../../assets/img/Spinner-1s-200px.gif';
 import { ProductItem } from "../../components/ProductItem";
 import { selectProduct } from "../../redux/product/selectors";
-import { setBrands, setColors, setCpuCores, setCurrentPage, setMemory, setRamMemory } from "../../redux/filter/filterSlice";
+import { setBrands, setColors, setCpuCores, setCurrentPage, setMemory, setRam } from "../../redux/filter/filterSlice";
 import { IProduct } from "../../types/IProduct";
 
 type filterFunc = (object: IProduct) => boolean;
@@ -25,7 +25,7 @@ export const Home: FC = () => {
   
   const { products, isLoading } = useAppSelector(selectProduct);
   const { sort, types, searchValue, currentPage } = useAppSelector(selectFilter);
-  const { brands, memory, ramMemory, cpuCores, colors, 
+  const { brands, memory, ram, cpuCores, colors, 
     priceRange, screenSizeRange, batteryCapacityRange } = types;
 
   let finalProducts: IProduct[] = products;
@@ -81,8 +81,8 @@ export const Home: FC = () => {
   const checkedMemory: any[] = setCheckedItems(memory);
   const filteredMemory: IProduct[] = setFilteredItems(checkedMemory, "memory");
 
-  const checkedRam: any[] = setCheckedItems(ramMemory);
-  const filteredRam: IProduct[] = setFilteredItems(checkedRam, "ramMemory");
+  const checkedRam: any[] = setCheckedItems(ram);
+  const filteredRam: IProduct[] = setFilteredItems(checkedRam, "ram");
 
   const checkedCpuCores: any[] = setCheckedItems(cpuCores);
   const filteredCpuCores: IProduct[] = setFilteredItems(checkedCpuCores, "cpuCores");
@@ -140,8 +140,8 @@ export const Home: FC = () => {
   const filterMemory = ({ memory }: IProduct) => {
     return checkedMemory.includes(memory.toString());
   };
-  const filterRam = ({ ramMemory }: IProduct) => {
-    return checkedRam.includes(ramMemory.toString());
+  const filterRam = ({ ram }: IProduct) => {
+    return checkedRam.includes(ram.toString());
   };
   const filterCpuCores = ({ cpuCores }: IProduct) => {
     return checkedCpuCores.includes(cpuCores.toString());
@@ -195,8 +195,7 @@ export const Home: FC = () => {
 
   setIndexes();
   
-  if (brandsDontExist || memoryDoesntExist || ramDoesntExist || cpuCoresDontExist || colorsDontExist || 
-    !priceExists || !screenSizeExists || !batteryCapacityExists || !searchItemsExist ) {
+  if (brandsDontExist || memoryDoesntExist || ramDoesntExist || cpuCoresDontExist || colorsDontExist || !priceExists || !screenSizeExists || !batteryCapacityExists || !searchItemsExist) {
     showFinalProducts([]);
   }
 
@@ -208,11 +207,9 @@ export const Home: FC = () => {
 
   const brandsArr = [setBrands, brands];
   const memoryArr = [setMemory, memory];
-  const ramMemoryArr = [setRamMemory, ramMemory];
+  const ramArr = [setRam, ram];
   const cpuCoresArr = [setCpuCores, cpuCores];
   const colorsArr = [setColors, colors];
-
-  // debugger;
 
   return (
     <div className={styles.homeContainer}>
@@ -222,7 +219,7 @@ export const Home: FC = () => {
           setFirstPage={setFirstPage}
           brandsArr={brandsArr}
           memoryArr={memoryArr}
-          ramMemoryArr={ramMemoryArr}
+          ramArr={ramArr}
           cpuCoresArr={cpuCoresArr}
           colorsArr={colorsArr}
         />
@@ -247,6 +244,7 @@ export const Home: FC = () => {
                         testimonials={item.testimonials}
                         productName={item.name}
                         priceValue={item.price}
+                        productCode={item.productCode}
                         key={index}
                       />
                     );

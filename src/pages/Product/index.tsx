@@ -9,35 +9,98 @@ import classNames from 'classnames';
 import NumberFormat from 'react-number-format';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import parse from 'html-react-parser';
 import styles from './Product.module.scss';
+import { IProduct } from '../../types/IProduct';
+import { CartItem } from '../../redux/cart/types';
+import { useAppDispatch } from '../../redux/hooks';
+import { addItem } from '../../redux/cart/cartSlice';
 
 export const Product = () => {
-  const [data, setData] = useState({});
+  const dispatch = useAppDispatch();
+
+  const initialProduct: IProduct = {
+    id: 0,
+    imageUrl: "/images/iphone-12-red.jpg",
+    images: [
+      "/images/products/iphone-12-red/iphone-12-red.jpg",
+      "/images/products/iphone-12-red/iphone-12-red-2-min.jpg",
+      "/images/products/iphone-12-red/iphone-12-red-3-min.jpg"
+    ],
+    brand: "Apple",
+    name: "Apple iPhone 12 Mini 64 Гб, красный",
+    price: 60000,
+    rating: 4.8,
+    testimonials: 6,
+    memory: 64,
+    ram: 6,
+    cpuCores: 6,
+    screenSize: 5.5,
+    batteryCapacity: 3000,
+    color: "red",
+    productCode: 24663,
+    specifications: [
+      {"Диагональ экрана, дюйм": "5,5"},
+      {"Объем встроенной памяти": "64 Гб"},
+      {"Объем оперативной памяти": "4 Гб"},
+      {"Количество ядер": "6"},
+      {"Ёмкость аккумулятора, мАч": "3000"},
+      {"Цвет": "красный"}
+    ],
+    description: "product description",
+    shortDesc: "6x(2.99 ГГц), 4 Гб, 1 SIM, OLED, 2340x1080, камера 12+12 Мп, NFC, 5G, GPS, 2227 мА*ч",
+  };
+
+  const [productObj, setProductObj] = useState<IProduct>(initialProduct);
   const [photoIndex, setPhotoIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const { id } = useParams();
 
-  const rating = 4.8;
-  const testimonials = 10;
-  const productCode = 2465730;
-  const priceValue = 60000;
-
-  useEffect( () => {
+  useEffect(() => {
     axios
-      .get(`/devices/${id}`)
+      .get(`/products/${id}`)
       .then((res) => {
-        setData(res.data);
+        setProductObj(res.data);
       })
       .catch((err) => {
         console.warn(err);
       });
   }, []);
 
-  const images = [
-    'https://c.dns-shop.ru/thumb/st4/fit/0/0/55397a81830541f4eb540f683257f747/12092f9b71a507a98b8dccea0ad509ad042718c88cbbebc1efa76393bf4b5e2d.jpg.webp',
-    'https://c.dns-shop.ru/thumb/st4/fit/0/0/af1fc14437cd51b02ff51639960aafb6/15592be6e1d2e99f0d576feb215b6f06f2a99fa3812a099602922d3611f206b5.jpg.webp',
-    'https://c.dns-shop.ru/thumb/st4/fit/0/0/78f3b31cc33931f58f71262610ad4213/61a932ae834913c10b87a0da54232da7e84e302c06bf20fe6441b808d90f646d.jpg.webp'
-  ];
+  const galleryImages = productObj.images;
+
+  const divsWithGalImgs = galleryImages.map((el, i) => {
+    return (
+      <div onClick={() => setIsOpen(true)} key={i}>
+        <img src={galleryImages[i]} />
+      </div>
+    );
+  });
+
+  const specs = productObj.specifications;
+
+  const specList = specs.map((el, i) => {
+    let specKeys = Object.keys(el);
+
+    return (
+      <div className={styles.spec} key={i}>
+        <div className={styles.specName}>{specKeys[0]}</div>
+        <div className={styles.specValue}>{el[specKeys[0]]}</div>
+      </div>
+    );
+  });
+
+  const onClickAdd = () => {
+    const item: CartItem = {
+      id: productObj.id.toString(),
+      name: productObj.name,
+      price: productObj.price,
+      imageUrl: productObj.imageUrl,
+      productCode: productObj.productCode,
+      count: 0,
+    };
+    dispatch(addItem(item));
+  };
 
   return (
     <>
@@ -45,61 +108,47 @@ export const Product = () => {
         <div className={styles.productImage}>
           <div>
             <Carousel showIndicators={false} showStatus={false}>
-              <div onClick={() => setIsOpen(true)}>
-                <img 
-                  src="https://c.dns-shop.ru/thumb/st4/fit/0/0/55397a81830541f4eb540f683257f747/12092f9b71a507a98b8dccea0ad509ad042718c88cbbebc1efa76393bf4b5e2d.jpg.webp" 
-                />
-              </div>
-              <div onClick={() => setIsOpen(true)}>
-                <img 
-                  src="https://c.dns-shop.ru/thumb/st4/fit/0/0/af1fc14437cd51b02ff51639960aafb6/15592be6e1d2e99f0d576feb215b6f06f2a99fa3812a099602922d3611f206b5.jpg.webp" 
-                />
-              </div>
-              <div onClick={() => setIsOpen(true)}>
-                <img 
-                  src="https://c.dns-shop.ru/thumb/st4/fit/0/0/78f3b31cc33931f58f71262610ad4213/61a932ae834913c10b87a0da54232da7e84e302c06bf20fe6441b808d90f646d.jpg.webp" 
-                />
-              </div>
+              {divsWithGalImgs}
             </Carousel>
           </div>
           <div>
             {isOpen && (
               <Lightbox
-                mainSrc={images[photoIndex]}
-                nextSrc={images[(photoIndex + 1) % images.length]}
-                prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+                mainSrc={galleryImages[photoIndex]}
+                nextSrc={galleryImages[(photoIndex + 1) % galleryImages.length]}
+                prevSrc={galleryImages[(photoIndex + galleryImages.length - 1) % galleryImages.length]}
                 onCloseRequest={() => setIsOpen(false)}
                 onMovePrevRequest={
-                  () => setPhotoIndex((photoIndex + images.length - 1) % images.length)
+                  () => setPhotoIndex((photoIndex + galleryImages.length - 1) % galleryImages.length)
                 }
                 onMoveNextRequest={
-                  () => setPhotoIndex((photoIndex + 1) % images.length)
+                  () => setPhotoIndex((photoIndex + 1) % galleryImages.length)
                 }
               />
             )}
           </div>
         </div>
         <div className={styles.mainData}>
-          <h1>Apple iPhone</h1>
+          <h1>{productObj.name}</h1>
           <div className={styles.shortSpecs}>
-            8x(2.4 ГГц), 6 Гб, 2 SIM, IPS, 2400x1080, камера 50+8 Мп, NFC, 5G, GPS, FM, 5000 мА*ч
+            {productObj.shortDesc}
           </div>
           <div className={styles.productCode}>
-            Код товара: {productCode}
+            Код товара: {productObj.productCode}
           </div>
           <div className={styles.icons}>
             <div className={classNames(styles.rating, "tooltip", styles.tooltip)}>
               <i className="fa-solid fa-star"></i>
-              <span>{rating}</span>
+              <span>{productObj.rating}</span>
               <div className={classNames(styles.tooltipText, "tooltipText")}>
-                Рейтинг {rating} из 5
+                Рейтинг {productObj.rating} из 5
               </div>
             </div>
             <div className={classNames(styles.testimonials, "tooltip", styles.tooltip)}>
               <i className="fa-solid fa-comment"></i>
-              <span>{testimonials}</span>
+              <span>{productObj.testimonials}</span>
               <div className={classNames("tooltipText", styles.tooltipText)}>
-                {testimonials} отзывов
+                {productObj.testimonials} отзывов
               </div>
             </div>
           </div>
@@ -107,7 +156,7 @@ export const Product = () => {
             <div className={styles.price}>
               <div className={styles.priceValue}>
                 <NumberFormat 
-                  value={priceValue} 
+                  value={productObj.price} 
                   displayType='text' 
                   thousandSeparator=' '
                 />
@@ -116,7 +165,7 @@ export const Product = () => {
             </div>
             <div className={styles.addToCartAndFavorites}>
               <div className={styles.addToCart}>
-                <button>
+                <button onClick={onClickAdd}>
                   <div>
                     <span className={
                       classNames("material-symbols-outlined", styles.cartIcon)
@@ -143,28 +192,13 @@ export const Product = () => {
           </TabList>
           <TabPanel>
             <div className={styles.specs}>
-              <div className={styles.spec}>
-                <div className={styles.specName}>Диагональ экрана, дюйм</div>
-                <div className={styles.specValue}>6.1</div>
-              </div>
-              <div className={styles.spec}>
-                <div className={styles.specName}>Объем встроенной памяти</div>
-                <div className={styles.specValue}>64 Гб</div>
-              </div>
-              <div className={styles.spec}>
-                <div className={styles.specName}>Объем оперативной памяти</div>
-                <div className={styles.specValue}>4 Гб</div>
-              </div>
+              {specList}
             </div>
           </TabPanel>
           <TabPanel>
-            <p className={styles.productDescription}>
-              POCO M4 Pro оснащён 6,6-дюймовым IPS-дисплеем DotDisplay с разрешением FHD+ (2400 × 1080 точек), частотой обновления 90 Гц и частотой отклика сенсорного слоя в пределах 240 Гц. Частота обновления экрана автоматически регулируется в зависимости от воспроизводимого контента. Дисплей поддерживает цветовое пространство DCI-P3 и обеспечивает яркость в 450 кд/м2. Для его защиты от царапин используется прочное стекло Gorilla Glass 3.
-              Основная камера смартфона базируется на 50-Мп сенсоре, дополненном ультраширокоугольным 8-Мп датчиком с углом обзора 119°. Разрешение фронтальной камеры, размещённой в отверстии в центр у верхнего торца экрана, составляет 16 Мп.
-              Смартфон основан на 6-нм восьмиядерном процессоре MediaTek Dimensity 810 с максимальной тактовой частотой 2,4 ГГц, графической системой Arm Mali-G57 MC2 и модемом 5G. Объём оперативной памяти составляет 4 Гбайт, ёмкость флеш-накопителя UFS 2.2 — 64 Гбайт. Есть слот для карт памяти microSD ёмкостью до 1 Тбайт.
-              Спецификации смартфона также включают поддержку технологии NFC, адаптеры беспроводной связи Wi-Fi, Bluetooth, FM-радио, инфракрасный приёмопередатчик, порт USB Type-C, 3,5-мм аудиоразъём и два динамика. Для разблокировки используется боковой сканер отпечатков пальцев.
-              Аккумуляторная батарея ёмкостью 5000 мА·ч обладает поддержкой быстрой 33-ваттной подзарядки. На полную зарядку батареи с нуля потребуется 59 минут, а всего 10 минут зарядки обеспечат просмотр видео в течение 2,5 часа. Смартфон работает под управлением операционной системы Android 11 с фирменным интерфейсом MIUI 12.5.
-            </p>
+            <div className={styles.productDescription}>
+              {parse(productObj.description)}
+            </div>
           </TabPanel>
         </Tabs>
       </div>

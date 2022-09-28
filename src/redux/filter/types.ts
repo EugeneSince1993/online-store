@@ -15,7 +15,7 @@ export type Sort = {
 export interface ITypes {
   brands: IStringVal;
   memory: IStringVal;
-  ramMemory: IStringVal;
+  ram: IStringVal;
   cpuCores: IStringVal;
   priceRange: IRange;
   screenSizeRange: IRange;
