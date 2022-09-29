@@ -9,6 +9,7 @@ import { ProductItem } from "../../components/ProductItem";
 import { selectProduct } from "../../redux/product/selectors";
 import { setBrands, setColors, setCpuCores, setCurrentPage, setMemory, setRam } from "../../redux/filter/filterSlice";
 import { IProduct } from "../../types/IProduct";
+import emptyCart from "../../assets/img/empty-cart-2-400x400.png";
 
 type filterFunc = (object: IProduct) => boolean;
 type filterFuncArr = filterFunc[];
@@ -231,38 +232,45 @@ export const Home: FC = () => {
             <div className={styles.loadingBlock}>
               <img src={spinner} />
             </div>
-          ) : (
+          ) : (currentData.length ? (
             <>
               <div className={styles.productList}>
-                {currentData && (
-                  currentData.map((item: any, index: number) => {
-                    return (
-                      <ProductItem
-                        productId={item.id}
-                        phoneImage={item.imageUrl}
-                        rating={item.rating}
-                        testimonials={item.testimonials}
-                        productName={item.name}
-                        priceValue={item.price}
-                        productCode={item.productCode}
-                        key={index}
-                      />
-                    );
-                }))}
+                {currentData.map((item: any, index: number) => {
+                  return (
+                    <ProductItem
+                      productId={item.id}
+                      phoneImage={item.imageUrl}
+                      rating={item.rating}
+                      testimonials={item.testimonials}
+                      productName={item.name}
+                      priceValue={item.price}
+                      productCode={item.productCode}
+                      key={index}
+                    />
+                  );
+                })}
               </div>
               <div className={styles.productsPagination}>
-                {finalProducts && (
-                  <Pagination 
-                    className={styles.paginationBar}
-                    currentPage={currentPage}
-                    totalCount={finalProducts.length}
-                    pageSize={pageSize}
-                    onPageChange={(page: number) => dispatch(setCurrentPage(page))}
-                  />
-                )}
+                <Pagination 
+                  className={styles.paginationBar}
+                  currentPage={currentPage}
+                  totalCount={finalProducts.length}
+                  pageSize={pageSize}
+                  onPageChange={(page: number) => dispatch(setCurrentPage(page))}
+                />
               </div>
             </>
-          )}
+          ) : (
+            <div className={styles.productsNotFound}>
+              <div className={styles.emptyCart}>
+                <img src={emptyCart} />
+              </div>
+              <div>
+                <h5>Товары не найдены</h5>
+                <p>Попробуйте изменить критерии поиска</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
