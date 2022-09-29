@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import axios from '../../axios';
 import { useParams } from 'react-router-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -15,8 +15,10 @@ import { IProduct } from '../../types/IProduct';
 import { CartItem } from '../../redux/cart/types';
 import { useAppDispatch } from '../../redux/hooks';
 import { addItem } from '../../redux/cart/cartSlice';
+import { FavoriteItem } from '../../redux/favorites/types';
+import { addFavoriteItem } from '../../redux/favorites/favoriteSlice';
 
-export const Product = () => {
+export const Product: FC = () => {
   const dispatch = useAppDispatch();
 
   const initialProduct: IProduct = {
@@ -90,7 +92,7 @@ export const Product = () => {
     );
   });
 
-  const onClickAdd = () => {
+  const onClickAddToCart = () => {
     const item: CartItem = {
       id: productObj.id.toString(),
       name: productObj.name,
@@ -100,6 +102,17 @@ export const Product = () => {
       count: 0,
     };
     dispatch(addItem(item));
+  };
+
+  const onClickAddToFavorites = () => {
+    const item: FavoriteItem = {
+      id: productObj.id.toString(),
+      name: productObj.name,
+      price: productObj.price,
+      imageUrl: productObj.imageUrl,
+      count: 0,
+    };
+    dispatch(addFavoriteItem(item));
   };
 
   return (
@@ -165,7 +178,7 @@ export const Product = () => {
             </div>
             <div className={styles.addToCartAndFavorites}>
               <div className={styles.addToCart}>
-                <button onClick={onClickAdd}>
+                <button onClick={onClickAddToCart}>
                   <div>
                     <span className={
                       classNames("material-symbols-outlined", styles.cartIcon)
@@ -176,7 +189,10 @@ export const Product = () => {
                   </div>
                 </button>
               </div>
-              <div className={classNames(styles.favorites, "tooltip")}>
+              <div 
+                className={classNames(styles.favorites, "tooltip")}
+                onClick={onClickAddToFavorites}
+              >
                 <i className="fa-solid fa-heart"></i>
                 <div className="tooltipText">Добавить в избранное</div>
               </div>

@@ -5,6 +5,8 @@ import styles from './ProductItem.module.scss';
 import { CartItem } from '../../redux/cart/types';
 import { useAppDispatch } from '../../redux/hooks';
 import { addItem } from '../../redux/cart/cartSlice';
+import { FavoriteItem } from '../../redux/favorites/types';
+import { addFavoriteItem } from '../../redux/favorites/favoriteSlice';
 
 interface Props {
   phoneImage: string;
@@ -27,7 +29,7 @@ export const ProductItem = ({
 }: Props) => {
   const dispatch = useAppDispatch();
 
-  const onClickAdd = () => {
+  const onClickAddToCart = () => {
     const item: CartItem = {
       id: productId.toString(),
       name: productName,
@@ -37,6 +39,17 @@ export const ProductItem = ({
       count: 0,
     };
     dispatch(addItem(item));
+  };
+
+  const onClickAddToFavorites = () => {
+    const item: FavoriteItem = {
+      id: productId.toString(),
+      name: productName,
+      price: priceValue,
+      imageUrl: phoneImage,
+      count: 0,
+    };
+    dispatch(addFavoriteItem(item));
   };
 
   return (
@@ -60,7 +73,10 @@ export const ProductItem = ({
               {testimonials} отзывов
             </div>
           </div>
-          <div className={classNames(styles.favorites, "tooltip", styles.tooltip)}>
+          <div 
+            className={classNames(styles.favorites, "tooltip", styles.tooltip)}
+            onClick={onClickAddToFavorites}
+          >
             <i className="fa-solid fa-heart"></i>
             <div className={classNames("tooltipText", styles.tooltipText)}>
               Добавить в избранное
@@ -85,7 +101,7 @@ export const ProductItem = ({
             <div className={styles.addToCart}>
               <button 
                 className="tooltip"
-                onClick={onClickAdd}
+                onClick={onClickAddToCart}
               >
                 <span className={
                   classNames("material-symbols-outlined", styles.cartIcon)

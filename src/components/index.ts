@@ -4,5 +4,5 @@ export { Filters } from "./Filters";
 export { Sorting } from "./Sorting";
 export { Button } from "./Button";
 export { Pagination } from "./Pagination";
-export { CartEmpty } from './CartEmpty';
 export { CartItem } from './CartItem';
+export { FavoriteItem } from './FavoriteItem';

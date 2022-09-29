@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styles from './CartEmpty.module.scss';
-import { Button } from '../Button';
+import { Button } from '../../components';
 import cartEmpty from '../../assets/img/cart-empty.png';
 
 export const CartEmpty: FC = () => {

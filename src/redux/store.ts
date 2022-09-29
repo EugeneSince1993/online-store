@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import productReducer from "./product/productSlice";
 import filterReducer from "./filter/filterSlice";
 import cartReducer from "./cart/cartSlice";
+import favoritesReducer from "./favorites/favoriteSlice";
 import { setupListeners } from "@reduxjs/toolkit/query";
 
 export const store = configureStore({
@@ -10,6 +11,7 @@ export const store = configureStore({
     product: productReducer,
     filter: filterReducer,
     cart: cartReducer,
+    favorites: favoritesReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });

@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import classNames from 'classnames';
 import { usePagination, DOTS } from './usePagination';
 import styles from "./Pagination.module.scss";
@@ -11,14 +12,14 @@ interface IPaginationProps {
   className: any;
 }
 
-export const Pagination = ({
+export const Pagination: FC<IPaginationProps> = ({
   onPageChange,
   totalCount,
   siblingCount = 1,
   currentPage,
   pageSize,
   className
-}: IPaginationProps) => {
+}) => {
   const paginationRange = usePagination({
     currentPage,
     totalCount,
@@ -39,8 +40,6 @@ export const Pagination = ({
   };
 
   let lastPage = paginationRange[paginationRange.length - 1];
-
-  // debugger;
 
   return (
     <ul

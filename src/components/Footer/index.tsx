@@ -1,8 +1,9 @@
+import { FC } from 'react';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
 import styles from './Footer.module.scss';
 
-export const Footer = () => {
+export const Footer: FC = () => {
   const date = new Date();
   let year = date.getFullYear();
 

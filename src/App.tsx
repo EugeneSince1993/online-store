@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import { Header, Footer, CartEmpty } from "./components";
-import { Home, Product, Cart } from "./pages";
+import { Header, Footer } from "./components";
+import { Home, Product, Cart, Favorites, CartEmpty, FavoritesEmpty } from "./pages";
 
 function App() {
   return (
@@ -12,6 +12,8 @@ function App() {
           <Route path="/products/:id" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/empty-cart" element={<CartEmpty />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/empty-favorites" element={<FavoritesEmpty />} />
         </Routes>
       </div>
       <Footer />

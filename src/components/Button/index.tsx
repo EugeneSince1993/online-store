@@ -1,9 +1,9 @@
-import { ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 import styles from "./Button.module.scss";
 
-interface Props {
+interface IButtonProps {
   display: string;
   variant: string;
   link?: string;
@@ -12,14 +12,14 @@ interface Props {
   children: ReactNode;
 }
 
-export const Button = ({
+export const Button: FC<IButtonProps> = ({
   display = "inline-block",
   variant,
   link = "/",
   justifyContentCenter = false,
   onClickFunc,
   children,
-}: Props) => {
+}) => {
   return (
     <>
       {display === "block" && (

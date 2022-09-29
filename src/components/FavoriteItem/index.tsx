@@ -3,42 +3,27 @@ import NumberFormat from "react-number-format";
 import { useAppDispatch } from "../../redux/hooks";
 import { NavLink } from "react-router-dom";
 import classNames from 'classnames';
-import { addItem, subtractItem, removeItem } from "../../redux/cart/cartSlice";
-import { CartItem as CartItemType } from "../../redux/cart/types";
-import styles from './CartItem.module.scss';
+import styles from './FavoriteItem.module.scss';
+import { removeFavoriteItem } from "../../redux/favorites/favoriteSlice";
 
-interface CartItemProps {
+interface IFavoriteItemProps {
   id: string;
   name: string;
   price: number;
   imageUrl: string;
-  count: number;
-  productCode: number;
 };
 
-export const CartItem: FC<CartItemProps> = ({
+export const FavoriteItem: FC<IFavoriteItemProps> = ({
   id,
   name,
   price,
-  imageUrl,
-  count,
-  productCode
+  imageUrl
 }) => {
   const dispatch = useAppDispatch();
 
-  const onClickAdd = () => {
-    dispatch(addItem({
-      id,
-    } as CartItemType));
-  };
-
-  const onClickSubtract = () => {
-    dispatch(subtractItem(id));
-  };
-
   const onClickRemove = () => {
     if (window.confirm('Вы действительно хотите удалить товар?')) {
-      dispatch(removeItem(id));
+      dispatch(removeFavoriteItem(id));
     }
   };
 
@@ -52,28 +37,11 @@ export const CartItem: FC<CartItemProps> = ({
           <NavLink to={`/products/${id}`} className={styles.productName}>
             {name}
           </NavLink>
-          <div className={styles.productCode}>
-            Код товара: {productCode}
-          </div>
-        </div>
-        <div className={styles.quantityContainer}>
-          <div className={styles.quantity}>
-            <button
-              disabled={count === 1}
-              onClick={onClickSubtract}
-            >
-              <i className="fa-solid fa-minus"></i>
-            </button>
-            <div>{count}</div>
-            <button onClick={onClickAdd}>
-              <i className="fa-solid fa-plus"></i>
-            </button>
-          </div>
         </div>
         <div className={styles.price}>
           <div className={styles.priceValue}>
             <NumberFormat 
-              value={price * count} 
+              value={price} 
               displayType='text' 
               thousandSeparator=' '
             />

@@ -29,15 +29,15 @@
           display: inline-block;
           color: #000;
 
-          .cartLink {
+          .linkInner {
             display: flex;
             align-items: center;
 
-            .cartText, .totalCount {
+            .linkInnerText, .totalCount {
               display: inline-block;
             }
   
-            .cartText {
+            .linkInnerText {
               margin-right: 5px;
             }
   

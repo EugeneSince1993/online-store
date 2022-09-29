@@ -5,7 +5,8 @@ import { selectCart } from '../../redux/cart/selectors';
 import NumberFormat from 'react-number-format';
 import classNames from 'classnames';
 import { clearItems } from '../../redux/cart/cartSlice';
-import { CartEmpty, CartItem, Button } from '../../components';
+import { CartItem, Button } from '../../components';
+import { CartEmpty } from '../CartEmpty';
 import styles from './Cart.module.scss';
 
 export const Cart: FC = () => {
