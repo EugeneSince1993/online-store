@@ -30,7 +30,7 @@
         margin-right: 4px;
       }
 
-      .rating, .testimonials, .favorites {
+      .testimonials, .favorites {
         cursor: pointer;
       }
 
@@ -48,6 +48,7 @@
       }
 
       .testimonials {
+        display: none;
 
         i {
           color: rgb(173, 173, 173);

@@ -33,7 +33,7 @@
         margin-right: 4px;
       }
 
-      .rating, .testimonials {
+      .testimonials {
         cursor: pointer;
       }
 
@@ -51,6 +51,7 @@
       }
 
       .testimonials {
+        display: none;
 
         i {
           color: rgb(173, 173, 173);

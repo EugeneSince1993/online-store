@@ -5,19 +5,23 @@ import { NavLink } from "react-router-dom";
 import classNames from 'classnames';
 import styles from './FavoriteItem.module.scss';
 import { removeFavoriteItem } from "../../redux/favorites/favoriteSlice";
+import { CartItem } from "../../redux/cart/types";
+import { addItem } from "../../redux/cart/cartSlice";
 
 interface IFavoriteItemProps {
   id: string;
   name: string;
   price: number;
   imageUrl: string;
+  productCode: number;
 };
 
 export const FavoriteItem: FC<IFavoriteItemProps> = ({
   id,
   name,
   price,
-  imageUrl
+  imageUrl,
+  productCode
 }) => {
   const dispatch = useAppDispatch();
 
@@ -25,6 +29,18 @@ export const FavoriteItem: FC<IFavoriteItemProps> = ({
     if (window.confirm('Вы действительно хотите удалить товар?')) {
       dispatch(removeFavoriteItem(id));
     }
+  };
+
+  const onClickAddToCart = () => {
+    const item: CartItem = {
+      id: id.toString(),
+      name: name,
+      price: price,
+      imageUrl: imageUrl,
+      productCode: productCode,
+      count: 0,
+    };
+    dispatch(addItem(item));
   };
 
   return (
@@ -47,6 +63,18 @@ export const FavoriteItem: FC<IFavoriteItemProps> = ({
             />
           </div>
           <div className={styles.currency}>₽</div>
+        </div>
+        <div className={styles.addToCart}>
+          <button onClick={onClickAddToCart}>
+            <div>
+              <span className={
+                classNames("material-symbols-outlined", styles.cartIcon)
+              }>
+                shopping_cart
+              </span>
+              <span className={styles.toCart}>В корзину</span>
+            </div>
+          </button>
         </div>
         <div className={classNames(styles.deleteProduct, "tooltip", styles.tooltip)}>
           <div onClick={onClickRemove}>

@@ -4,6 +4,7 @@ export interface FavoriteItem {
   price: number;
   imageUrl: string;
   count: number;
+  productCode?: number;
 }
 
 export interface FavoriteSliceState {

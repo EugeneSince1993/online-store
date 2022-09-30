@@ -45,7 +45,7 @@ export const Header: FC = () => {
           <ul>
             <li>
               <NavLink to="/cart">
-                <div className={styles.linkInner}>
+                <div className={classNames(styles.linkInner, styles.cartLink)}>
                   <div className={styles.linkInnerText}>Корзина</div>
                   {cartTotal > 0 && (
                     <div className={styles.totalCount}>
@@ -57,7 +57,7 @@ export const Header: FC = () => {
             </li>
             <li>
               <NavLink to="/favorites">
-                <div className={styles.linkInner}>
+                <div className={classNames(styles.linkInner, styles.favoritesLink)}>
                   <div className={styles.linkInnerText}>Избранное</div>
                   {favoritesTotal > 0 && (
                     <div className={styles.totalCount}>
