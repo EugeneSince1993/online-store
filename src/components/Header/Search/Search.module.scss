@@ -29,3 +29,31 @@
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  .search {
+    margin-bottom: 15px;
+
+    .searchContainer {
+      padding-left: 10px;
+      padding-right: 10px;
+      
+      .searchInput {
+        width: 100%;
+
+        input {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          font-size: 16px;
+        }
+      }
+
+      .searchIcon {
+
+        i {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

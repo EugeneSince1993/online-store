@@ -5,11 +5,18 @@
   padding-top: 15px;
   padding-bottom: 15px;
   height: 61px;
+  padding-left: 100px;
+  padding-right: 100px;
 
   .logo {
+    width: 160px;
 
     a {
-      color: #000;
+      display: inline-block;
+
+      img {
+        width: 100%;
+      }
     }
   }
 
@@ -24,6 +31,10 @@
 
       li {
         margin-right: 15px;
+
+        &:nth-of-type(2) {
+          margin-right: 0;
+        }
 
         a {
           display: inline-block;
@@ -69,6 +80,54 @@
 
             .totalCount {
               background-color: rgb(255, 45, 143);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header {
+    display: block;
+    height: auto;
+    padding: 15px 20px;
+
+    .logo {
+      width: 190px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+    }
+
+    .nav {
+      nav ul {
+        justify-content: center;
+        height: 20px;
+
+        li {
+          margin-right: 20px;
+
+          a {
+
+            .linkInner {
+
+              &.cartLink {
+                width: 120px;
+  
+                .linkInnerText {
+                  padding-left: 27px;
+                }
+              }
+
+              &.favoritesLink {
+                width: 108px;
+              }
+
+              .linkInnerText {
+                font-size: 16px;
+              }
             }
           }
         }

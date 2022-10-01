@@ -6,6 +6,7 @@ import { Search } from './Search';
 import { selectCart } from '../../redux/cart/selectors';
 import { selectFavorites } from '../../redux/favorites/selectors';
 import styles from './Header.module.scss';
+import onlineStoreLogo from '../../assets/img/online-store-logo-min.png';
 
 export const Header: FC = () => {
   const { items: cartItems } = useSelector(selectCart);
@@ -31,9 +32,11 @@ export const Header: FC = () => {
   }, [favoriteItems]);
 
   return (
-    <header className={classNames(styles.header, 'container', 'bgLightGray')}>
+    <header className={classNames(styles.header, 'bgLightGray')}>
       <div className={styles.logo}>
-        <NavLink to="/">Online store</NavLink>
+        <NavLink to="/">
+          <img src={onlineStoreLogo} alt="online store" />
+        </NavLink>
       </div>
       {(location.pathname !== '/cart' && location.pathname !== '/favorites') && (
         <div className={styles.search}>
