@@ -75,3 +75,13 @@
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  .checkboxList {
+    max-height: 139px;
+    
+    .container {
+      margin-bottom: 16px;
+    }
+  }
+}

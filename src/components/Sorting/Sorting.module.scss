@@ -33,3 +33,18 @@
     font-weight: 400;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .sorting {
+    display: block;
+    padding-left: 10px;
+
+    .rating, .price {
+      margin-bottom: 12px;
+    }
+
+    .rating, .price span, .title span {
+      font-size: 16px;
+    }
+  }
+}

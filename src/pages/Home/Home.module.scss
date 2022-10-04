@@ -3,7 +3,6 @@
 
   .filtersColumn {
     width: 20%;
-    box-sizing: border-box;
     padding-right: 30px;
   }
 
@@ -68,4 +67,48 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 450px) {
+  .homeContainer {
+    display: block;
+  
+    .filtersColumn {
+      width: 100%;
+      padding-right: 0;
+
+      .filtersCollapse {
+
+        > div:first-of-type {
+          background-color: #2d7dff;
+          padding: 15px 20px;
+          margin-left: -10px;
+          margin-right: -10px;
+  
+          h5 {
+            color: #fff;
+          }
+  
+          i {
+            color: #fff;
+            top: 15px;
+            right: 20px;
+          }
+        }
+      }
+    }
+
+    .productsColumn {
+      width: 100%;
+      padding-right: 0;
+      overflow-x: hidden;
+
+      .productListContainer {
+
+        .productList {
+          height: auto;
+        }
+      }
+    }
+  } 
 }

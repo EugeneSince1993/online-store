@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { setSort } from '../../redux/filter/filterSlice';
-import { Sort as SortType, SortPropertyEnum } from '../../redux/filter/types';
+import { SortPropertyEnum } from '../../redux/filter/types';
 import { useAppDispatch } from '../../redux/hooks';
 import styles from './Sorting.module.scss';
 

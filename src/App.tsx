@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="container content">
+      <div className="app-container app-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products/:id" element={<Product />} />

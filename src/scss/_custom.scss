@@ -200,3 +200,63 @@ body {
 }
 
 // filterColor - end
+
+// App
+.app-container {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.app-content {
+  padding-top: 30px;
+  padding-bottom: 75px;
+}
+
+// Responsible UI
+
+@media screen and (max-width: 450px) {
+  * {
+    font-size: 16px;
+  }
+
+  .app-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .app-content {
+    padding-bottom: 50px;
+  }
+
+  .carousel-root {
+
+    .carousel {
+  
+      &.carousel-slider {
+  
+        .slider-wrapper {
+  
+          .slider {
+  
+            .slide {
+  
+              div {
+                
+                img {
+                  height: 250px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tooltip {
+  
+    .tooltipText { 
+      display: none;
+    }
+  }
+}

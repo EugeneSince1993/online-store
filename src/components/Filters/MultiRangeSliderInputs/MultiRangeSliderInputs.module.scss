@@ -41,3 +41,25 @@
 		}
 	}
 }
+
+@media screen and (max-width: 450px) {
+	.multiRangeSliderInputs {
+
+		.multiRangeSliderContainer {
+			margin-bottom: 25px;
+		}
+
+		.rangeFields {
+
+			.rangeFieldsContainer {
+
+				.rangeFieldsInput {
+
+					input {
+						font-size: 16px;
+					}
+				}				
+			}
+		}
+	}
+}

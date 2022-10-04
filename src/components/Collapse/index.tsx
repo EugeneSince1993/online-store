@@ -2,16 +2,16 @@ import * as React from 'react';
 import styles from "./Collapse.module.scss";
 import classNames from 'classnames';
 
-interface Props {
+interface ICollapseProps {
   collapsed?: boolean;
   children: React.ReactNode;
   filterName: string;
   elementType?: keyof JSX.IntrinsicElements;
 }
 
-export const Collapse = ({ 
+export const Collapse: React.FC<ICollapseProps> = ({ 
   collapsed, children, filterName, elementType: ElementType = 'h5'
-}: Props) => {
+}) => {
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
 
   return (

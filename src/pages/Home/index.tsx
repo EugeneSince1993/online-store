@@ -1,15 +1,16 @@
 import React, { FC, useCallback, useEffect, useMemo } from "react";
-import { Filters, Sorting, Pagination } from "../../components";
+import MediaQuery from 'react-responsive';
+import { Filters, Sorting, Pagination, Collapse } from "../../components";
 import { selectFilter } from "../../redux/filter/selectors";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { fetchProducts } from "../../redux/product/asyncActions";
-import styles from "./Home.module.scss";
 import spinner from '../../assets/img/Spinner-1s-200px.gif';
 import { ProductItem } from "../../components/ProductItem";
 import { selectProduct } from "../../redux/product/selectors";
 import { setBrands, setColors, setCpuCores, setCurrentPage, setMemory, setRam } from "../../redux/filter/filterSlice";
 import { IProduct } from "../../types/IProduct";
 import emptyCart from "../../assets/img/empty-cart-2-400x400.png";
+import styles from "./Home.module.scss";
 
 type filterFunc = (object: IProduct) => boolean;
 type filterFuncArr = filterFunc[];
@@ -211,19 +212,36 @@ export const Home: FC = () => {
   const ramArr = [setRam, ram];
   const cpuCoresArr = [setCpuCores, cpuCores];
   const colorsArr = [setColors, colors];
-
+  
   return (
     <div className={styles.homeContainer}>
       <div className={styles.filtersColumn}>
-        <Filters 
-          handleChange={handleChange}
-          setFirstPage={setFirstPage}
-          brandsArr={brandsArr}
-          memoryArr={memoryArr}
-          ramArr={ramArr}
-          cpuCoresArr={cpuCoresArr}
-          colorsArr={colorsArr}
-        />
+        <MediaQuery maxWidth={450}>
+          <div className={styles.filtersCollapse}>
+            <Collapse filterName="Фильтры" elementType="h5" collapsed={true}>
+              <Filters 
+                handleChange={handleChange}
+                setFirstPage={setFirstPage}
+                brandsArr={brandsArr}
+                memoryArr={memoryArr}
+                ramArr={ramArr}
+                cpuCoresArr={cpuCoresArr}
+                colorsArr={colorsArr}
+              />
+            </Collapse>
+          </div>
+        </MediaQuery>
+        <MediaQuery minWidth={451}>
+          <Filters 
+            handleChange={handleChange}
+            setFirstPage={setFirstPage}
+            brandsArr={brandsArr}
+            memoryArr={memoryArr}
+            ramArr={ramArr}
+            cpuCoresArr={cpuCoresArr}
+            colorsArr={colorsArr}
+          />
+        </MediaQuery>
       </div>
       <div className={styles.productsColumn}>
         <Sorting />
@@ -263,7 +281,7 @@ export const Home: FC = () => {
           ) : (
             <div className={styles.productsNotFound}>
               <div className={styles.emptyCart}>
-                <img src={emptyCart} />
+                <img src={emptyCart} alt="empty cart" />
               </div>
               <div>
                 <h5>Товары не найдены</h5>

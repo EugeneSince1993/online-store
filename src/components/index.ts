@@ -6,3 +6,4 @@ export { Button } from "./Button";
 export { Pagination } from "./Pagination";
 export { CartItem } from './CartItem';
 export { FavoriteItem } from './FavoriteItem';
+export { Collapse } from './Collapse';
