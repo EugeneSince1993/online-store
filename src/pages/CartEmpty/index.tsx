@@ -4,9 +4,8 @@ import { Button } from '../../components';
 import cartEmpty from '../../assets/img/cart-empty.png';
 
 export const CartEmpty: FC = () => {
-
   return (
-    <div>
+    <div className={styles.cartEmpty}>
       <h1>Корзина</h1>
       <div className={styles.cartContainer}>
         <div className={styles.info}>

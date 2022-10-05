@@ -73,7 +73,7 @@
 
       .priceValue {
         display: inline-block;
-        margin-right: 9px;
+        margin-right: 8px;
 
         span {
           font-size: 16px;
@@ -99,6 +99,72 @@
         width: 80px;
         margin-left: -40px;
         bottom: 107%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .productItem {
+    margin-bottom: 25px;
+
+    .thumbnail {
+      margin-right: 17px;
+      overflow: hidden;
+      flex-basis: 30%;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  
+    .dataContainer {
+      display: block;
+      flex-basis: 70%;
+  
+      .productInfo {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 14px;
+  
+        .productName {
+          line-height: 22px;
+        }
+  
+        .productCode {
+          font-size: 16px;
+        }
+      }
+  
+      .quantityContainer {
+        display: inline-block;
+        margin-right: 20px;
+
+        .quantity {
+
+          button {
+
+            i {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+  
+      .price {
+        display: inline-block;
+        margin-right: 15px;
+      }
+  
+      .deleteProduct {
+        display: inline-block;
+
+        div {
+
+          i {
+            font-size: 16px;
+          }
+        }
       }
     }
   }

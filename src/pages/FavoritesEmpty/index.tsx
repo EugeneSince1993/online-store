@@ -5,7 +5,7 @@ import favoritesEmpty from '../../assets/img/favorites.png';
 
 export const FavoritesEmpty: FC = () => {
   return (
-    <div>
+    <div className={styles.favoritesEmpty}>
       <h1>Избранное</h1>
       <div className={styles.favoritesContainer}>
         <div className={styles.info}>

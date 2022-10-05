@@ -6,8 +6,8 @@ import NumberFormat from 'react-number-format';
 import classNames from 'classnames';
 import { clearItems } from '../../redux/cart/cartSlice';
 import { CartItem, Button } from '../../components';
-import { CartEmpty } from '../CartEmpty';
 import styles from './Cart.module.scss';
+import { CartEmpty } from '../CartEmpty';
 
 export const Cart: FC = () => {
   const dispatch = useAppDispatch();
@@ -26,7 +26,7 @@ export const Cart: FC = () => {
   }
   
   return (
-    <div>
+    <div className={styles.cartBlock}>
       <h1>Корзина</h1>
       <div className={styles.cartContainer}>
         <div className={styles.productList}>
