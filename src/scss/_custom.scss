@@ -268,3 +268,30 @@ body {
     }
   }
 }
+
+@media screen and (max-width: 355px) {
+  .carousel-root {
+
+    .carousel {
+  
+      &.carousel-slider {
+  
+        .slider-wrapper {
+  
+          .slider {
+  
+            .slide {
+  
+              div {
+                
+                img {
+                  height: 200px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

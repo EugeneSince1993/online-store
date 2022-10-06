@@ -62,7 +62,7 @@
               div {
                 position: absolute;
                 top: 2px;
-                left: 47%;
+                left: 50%;
                 -webkit-transform: translateX(-50%);
                 transform: translateX(-50%);
                 color: #fff;
@@ -72,7 +72,7 @@
           }
 
           .cartLink {
-            width: 79px;
+            width: 81px;
           }
 
           .favoritesLink {
@@ -112,6 +112,13 @@
           a {
 
             .linkInner {
+
+              .totalCount {
+
+                div {
+                  left: 47%;
+                }
+              }
 
               &.cartLink {
                 width: 120px;

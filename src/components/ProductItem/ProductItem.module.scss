@@ -184,3 +184,47 @@
     }
   }
 }
+
+@media screen and (max-width: 355px) {
+  .productItem {
+    flex-basis: 50%;
+
+    &:nth-of-type(odd) {
+      padding-right: 5px;
+    }
+
+    &:nth-of-type(even) {
+      padding-right: 0;
+      padding-left: 5px;
+    }
+
+    .productItemInner {
+      height: 310px;
+      padding: 15px 10px;
+
+      .image {
+  
+        img {
+          max-height: 115px;
+        }
+      }
+
+      .productLink {
+        max-height: 70px;
+        font-size: 16px;
+      }
+
+      .buyContainer {
+        width: calc(100% - 20px);
+
+        .buy {
+          .price {
+            .priceValue span, .currency {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
