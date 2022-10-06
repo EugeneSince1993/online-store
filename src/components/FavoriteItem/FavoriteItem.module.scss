@@ -76,6 +76,12 @@
             color: #fff;
             margin-right: 7px;
           }
+
+          .toCart {
+            display: inline-block;
+            color: #fff;
+            font-size: 16px;
+          }
         }
       }
     }
@@ -150,6 +156,10 @@
             .cartIcon {
               font-size: 20px;
               margin-right: 0;
+            }
+
+            .toCart {
+              display: none;
             }
           }
         }
