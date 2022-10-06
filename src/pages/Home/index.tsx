@@ -52,10 +52,10 @@ export const Home: FC = () => {
   };
 
   const getProducts = () => {
-    const _sort = sort.sortProperty.replace('-', '');
-    const _order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
+    const sortBy = sort.sortProperty.replace('-', '');
+    const order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
 
-    dispatch(fetchProducts({_sort, _order}));
+    dispatch(fetchProducts({sortBy, order}));
     setFirstPage();
   };
 

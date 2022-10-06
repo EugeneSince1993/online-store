@@ -18,9 +18,13 @@ const initialState: ProductState = {
 const productSlice = createSlice({
   name: 'product',
   initialState,
-  reducers: {},
+  reducers: {
+    setItems(state, action: PayloadAction<IProduct[]>) {
+      state.products = action.payload;
+    },
+  },
   extraReducers: (builder) => {
-    builder.addCase(fetchProducts.pending, (state) => {
+    builder.addCase(fetchProducts.pending, (state, action) => {
       state.isLoading = true;
     });
 
@@ -35,8 +39,11 @@ const productSlice = createSlice({
       (state, action: any) => {
       state.isLoading = false;
       state.error = action.payload;
+      state.products = [];
     });
   }
 });
+
+export const { setItems } = productSlice.actions;
 
 export default productSlice.reducer;

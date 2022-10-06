@@ -1,4 +1,4 @@
 export type SearchProductParams = {
-  _sort: string;
-  _order: string;
+  sortBy: string;
+  order: string;
 };

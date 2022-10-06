@@ -2,11 +2,11 @@
   "products": [
     {
       "id": 0,
-      "imageUrl": "/images/iphone-12-red.jpg",
+      "imageUrl": "https://c.dns-shop.ru/thumb/st1/fit/500/500/c37c5e3b5f8dbf96784d596c30b6cb1a/d97646879f66b4c8f4690107b503240f40a6b731ed6575fa7fbe4f0a7d0d63fc.jpg.webp",
       "images": [
-        "/images/iphone-12-red.jpg",
-        "/images/products/iphone-12-red/iphone-12-red-2-min.jpg",
-        "/images/products/iphone-12-red/iphone-12-red-3-min.jpg"
+        "https://c.dns-shop.ru/thumb/st1/fit/500/500/c37c5e3b5f8dbf96784d596c30b6cb1a/d97646879f66b4c8f4690107b503240f40a6b731ed6575fa7fbe4f0a7d0d63fc.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st1/fit/500/500/17e47304999c2353cae08c032b3be8f9/1cae89b6daff59973c2b5d665e3af67dfcbedf285821146b8d56d0d772a1f945.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st1/fit/500/500/8ad5c8a0d50f44f746a955c489392be2/3ea2e901a2228ea8bd477b98c8449add00f11aa4ad4646f98270ac094a50cab7.jpg.webp"
       ],
       "brand": "Apple",
       "name": "Apple iPhone 12 Mini 64 Гб, красный",
@@ -33,11 +33,11 @@
     },
     {
       "id": 1,
-      "imageUrl": "/images/a52.jpeg",
+      "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/beaa90d50324945391d124dfb217a1cb/ed119b3f00d58fd4eeb972d5bcb9f899d8b57c58bc4ce48d619583451dc6006d.jpg.webp",
       "images": [
-        "/images/a52.jpeg",
-        "/images/products/samsung-galaxy-a52-black/d025f418-a948-4157-b690-00157b3d5f3f.png",
-        "/images/products/samsung-galaxy-a52-black/13454-36orig-18.jpeg"
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/beaa90d50324945391d124dfb217a1cb/ed119b3f00d58fd4eeb972d5bcb9f899d8b57c58bc4ce48d619583451dc6006d.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/28deb15541e3b7f2f2082a4f9af3c117/b372943299b26954cbeb1accf3e5dde7934751755bc2d369c369e5ae8347dc3c.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/47ce4ed7042065a502a27b69b54a2a37/1e06dde5c37620700884a58e0e14b98813147b199c0d80bbbd0a72011558127b.jpg.webp"
       ],
       "brand": "Samsung",
       "name": "Samsung Galaxy A52 32 Гб, черный",
@@ -64,11 +64,11 @@
     },
     {
       "id": 2,
-      "imageUrl": "/images/redmi-9.jpg",
+      "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/85b57168f63595bfde45ee67f14d7bd8/0a8694a84262992849ac45ee1dcc9d9a700ac4dd8ee34d9de92f77c5bf980616.jpg.webp",
       "images": [
-        "/images/redmi-9.jpg",
-        "/images/products/redmi-9-gray/smartfon_xiaomi_3_32gb_grey_2.jpg",
-        "/images/products/redmi-9-gray/ca13fd0e6e9e47ab7b85038b187c993a.jpeg"
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/85b57168f63595bfde45ee67f14d7bd8/0a8694a84262992849ac45ee1dcc9d9a700ac4dd8ee34d9de92f77c5bf980616.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st1/fit/500/500/76875e02f060febfc27eab7bd57444e8/32d2139fc442f894cae5f1c57e10376aaa62c6b31bc7536349941b1c0cb7dcd4.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/5d4365235181fc17a75fab2e9f10ae14/8d95fcabf0c8271ff7d11769db1dc6ff1c2c0c1a3f9340fde4410f1d6acac783.jpg.webp"
       ],
       "brand": "Xiaomi",
       "name": "Xiaomi Redmi 9 64 Гб, серый",
@@ -95,11 +95,11 @@
     },
     {
       "id": 3,
-      "imageUrl": "/images/xiaomi-11-lite.jpg",
+      "imageUrl": "https://c.dns-shop.ru/thumb/st1/fit/500/500/8c20c236237514ff2653f40d1c4b4064/df9ff2b4a6790b65cc16b4bae60cfd3519e7be3834e892da9a4c43bc58728741.jpg.webp",
       "images": [
-        "/images/xiaomi-11-lite.jpg",
-        "/images/products/xiaomi-11-lite-black/11-lite-black-800x800-85.png",
-        "/images/products/xiaomi-11-lite-black/IMG1616.jpg"
+        "https://c.dns-shop.ru/thumb/st1/fit/500/500/8c20c236237514ff2653f40d1c4b4064/df9ff2b4a6790b65cc16b4bae60cfd3519e7be3834e892da9a4c43bc58728741.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/236613c4993ee5875f35a8e569790f00/6ef5849089da5517444eddbaa41bd69663563dd3fb5c807ad48a96a43ed6dcce.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/ea4e266d490c029859a3ecfce790f7ae/cdb98f4c51786bacae99d172a05d29365742d1ae2dd195e5a665bd9bafcb7f2b.jpg.webp"
       ],
       "brand": "Xiaomi",
       "name": "Xiaomi 11 Lite 128 Гб, черный",
@@ -126,11 +126,11 @@
     },
     {
       "id": 4,
-      "imageUrl": "/images/iphone-13.jpg",
+      "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/177ffb63b8676c0c51f7ad0f97a9fbeb/eb8451aabac1799ab1082c14969fa040cb8f160adfe3292b4b3806325bff1d02.jpg.webp",
       "images": [
-        "/images/iphone-13.jpg",
-        "/images/products/iphone-13-blue/iphone-13-blue-4-700x500.jpg",
-        "/images/products/iphone-13-blue/smartfon-apple-iphone-13-blue-cena-800x800.jpg"
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/177ffb63b8676c0c51f7ad0f97a9fbeb/eb8451aabac1799ab1082c14969fa040cb8f160adfe3292b4b3806325bff1d02.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/f39a63c26b345cd639c1c42a9270b376/479b9d1b18425f4750726fa6a3d28ffb82382725f7724ca799aa5eb6dfd72163.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st1/fit/500/500/a60437a749d087c51c7f99d682285eef/d40ccfbb62289261dabcd2e5de40a89ef91dae1ad1a2b2b894db4dd54d31b089.jpg.webp"
       ],
       "brand": "Apple",
       "name": "Apple iPhone 13 Pro 64 Гб, синий",
@@ -157,11 +157,11 @@
     },
     {
       "id": 5,
-      "imageUrl": "/images/iphone-13.jpg",
+      "imageUrl": "https://c.dns-shop.ru/thumb/st1/fit/500/500/9b55cf42b76edbee95aa5aa200ea485f/97bd37ea5f0d516804fd5819f2ea1460228199e6612e0f5536f26bc61796e3a4.jpg.webp",
       "images": [
-        "/images/iphone-13.jpg",
-        "/images/products/iphone-13-blue/iphone-13-blue-4-700x500.jpg",
-        "/images/products/iphone-13-blue/smartfon-apple-iphone-13-blue-cena-800x800.jpg"
+        "https://c.dns-shop.ru/thumb/st1/fit/500/500/9b55cf42b76edbee95aa5aa200ea485f/97bd37ea5f0d516804fd5819f2ea1460228199e6612e0f5536f26bc61796e3a4.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/2058b34eba82f360e5d896803aa1848c/d1b6fa68e756279467818ee3eb27f79b76b046fcf3ab3ecd9a360ea0734b9050.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st1/fit/500/500/0d38bd7f999d517f81407a4c43a77d3b/12348ab4cb6390fa435d6672642f9fd6da77777a9cecb6c9e3fbd9483e1bc7f4.jpg.webp"
       ],
       "brand": "Apple",
       "name": "Apple iPhone 13 128 Гб, розовый",
@@ -188,11 +188,11 @@
     },
     {
       "id": 6,
-      "imageUrl": "/images/iphone-x.jpg",
+      "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
       "images": [
-        "/images/iphone-x.jpg",
-        "/images/products/iphone-x-silver/apple-iphone-x-64gb-silver_1.jpg",
-        "/images/products/iphone-x-silver/ebc9ea76dfe97e135198f7525997600b.jpg"
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/3674d3a258e1ca13c9c9cca4498ae88c/b3099612c90816a74bb2f088a8fc7b51faacfc8e75349c3f5cab07e05b5ced78.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/5ac85a7b25cbe46a51e96b727e97f9ca/1830d228861780f94c800ddaea592f65f158270cc42dad2373dcb06de5ab6910.jpg.webp"
       ],
       "brand": "Apple",
       "name": "Apple iPhone X 64 Гб, серебристый",
@@ -219,11 +219,11 @@
     },
     {
       "id": 7,
-      "imageUrl": "/images/iphone-x.jpg",
+      "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
       "images": [
-        "/images/iphone-x.jpg",
-        "/images/products/iphone-x-silver/apple-iphone-x-64gb-silver_1.jpg",
-        "/images/products/iphone-x-silver/ebc9ea76dfe97e135198f7525997600b.jpg"
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/3674d3a258e1ca13c9c9cca4498ae88c/b3099612c90816a74bb2f088a8fc7b51faacfc8e75349c3f5cab07e05b5ced78.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/5ac85a7b25cbe46a51e96b727e97f9ca/1830d228861780f94c800ddaea592f65f158270cc42dad2373dcb06de5ab6910.jpg.webp"
       ],
       "brand": "Apple",
       "name": "Apple iPhone X 64 Гб, черный",
@@ -250,14 +250,14 @@
     },
     {
       "id": 8,
-      "imageUrl": "/images/iphone-x.jpg",
+      "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/91443581f6ba81942814479f164519b9/18a076e185d239b21ba2c3153109825792c54fa87dcec142a5ddaa75dcc51889.jpg.webp",
       "images": [
-        "/images/iphone-x.jpg",
-        "/images/products/iphone-x-silver/apple-iphone-x-64gb-silver_1.jpg",
-        "/images/products/iphone-x-silver/ebc9ea76dfe97e135198f7525997600b.jpg"
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/91443581f6ba81942814479f164519b9/18a076e185d239b21ba2c3153109825792c54fa87dcec142a5ddaa75dcc51889.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st1/fit/500/500/24835f95a32a3c3b21721d10052bb26f/e7fd26f0317e0d1054cc9983d2f736d79caea9c1bcacc7f72eedd5023d0b3e50.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/b31be75c2e75fb7a873cc33a86e42055/fb39c4afb1eb824acac19f485dc32b89ffacb6f5ec2e7d62e32e79364b32faef.jpg.webp"
       ],
       "brand": "Apple",
-      "name": "Apple iPhone X 128 Гб, зеленый",
+      "name": "Apple iPhone 11 128 Гб, зеленый",
       "price": 30000,
       "rating": 4.2,
       "testimonials": 15,
@@ -276,19 +276,19 @@
         {"Ёмкость аккумулятора, мАч": "2500"},
         {"Цвет": "зеленый"}
       ],
-      "description": "<div>Стильный и надёжный смартфон Apple iPhone X оснащён ультра-производительным процессором А11 Bionic и стабильным программным обеспечением. Полноэкранный дисплей Super Retina с диагональю 5.8 дюйма демонстрирует невероятно яркую, контрастную и живую картинку. Корпус аппарата защищён от воды и пыли.</div><div>Камера с матрицей 12 Мп, широкоугольным объективом и чувствительной диафрагмой снимает идеально чёткие фотографии и видео, а двойная система оптической стабилизации ещё больше повышает качество изображений. Фронтальная камера на 7 Мп с прогрессивной функцией портретного освещения не только делает красивые селфи, но и помогает обеспечивать безупречный уровень безопасности. Функция Face ID разблокирует устройство после сканирования лица.</div><div>Корпус полностью выполнен из особенно прочного стекла, усиливающее покрытие которого на 50% толще по сравнению с предыдущими моделями. Благодаря специальному слою с поверхности легко удаляются все загрязнения.</div>",
+      "description": "<div>Стильный и надёжный смартфон Apple iPhone 11 оснащён ультра-производительным процессором А11 Bionic и стабильным программным обеспечением. Полноэкранный дисплей Super Retina с диагональю 5.8 дюйма демонстрирует невероятно яркую, контрастную и живую картинку. Корпус аппарата защищён от воды и пыли.</div><div>Камера с матрицей 12 Мп, широкоугольным объективом и чувствительной диафрагмой снимает идеально чёткие фотографии и видео, а двойная система оптической стабилизации ещё больше повышает качество изображений. Фронтальная камера на 7 Мп с прогрессивной функцией портретного освещения не только делает красивые селфи, но и помогает обеспечивать безупречный уровень безопасности. Функция Face ID разблокирует устройство после сканирования лица.</div><div>Корпус полностью выполнен из особенно прочного стекла, усиливающее покрытие которого на 50% толще по сравнению с предыдущими моделями. Благодаря специальному слою с поверхности легко удаляются все загрязнения.</div>",
       "shortDesc": "6x2.5 ГГц, 3 Гб, 1 SIM, OLED, 2436x1125, камера 12+12 Мп, NFC, 4G, GPS, 2700 мАч"
     },
     {
       "id": 9,
-      "imageUrl": "/images/iphone-x.jpg",
+      "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/0765b2a3fed537f431efbeb5b5430679/ff3435d14d713cc3ed67f2862e3367897c030bc8903b063b1f569824796aa56b.jpg.webp",
       "images": [
-        "/images/iphone-x.jpg",
-        "/images/products/iphone-x-silver/apple-iphone-x-64gb-silver_1.jpg",
-        "/images/products/iphone-x-silver/ebc9ea76dfe97e135198f7525997600b.jpg"
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/0765b2a3fed537f431efbeb5b5430679/ff3435d14d713cc3ed67f2862e3367897c030bc8903b063b1f569824796aa56b.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st1/fit/500/500/7a050b65d806b80910ff203876583023/edbd32b95907d230dfc78e1bfbda32477791df1ca292d48b62060e56d806564a.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st1/fit/500/500/d2c72026029de1132fc61d8f8d1e78b1/91d8450774ce25faeb28869ab58a491c25de4f42a7826a1cba888d518b106e82.jpg.webp"
       ],
       "brand": "Apple",
-      "name": "Apple iPhone X 128 Гб, золотой",
+      "name": "Apple iPhone 11 128 Гб, золотистый",
       "price": 35000,
       "rating": 4.2,
       "testimonials": 15,
@@ -307,16 +307,16 @@
         {"Ёмкость аккумулятора, мАч": "2500"},
         {"Цвет": "золотой"}
       ],
-      "description": "<div>Стильный и надёжный смартфон Apple iPhone X оснащён ультра-производительным процессором А11 Bionic и стабильным программным обеспечением. Полноэкранный дисплей Super Retina с диагональю 5.8 дюйма демонстрирует невероятно яркую, контрастную и живую картинку. Корпус аппарата защищён от воды и пыли.</div><div>Камера с матрицей 12 Мп, широкоугольным объективом и чувствительной диафрагмой снимает идеально чёткие фотографии и видео, а двойная система оптической стабилизации ещё больше повышает качество изображений. Фронтальная камера на 7 Мп с прогрессивной функцией портретного освещения не только делает красивые селфи, но и помогает обеспечивать безупречный уровень безопасности. Функция Face ID разблокирует устройство после сканирования лица.</div><div>Корпус полностью выполнен из особенно прочного стекла, усиливающее покрытие которого на 50% толще по сравнению с предыдущими моделями. Благодаря специальному слою с поверхности легко удаляются все загрязнения.</div>",
+      "description": "<div>Стильный и надёжный смартфон Apple iPhone 11 оснащён ультра-производительным процессором А11 Bionic и стабильным программным обеспечением. Полноэкранный дисплей Super Retina с диагональю 5.8 дюйма демонстрирует невероятно яркую, контрастную и живую картинку. Корпус аппарата защищён от воды и пыли.</div><div>Камера с матрицей 12 Мп, широкоугольным объективом и чувствительной диафрагмой снимает идеально чёткие фотографии и видео, а двойная система оптической стабилизации ещё больше повышает качество изображений. Фронтальная камера на 7 Мп с прогрессивной функцией портретного освещения не только делает красивые селфи, но и помогает обеспечивать безупречный уровень безопасности. Функция Face ID разблокирует устройство после сканирования лица.</div><div>Корпус полностью выполнен из особенно прочного стекла, усиливающее покрытие которого на 50% толще по сравнению с предыдущими моделями. Благодаря специальному слою с поверхности легко удаляются все загрязнения.</div>",
       "shortDesc": "6x2.5 ГГц, 3 Гб, 1 SIM, OLED, 2436x1125, камера 12+12 Мп, NFC, 4G, GPS, 2700 мАч"
     },
     {
       "id": 10,
-      "imageUrl": "/images/iphone-x.jpg",
+      "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
       "images": [
-        "/images/iphone-x.jpg",
-        "/images/products/iphone-x-silver/apple-iphone-x-64gb-silver_1.jpg",
-        "/images/products/iphone-x-silver/ebc9ea76dfe97e135198f7525997600b.jpg"
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/3674d3a258e1ca13c9c9cca4498ae88c/b3099612c90816a74bb2f088a8fc7b51faacfc8e75349c3f5cab07e05b5ced78.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/5ac85a7b25cbe46a51e96b727e97f9ca/1830d228861780f94c800ddaea592f65f158270cc42dad2373dcb06de5ab6910.jpg.webp"
       ],
       "brand": "Apple",
       "name": "Apple iPhone X 128 Гб, черный",
@@ -343,14 +343,14 @@
     },
     {
       "id": 11,
-      "imageUrl": "/images/iphone-x.jpg",
+      "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/a21eb3b0d675a518ea7073d218e96223/71a5351d3586ffac7e38a335faacf082405a985d4adb0d19b6759308fbcfa687.jpg.webp",
       "images": [
-        "/images/iphone-x.jpg",
-        "/images/products/iphone-x-silver/apple-iphone-x-64gb-silver_1.jpg",
-        "/images/products/iphone-x-silver/ebc9ea76dfe97e135198f7525997600b.jpg"
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/a21eb3b0d675a518ea7073d218e96223/71a5351d3586ffac7e38a335faacf082405a985d4adb0d19b6759308fbcfa687.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/6f2811a710e24d54034629fec8a239a5/a3ee2b87b2e7ea2c09d71e78687fadc9bae977cad95bbaaaf67d6d62d4400b04.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st1/fit/500/500/36cfcdff7a3ceb622480b9af34d1b71f/3859acd1e2d6fae5a2dd55a8a433ea476e119962d873e7aa0d06fb21398a8302.jpg.webp"
       ],
       "brand": "Apple",
-      "name": "Apple iPhone X 128 Гб, белый",
+      "name": "Apple iPhone 11 128 Гб, белый",
       "price": 35000,
       "rating": 4.2,
       "testimonials": 15,
@@ -369,16 +369,16 @@
         {"Ёмкость аккумулятора, мАч": "2500"},
         {"Цвет": "белый"}
       ],
-      "description": "<div>Стильный и надёжный смартфон Apple iPhone X оснащён ультра-производительным процессором А11 Bionic и стабильным программным обеспечением. Полноэкранный дисплей Super Retina с диагональю 5.8 дюйма демонстрирует невероятно яркую, контрастную и живую картинку. Корпус аппарата защищён от воды и пыли.</div><div>Камера с матрицей 12 Мп, широкоугольным объективом и чувствительной диафрагмой снимает идеально чёткие фотографии и видео, а двойная система оптической стабилизации ещё больше повышает качество изображений. Фронтальная камера на 7 Мп с прогрессивной функцией портретного освещения не только делает красивые селфи, но и помогает обеспечивать безупречный уровень безопасности. Функция Face ID разблокирует устройство после сканирования лица.</div><div>Корпус полностью выполнен из особенно прочного стекла, усиливающее покрытие которого на 50% толще по сравнению с предыдущими моделями. Благодаря специальному слою с поверхности легко удаляются все загрязнения.</div>",
+      "description": "<div>Стильный и надёжный смартфон Apple iPhone 11 оснащён ультра-производительным процессором А11 Bionic и стабильным программным обеспечением. Полноэкранный дисплей Super Retina с диагональю 5.8 дюйма демонстрирует невероятно яркую, контрастную и живую картинку. Корпус аппарата защищён от воды и пыли.</div><div>Камера с матрицей 12 Мп, широкоугольным объективом и чувствительной диафрагмой снимает идеально чёткие фотографии и видео, а двойная система оптической стабилизации ещё больше повышает качество изображений. Фронтальная камера на 7 Мп с прогрессивной функцией портретного освещения не только делает красивые селфи, но и помогает обеспечивать безупречный уровень безопасности. Функция Face ID разблокирует устройство после сканирования лица.</div><div>Корпус полностью выполнен из особенно прочного стекла, усиливающее покрытие которого на 50% толще по сравнению с предыдущими моделями. Благодаря специальному слою с поверхности легко удаляются все загрязнения.</div>",
       "shortDesc": "6x2.5 ГГц, 3 Гб, 1 SIM, OLED, 2436x1125, камера 12+12 Мп, NFC, 4G, GPS, 2700 мАч"
     },
     {
       "id": 12,
-      "imageUrl": "/images/iphone-x.jpg",
+      "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
       "images": [
-        "/images/iphone-x.jpg",
-        "/images/products/iphone-x-silver/apple-iphone-x-64gb-silver_1.jpg",
-        "/images/products/iphone-x-silver/ebc9ea76dfe97e135198f7525997600b.jpg"
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/3674d3a258e1ca13c9c9cca4498ae88c/b3099612c90816a74bb2f088a8fc7b51faacfc8e75349c3f5cab07e05b5ced78.jpg.webp",
+        "https://c.dns-shop.ru/thumb/st4/fit/500/500/5ac85a7b25cbe46a51e96b727e97f9ca/1830d228861780f94c800ddaea592f65f158270cc42dad2373dcb06de5ab6910.jpg.webp"
       ],
       "brand": "Apple",
       "name": "Apple iPhone X 128 Гб, черный",
