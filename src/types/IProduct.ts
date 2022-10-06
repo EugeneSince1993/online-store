@@ -1,7 +1,7 @@
 import { ISpec } from "./ISpec";
 
 export interface IProduct {
-  id: number;
+  id: string;
   imageUrl: string;
   images: string[];
   name: string;

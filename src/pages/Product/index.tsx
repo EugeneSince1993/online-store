@@ -22,12 +22,12 @@ export const Product: FC = () => {
   const dispatch = useAppDispatch();
 
   const initialProduct: IProduct = {
-    id: 0,
-    imageUrl: "/images/iphone-12-red.jpg",
+    id: "0",
+    imageUrl: "https://c.dns-shop.ru/thumb/st1/fit/500/500/c37c5e3b5f8dbf96784d596c30b6cb1a/d97646879f66b4c8f4690107b503240f40a6b731ed6575fa7fbe4f0a7d0d63fc.jpg.webp",
     images: [
-      "/images/products/iphone-12-red/iphone-12-red.jpg",
-      "/images/products/iphone-12-red/iphone-12-red-2-min.jpg",
-      "/images/products/iphone-12-red/iphone-12-red-3-min.jpg"
+      "https://c.dns-shop.ru/thumb/st1/fit/500/500/c37c5e3b5f8dbf96784d596c30b6cb1a/d97646879f66b4c8f4690107b503240f40a6b731ed6575fa7fbe4f0a7d0d63fc.jpg.webp",
+      "https://c.dns-shop.ru/thumb/st1/fit/500/500/17e47304999c2353cae08c032b3be8f9/1cae89b6daff59973c2b5d665e3af67dfcbedf285821146b8d56d0d772a1f945.jpg.webp",
+      "https://c.dns-shop.ru/thumb/st1/fit/500/500/8ad5c8a0d50f44f746a955c489392be2/3ea2e901a2228ea8bd477b98c8449add00f11aa4ad4646f98270ac094a50cab7.jpg.webp"
     ],
     brand: "Apple",
     name: "Apple iPhone 12 Mini 64 Гб, красный",
@@ -60,7 +60,7 @@ export const Product: FC = () => {
 
   useEffect(() => {
     axios
-      .get(`/products/${id}`)
+      .get(`https://62d96f595d893b27b2e676e7.mockapi.io/products/${id}`)
       .then((res) => {
         setProductObj(res.data);
       })

@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 0,
+      "id": "0",
       "imageUrl": "https://c.dns-shop.ru/thumb/st1/fit/500/500/c37c5e3b5f8dbf96784d596c30b6cb1a/d97646879f66b4c8f4690107b503240f40a6b731ed6575fa7fbe4f0a7d0d63fc.jpg.webp",
       "images": [
         "https://c.dns-shop.ru/thumb/st1/fit/500/500/c37c5e3b5f8dbf96784d596c30b6cb1a/d97646879f66b4c8f4690107b503240f40a6b731ed6575fa7fbe4f0a7d0d63fc.jpg.webp",
@@ -32,7 +32,7 @@
       "shortDesc": "6x(2.99 ГГц), 4 Гб, 1 SIM, OLED, 2340x1080, камера 12+12 Мп, NFC, 5G, GPS, 2227 мА*ч"
     },
     {
-      "id": 1,
+      "id": "1",
       "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/beaa90d50324945391d124dfb217a1cb/ed119b3f00d58fd4eeb972d5bcb9f899d8b57c58bc4ce48d619583451dc6006d.jpg.webp",
       "images": [
         "https://c.dns-shop.ru/thumb/st4/fit/500/500/beaa90d50324945391d124dfb217a1cb/ed119b3f00d58fd4eeb972d5bcb9f899d8b57c58bc4ce48d619583451dc6006d.jpg.webp",
@@ -63,7 +63,7 @@
       "shortDesc": "8x(2.3 ГГц, 1.8 ГГц), 4 Гб, 2 SIM, Super AMOLED, 2400x1080, камера 64+12+5+5 Мп, NFC, 4G, GPS, FM, 4500 мА*ч"
     },
     {
-      "id": 2,
+      "id": "2",
       "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/85b57168f63595bfde45ee67f14d7bd8/0a8694a84262992849ac45ee1dcc9d9a700ac4dd8ee34d9de92f77c5bf980616.jpg.webp",
       "images": [
         "https://c.dns-shop.ru/thumb/st4/fit/500/500/85b57168f63595bfde45ee67f14d7bd8/0a8694a84262992849ac45ee1dcc9d9a700ac4dd8ee34d9de92f77c5bf980616.jpg.webp",
@@ -94,7 +94,7 @@
       "shortDesc": "8x(2 ГГц, 1.8 ГГц), 3 Гб, 2 SIM, IPS, 2340x1080, камера 13+8+5+2 Мп, NFC, 4G, GPS, FM, 5020 мА*ч"
     },
     {
-      "id": 3,
+      "id": "3",
       "imageUrl": "https://c.dns-shop.ru/thumb/st1/fit/500/500/8c20c236237514ff2653f40d1c4b4064/df9ff2b4a6790b65cc16b4bae60cfd3519e7be3834e892da9a4c43bc58728741.jpg.webp",
       "images": [
         "https://c.dns-shop.ru/thumb/st1/fit/500/500/8c20c236237514ff2653f40d1c4b4064/df9ff2b4a6790b65cc16b4bae60cfd3519e7be3834e892da9a4c43bc58728741.jpg.webp",
@@ -125,7 +125,7 @@
       "shortDesc": "8x(2.3 ГГц, 1.8 ГГц), 8 Гб, 2 SIM, AMOLED, 2400x1080, камера 64+8+5 Мп, NFC, 4G, GPS, 4250 мА*ч"
     },
     {
-      "id": 4,
+      "id": "4",
       "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/177ffb63b8676c0c51f7ad0f97a9fbeb/eb8451aabac1799ab1082c14969fa040cb8f160adfe3292b4b3806325bff1d02.jpg.webp",
       "images": [
         "https://c.dns-shop.ru/thumb/st4/fit/500/500/177ffb63b8676c0c51f7ad0f97a9fbeb/eb8451aabac1799ab1082c14969fa040cb8f160adfe3292b4b3806325bff1d02.jpg.webp",
@@ -156,7 +156,7 @@
       "shortDesc": "6x(1.8 ГГц, 3.2 ГГц), 1 SIM, OLED, 2532х1170, камера 12+12+12 Мп, NFC, 5G, GPS"
     },
     {
-      "id": 5,
+      "id": "5",
       "imageUrl": "https://c.dns-shop.ru/thumb/st1/fit/500/500/9b55cf42b76edbee95aa5aa200ea485f/97bd37ea5f0d516804fd5819f2ea1460228199e6612e0f5536f26bc61796e3a4.jpg.webp",
       "images": [
         "https://c.dns-shop.ru/thumb/st1/fit/500/500/9b55cf42b76edbee95aa5aa200ea485f/97bd37ea5f0d516804fd5819f2ea1460228199e6612e0f5536f26bc61796e3a4.jpg.webp",
@@ -187,7 +187,7 @@
       "shortDesc": "6x(1.8 ГГц, 3.2 ГГц), 1 SIM, OLED, 2532х1170, камера 12+12 Мп, NFC, 5G, GPS"
     },
     {
-      "id": 6,
+      "id": "6",
       "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
       "images": [
         "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
@@ -218,7 +218,7 @@
       "shortDesc": "6x2.5 ГГц, 3 Гб, 1 SIM, OLED, 2436x1125, камера 12+12 Мп, NFC, 4G, GPS, 2700 мАч"
     },
     {
-      "id": 7,
+      "id": "7",
       "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
       "images": [
         "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
@@ -249,7 +249,7 @@
       "shortDesc": "6x2.5 ГГц, 3 Гб, 1 SIM, OLED, 2436x1125, камера 12+12 Мп, NFC, 4G, GPS, 2700 мАч"
     },
     {
-      "id": 8,
+      "id": "8",
       "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/91443581f6ba81942814479f164519b9/18a076e185d239b21ba2c3153109825792c54fa87dcec142a5ddaa75dcc51889.jpg.webp",
       "images": [
         "https://c.dns-shop.ru/thumb/st4/fit/500/500/91443581f6ba81942814479f164519b9/18a076e185d239b21ba2c3153109825792c54fa87dcec142a5ddaa75dcc51889.jpg.webp",
@@ -280,7 +280,7 @@
       "shortDesc": "6x2.5 ГГц, 3 Гб, 1 SIM, OLED, 2436x1125, камера 12+12 Мп, NFC, 4G, GPS, 2700 мАч"
     },
     {
-      "id": 9,
+      "id": "9",
       "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/0765b2a3fed537f431efbeb5b5430679/ff3435d14d713cc3ed67f2862e3367897c030bc8903b063b1f569824796aa56b.jpg.webp",
       "images": [
         "https://c.dns-shop.ru/thumb/st4/fit/500/500/0765b2a3fed537f431efbeb5b5430679/ff3435d14d713cc3ed67f2862e3367897c030bc8903b063b1f569824796aa56b.jpg.webp",
@@ -311,7 +311,7 @@
       "shortDesc": "6x2.5 ГГц, 3 Гб, 1 SIM, OLED, 2436x1125, камера 12+12 Мп, NFC, 4G, GPS, 2700 мАч"
     },
     {
-      "id": 10,
+      "id": "10",
       "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
       "images": [
         "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
@@ -342,7 +342,7 @@
       "shortDesc": "6x2.5 ГГц, 3 Гб, 1 SIM, OLED, 2436x1125, камера 12+12 Мп, NFC, 4G, GPS, 2700 мАч"
     },
     {
-      "id": 11,
+      "id": "11",
       "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/a21eb3b0d675a518ea7073d218e96223/71a5351d3586ffac7e38a335faacf082405a985d4adb0d19b6759308fbcfa687.jpg.webp",
       "images": [
         "https://c.dns-shop.ru/thumb/st4/fit/500/500/a21eb3b0d675a518ea7073d218e96223/71a5351d3586ffac7e38a335faacf082405a985d4adb0d19b6759308fbcfa687.jpg.webp",
@@ -373,7 +373,7 @@
       "shortDesc": "6x2.5 ГГц, 3 Гб, 1 SIM, OLED, 2436x1125, камера 12+12 Мп, NFC, 4G, GPS, 2700 мАч"
     },
     {
-      "id": 12,
+      "id": "12",
       "imageUrl": "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
       "images": [
         "https://c.dns-shop.ru/thumb/st4/fit/500/500/6b0acff3d58fe5c64bea5d87668f988b/817a9606bd42fd2a7770bb7569310f9aededd44ecd5fa95a616b23d446b85fa2.jpg.webp",
