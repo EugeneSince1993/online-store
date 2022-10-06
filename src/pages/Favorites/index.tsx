@@ -22,7 +22,7 @@ export const Favorites: FC = () => {
   }
   
   return (
-    <div>
+    <div className={styles.favoritesBlock}>
       <h1>Избранное</h1>
       <div className={styles.favoritesContainer}>
         <div className={styles.productList}>

@@ -1,60 +1,39 @@
-.favoritesContainer {
-  display: flex;
+.favoritesBlock {
+  padding-left: 10px;
+  padding-right: 10px;
 
-  .productList {
-    flex-basis: 70%;
-  }
-
-  .summary {
-    flex-basis: 30%;
-    padding-left: 70px;
-
-    .summaryContainer {
-      border: 3px solid #a0a0a0;
-      padding: 15px;
-      margin-bottom: 20px;
-
-      h3 {
-        margin-bottom: 20px;
-      }
+  .favoritesContainer {
+    display: flex;
   
-      .summaryBlocks {
-        display: flex;
-        justify-content: space-between;
+    .productList {
+      flex-basis: 70%;
+    }
   
-        .productQuantity {
-  
-          .quantityKey {
-            margin-bottom: 10px;
-            font-size: 16px;
-          }
-  
-          .quantityValue {
-            font-size: 24px;
-          }
-        }
-  
-        .total {
-          
-          .totalKey {
-            margin-bottom: 10px;
-            font-size: 16px;
-          }
-        }
-      }
+    .summary {
+      flex-basis: 30%;
+      padding-left: 70px;
     }
   }
 }
 
-.price {
-  display: block;
+@media screen and (max-width: 450px) {
+  .favoritesBlock {
 
-  .priceValue, .currency {
-    display: inline-block;
-    font-size: 24px;
-  }
+    .favoritesContainer {
+      display: block;
 
-  .priceValue {
-    margin-right: 5px;
+      .summary {
+        padding-left: 0;
+
+        div {
+
+          a {
+            font-size: 16px;
+            margin-bottom: 0;
+
+          }
+        }
+      }
+    }
   }
 }

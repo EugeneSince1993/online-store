@@ -72,7 +72,6 @@ export const FavoriteItem: FC<IFavoriteItemProps> = ({
               }>
                 shopping_cart
               </span>
-              <span className={styles.toCart}>В корзину</span>
             </div>
           </button>
         </div>
