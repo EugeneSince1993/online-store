@@ -67,15 +67,15 @@
           color: rgb(173, 173, 173);
           font-size: 19px;
           transition: all 0.2s ease-in-out;
+
+          &:hover {
+            color: rgb(255, 45, 143);
+          }
         }
 
         .tooltipText {
           width: 175px;
           margin-left: -89px;
-        }
-
-        &:hover i {
-          color: rgb(255, 45, 143);
         }
       }
     }
@@ -125,9 +125,10 @@
             &:hover {
               background-color: #5c9aff;
             }
-  
-            .cartIcon {
+
+            i {
               color: #fff;
+              font-size: 18px;
             }
           }
   
@@ -135,6 +136,21 @@
             width: 155px;
             margin-left: -78px;
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+  .productItem {
+  
+    .productItemInner {
+  
+      .image {
+  
+        img {
+          max-height: 148px;
         }
       }
     }
@@ -162,6 +178,16 @@
   
         img {
           max-height: 125px;
+        }
+      }
+
+      .icons {
+
+        .favorites {
+          
+          i:hover {
+            color: rgb(173, 173, 173);
+          }
         }
       }
 
@@ -206,6 +232,16 @@
   
         img {
           max-height: 115px;
+        }
+      }
+
+      .icons {
+
+        .favorites {
+          
+          i:hover {
+            color: rgb(173, 173, 173);
+          }
         }
       }
 

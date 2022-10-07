@@ -73,8 +73,13 @@
           align-items: center;
 
           .cartIcon {
-            color: #fff;
+            display: inline-block;
             margin-right: 7px;
+            
+            i {
+              color: #fff;
+              font-size: 16px;
+            }
           }
 
           .toCart {
@@ -156,14 +161,17 @@
         margin-right: 25px;
 
         button {
-          padding: 6px;
+          padding: 7px;
           margin-right: 0;
   
           > div {
   
             .cartIcon {
-              font-size: 20px;
               margin-right: 0;
+
+              i {
+                font-size: 18px;
+              }
             }
 
             .toCart {

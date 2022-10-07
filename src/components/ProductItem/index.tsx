@@ -103,11 +103,7 @@ export const ProductItem = ({
                 className="tooltip"
                 onClick={onClickAddToCart}
               >
-                <span className={
-                  classNames("material-symbols-outlined", styles.cartIcon)
-                }>
-                  shopping_cart
-                </span>
+                <i className="fa-solid fa-cart-shopping"></i>
                 <div className="tooltipText">Добавить в корзину</div>
               </button>
             </div>

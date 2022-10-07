@@ -106,8 +106,13 @@
               align-items: center;
   
               .cartIcon {
-                color: #fff;
+                display: inline-block;
                 margin-right: 7px;
+                
+                i {
+                  color: #fff;
+                  font-size: 16px;
+                }
               }
     
               .toCart {
@@ -126,15 +131,15 @@
             color: rgb(173, 173, 173);
             font-size: 24px;
             transition: all 0.2s ease-in-out;
+
+            &:hover {
+              color: rgb(255, 45, 143);
+            }
           }
   
           .tooltipText {
             width: 175px;
             margin-left: -88px;
-          }
-  
-          &:hover i {
-            color: rgb(255, 45, 143);
           }
         }
       }
@@ -213,17 +218,18 @@
           .addToCart {
 
             button {
-              padding-left: 10px;
-              padding-right: 10px;
 
               div {
 
-                span:first-of-type {
-                  font-size: 23px;
+                .cartIcon {
+
+                  i {
+                    font-size: 16px;
+                  }
                 }
 
-                span.toCart {
-                  font-size: 18px;
+                .toCart {
+                  font-size: 16px;
                 }
               }
             }
@@ -233,6 +239,10 @@
 
             i {
               font-size: 28px;
+
+              &:hover {
+                color: rgb(173, 173, 173);
+              }
             }
           }
         }
@@ -307,17 +317,18 @@
           .addToCart {
 
             button {
-              padding-left: 10px;
-              padding-right: 10px;
 
               div {
 
-                span:first-of-type {
-                  font-size: 23px;
+                .cartIcon {
+                  
+                  i {
+                    font-size: 16px;
+                  }
                 }
 
-                span.toCart {
-                  font-size: 18px;
+                .toCart {
+                  font-size: 16px;
                 }
               }
             }
@@ -327,6 +338,10 @@
 
             i {
               font-size: 28px;
+
+              &:hover {
+                color: rgb(173, 173, 173);
+              }
             }
           }
         }

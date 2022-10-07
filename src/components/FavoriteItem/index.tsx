@@ -67,10 +67,8 @@ export const FavoriteItem: FC<IFavoriteItemProps> = ({
         <div className={styles.addToCart}>
           <button onClick={onClickAddToCart}>
             <div>
-              <span className={
-                classNames("material-symbols-outlined", styles.cartIcon)
-              }>
-                shopping_cart
+              <span className={styles.cartIcon}>
+                <i className="fa-solid fa-cart-shopping"></i>
               </span>
               <span className={styles.toCart}>В корзину</span>
             </div>
