@@ -40,11 +40,7 @@ export const Header: FC = () => {
             <img src={onlineStoreLogo} alt="online store" />
           </NavLink>
         </div>
-        {location.pathname === '/' && (
-          <div className={styles.search}>
-            <Search />
-          </div>
-        )}
+        {location.pathname === '/' && <Search />}
         <MediaQuery minWidth={768}>
           <div className={styles.nav}>
             <nav>
