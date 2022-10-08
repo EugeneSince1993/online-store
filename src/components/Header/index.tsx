@@ -1,4 +1,5 @@
 import { FC, useEffect, useRef } from 'react';
+import MediaQuery from 'react-responsive';
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 import { NavLink, useLocation } from 'react-router-dom';
@@ -32,60 +33,109 @@ export const Header: FC = () => {
   }, [favoriteItems]);
 
   return (
-    <header className={classNames(styles.header, 'bgLightGray')}>
-      <div className={styles.logo}>
-        <NavLink to="/">
-          <img src={onlineStoreLogo} alt="online store" />
-        </NavLink>
-      </div>
-      {(location.pathname !== '/cart' && location.pathname !== '/favorites') && (
-        <div className={styles.search}>
-          <Search />
+    <>
+      <header className={classNames(styles.header, 'bgLightGray')}>
+        <div className={styles.logo}>
+          <NavLink to="/">
+            <img src={onlineStoreLogo} alt="online store" />
+          </NavLink>
         </div>
-      )}
-      <div className={styles.nav}>
-        <nav>
-          <ul>
-            <li>
-              <NavLink to="/cart">
-                <div className={classNames(styles.linkInner, styles.cartLink)}>
-                  <div className={styles.linkGroup}>
-                    <div className={styles.linkInnerText}>
-                      <i className="fa-solid fa-cart-shopping"></i>
-                      <div>Корзина</div>
-                    </div>
-                    {cartTotal > 0 && (
-                      <div className={styles.totalCount}>
-                        <div>{cartTotal}</div>
+        {location.pathname === '/' && (
+          <div className={styles.search}>
+            <Search />
+          </div>
+        )}
+        <MediaQuery minWidth={768}>
+          <div className={styles.nav}>
+            <nav>
+              <ul>
+                <li>
+                  <NavLink to="/cart">
+                    <div className={classNames(styles.linkInner, styles.cartLink)}>
+                      <div className={styles.linkGroup}>
+                        <div className={styles.linkInnerText}>
+                          <i className="fa-solid fa-cart-shopping"></i>
+                          <div>Корзина</div>
+                        </div>
+                        {cartTotal > 0 && (
+                          <div className={styles.totalCount}>
+                            <div>{cartTotal}</div>
+                          </div>
+                        )}
                       </div>
-                    )}
-                  </div>
-                </div>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/favorites">
-                <div className={classNames(styles.linkInner, styles.favoritesLink)}>
-                  <div className={styles.linkGroup}>
-                    <div className={styles.linkInnerText}>
-                      <i className="fa-solid fa-heart"></i>
-                      <div>Избранное</div>
                     </div>
-                    {favoritesTotal > 0 && (
-                      <div className={styles.totalCount}>
-                        <div>{favoritesTotal}</div>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/favorites">
+                    <div className={classNames(styles.linkInner, styles.favoritesLink)}>
+                      <div className={styles.linkGroup}>
+                        <div className={styles.linkInnerText}>
+                          <i className="fa-solid fa-heart"></i>
+                          <div>Избранное</div>
+                        </div>
+                        {favoritesTotal > 0 && (
+                          <div className={styles.totalCount}>
+                            <div>{favoritesTotal}</div>
+                          </div>
+                        )}
                       </div>
-                    )}
+                    </div>
+                  </NavLink>
+                </li>
+                <li style={{display: "none"}}>
+                  <a href="#">Войти</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </MediaQuery>
+      </header>
+      <MediaQuery maxWidth={450}>
+        <div className={styles.nav}>
+          <nav>
+            <ul>
+              <li>
+                <NavLink to="/cart">
+                  <div className={classNames(styles.linkInner, styles.cartLink)}>
+                    <div className={styles.linkGroup}>
+                      <div className={styles.linkInnerText}>
+                        <i className="fa-solid fa-cart-shopping"></i>
+                        <div>Корзина</div>
+                      </div>
+                      {cartTotal > 0 && (
+                        <div className={styles.totalCount}>
+                          <div>{cartTotal}</div>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </NavLink>
-            </li>
-            <li style={{display: "none"}}>
-              <a href="#">Войти</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/favorites">
+                  <div className={classNames(styles.linkInner, styles.favoritesLink)}>
+                    <div className={styles.linkGroup}>
+                      <div className={styles.linkInnerText}>
+                        <i className="fa-solid fa-heart"></i>
+                        <div>Избранное</div>
+                      </div>
+                      {favoritesTotal > 0 && (
+                        <div className={styles.totalCount}>
+                          <div>{favoritesTotal}</div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </NavLink>
+              </li>
+              <li style={{display: "none"}}>
+                <a href="#">Войти</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </MediaQuery>
+    </>
   );
 };
