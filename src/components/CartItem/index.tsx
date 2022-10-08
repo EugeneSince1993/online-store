@@ -44,9 +44,9 @@ export const CartItem: FC<CartItemProps> = ({
 
   return (
     <div className={styles.productItem}>
-      <div className={styles.thumbnail}>
+      <NavLink to={`/products/${id}`} className={styles.thumbnail}>
         <img src={imageUrl} />
-      </div>
+      </NavLink>
       <div className={styles.dataContainer}>
         <div className={styles.productInfo}>
           <NavLink to={`/products/${id}`} className={styles.productName}>
