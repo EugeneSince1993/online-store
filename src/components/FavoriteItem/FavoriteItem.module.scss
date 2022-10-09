@@ -111,6 +111,18 @@
   }
 }
 
+@media screen and (min-width: 700px) and (max-width: 1199px) {
+  .productItem {
+  
+    .dataContainer {
+  
+      .productInfo {
+        width: 210px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 450px) {
   .productItem {
     margin-bottom: 20px;

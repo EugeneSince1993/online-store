@@ -141,11 +141,29 @@
   .productItem {
   
     .productItemInner {
-  
+      height: 317px;
+
       .image {
   
         img {
           max-height: 148px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1199px) {
+  .productItem {
+    flex-basis: 50%;
+
+    .productItemInner {
+        height: 298px;
+
+      .image {
+  
+        img {
+          max-height: 130px;
         }
       }
     }

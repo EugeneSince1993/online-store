@@ -173,6 +173,15 @@
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .info {
+
+    .productDescription {
+      width: 100%;
+    }
+  }
+}
+
 @media screen and (max-width: 450px) {
   .productContainer {
     display: block;

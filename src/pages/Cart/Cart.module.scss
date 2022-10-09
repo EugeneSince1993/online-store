@@ -64,11 +64,31 @@
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 1199px) {
   .cartBlock {
 
     .cartContainer {
       display: block;
+    }
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1199px) {
+  .cartBlock {
+
+    .cartContainer {
+
+      .summary { 
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .cartBlock {
+
+    .cartContainer {
 
       .summary {
 

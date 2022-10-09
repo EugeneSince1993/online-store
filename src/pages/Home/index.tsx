@@ -252,21 +252,23 @@ export const Home: FC = () => {
             </div>
           ) : (currentData.length ? (
             <>
-              <div className={styles.productList}>
-                {currentData.map((item: any, index: number) => {
-                  return (
-                    <ProductItem
-                      productId={item.id}
-                      phoneImage={item.imageUrl}
-                      rating={item.rating}
-                      testimonials={item.testimonials}
-                      productName={item.name}
-                      priceValue={item.price}
-                      productCode={item.productCode}
-                      key={index}
-                    />
-                  );
-                })}
+              <div className={styles.productListWrapper}>
+                <div className={styles.productList}>
+                  {currentData.map((item: any, index: number) => {
+                    return (
+                      <ProductItem
+                        productId={item.id}
+                        phoneImage={item.imageUrl}
+                        rating={item.rating}
+                        testimonials={item.testimonials}
+                        productName={item.name}
+                        priceValue={item.price}
+                        productCode={item.productCode}
+                        key={index}
+                      />
+                    );
+                  })}
+                </div>
               </div>
               <div className={styles.productsPagination}>
                 <Pagination 

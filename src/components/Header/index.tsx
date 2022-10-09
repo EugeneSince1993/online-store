@@ -6,6 +6,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { Search } from './Search';
 import { selectCart } from '../../redux/cart/selectors';
 import { selectFavorites } from '../../redux/favorites/selectors';
+import { Nav } from './Nav';
 import styles from './Header.module.scss';
 import onlineStoreLogo from '../../assets/img/online-store-logo-min.png';
 
@@ -41,96 +42,12 @@ export const Header: FC = () => {
           </NavLink>
         </div>
         {location.pathname === '/' && <Search />}
-        <MediaQuery minWidth={768}>
-          <div className={styles.nav}>
-            <nav>
-              <ul>
-                <li>
-                  <NavLink to="/cart">
-                    <div className={classNames(styles.linkInner, styles.cartLink)}>
-                      <div className={styles.linkGroup}>
-                        <div className={styles.linkInnerText}>
-                          <i className="fa-solid fa-cart-shopping"></i>
-                          <div>Корзина</div>
-                        </div>
-                        {cartTotal > 0 && (
-                          <div className={styles.totalCount}>
-                            <div>{cartTotal}</div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/favorites">
-                    <div className={classNames(styles.linkInner, styles.favoritesLink)}>
-                      <div className={styles.linkGroup}>
-                        <div className={styles.linkInnerText}>
-                          <i className="fa-solid fa-heart"></i>
-                          <div>Избранное</div>
-                        </div>
-                        {favoritesTotal > 0 && (
-                          <div className={styles.totalCount}>
-                            <div>{favoritesTotal}</div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </NavLink>
-                </li>
-                <li style={{display: "none"}}>
-                  <a href="#">Войти</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+        <MediaQuery minWidth={700}>
+          <Nav cartTotal={cartTotal} favoritesTotal={favoritesTotal} />
         </MediaQuery>
       </header>
       <MediaQuery maxWidth={450}>
-        <div className={styles.nav}>
-          <nav>
-            <ul>
-              <li>
-                <NavLink to="/cart">
-                  <div className={classNames(styles.linkInner, styles.cartLink)}>
-                    <div className={styles.linkGroup}>
-                      <div className={styles.linkInnerText}>
-                        <i className="fa-solid fa-cart-shopping"></i>
-                        <div>Корзина</div>
-                      </div>
-                      {cartTotal > 0 && (
-                        <div className={styles.totalCount}>
-                          <div>{cartTotal}</div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/favorites">
-                  <div className={classNames(styles.linkInner, styles.favoritesLink)}>
-                    <div className={styles.linkGroup}>
-                      <div className={styles.linkInnerText}>
-                        <i className="fa-solid fa-heart"></i>
-                        <div>Избранное</div>
-                      </div>
-                      {favoritesTotal > 0 && (
-                        <div className={styles.totalCount}>
-                          <div>{favoritesTotal}</div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </NavLink>
-              </li>
-              <li style={{display: "none"}}>
-                <a href="#">Войти</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <Nav cartTotal={cartTotal} favoritesTotal={favoritesTotal} />
       </MediaQuery>
     </>
   );

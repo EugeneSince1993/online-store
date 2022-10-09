@@ -214,6 +214,28 @@ body {
 
 // Responsible UI
 
+@media screen and (max-width: 1199px) {
+  .tooltip {
+  
+    .tooltipText { 
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1199px) {
+  .app-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .app-content {
+    padding-top: 91px;
+  }
+}
+
 @media screen and (max-width: 450px) {
   * {
     font-size: 16px;
@@ -260,13 +282,6 @@ body {
       }
     }
   }
-
-  .tooltip {
-  
-    .tooltipText { 
-      display: none;
-    }
-  }
 }
 
 @media screen and (max-width: 355px) {
@@ -293,11 +308,5 @@ body {
         }
       }
     }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .app-content {
-    padding-top: 91px;
   }
 }
