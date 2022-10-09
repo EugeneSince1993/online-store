@@ -137,7 +137,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1500px) {
+@media screen and (min-width: 1270px) and (max-width: 1500px) {
   .productItem {
   
     .productItemInner {
@@ -147,6 +147,22 @@
   
         img {
           max-height: 148px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1269px) {
+  .productItem {
+  
+    .productItemInner {
+      height: 301px;
+
+      .image {
+  
+        img {
+          max-height: 130px;
         }
       }
     }

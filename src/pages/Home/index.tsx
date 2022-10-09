@@ -216,7 +216,7 @@ export const Home: FC = () => {
   return (
     <div className={styles.homeContainer}>
       <div className={styles.filtersColumn}>
-        <MediaQuery maxWidth={450}>
+        <MediaQuery maxWidth={699}>
           <div className={styles.filtersCollapse}>
             <Collapse filterName="Фильтры" elementType="h5" collapsed={true}>
               <Filters 
@@ -231,7 +231,7 @@ export const Home: FC = () => {
             </Collapse>
           </div>
         </MediaQuery>
-        <MediaQuery minWidth={451}>
+        <MediaQuery minWidth={700}>
           <Filters 
             handleChange={handleChange}
             setFirstPage={setFirstPage}

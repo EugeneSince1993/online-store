@@ -46,7 +46,7 @@ export const Header: FC = () => {
           <Nav cartTotal={cartTotal} favoritesTotal={favoritesTotal} />
         </MediaQuery>
       </header>
-      <MediaQuery maxWidth={450}>
+      <MediaQuery maxWidth={699}>
         <Nav cartTotal={cartTotal} favoritesTotal={favoritesTotal} />
       </MediaQuery>
     </>
