@@ -24,6 +24,7 @@ export const Header: FC = () => {
       const json = JSON.stringify(cartItems);
       localStorage.setItem('cart', json);
     }
+    isMounted.current = true;
   }, [cartItems]);
 
   useEffect(() => {
@@ -31,6 +32,7 @@ export const Header: FC = () => {
       const json = JSON.stringify(favoriteItems);
       localStorage.setItem('favorites', json);
     }
+    isMounted.current = true;
   }, [favoriteItems]);
 
   return (
